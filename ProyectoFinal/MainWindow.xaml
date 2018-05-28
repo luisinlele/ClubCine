@@ -1,0 +1,192 @@
+﻿<Window x:Class="ProyectoFinal.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ProyectoFinal"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="682.4" Width="844.535" ResizeMode="NoResize" Closed="WindowClosed">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="481*"/>
+            <RowDefinition Height="172*"/>
+        </Grid.RowDefinitions>
+        <Image Source="/Images/Random/logo.png" Margin="10,-63,476.4,334.2"/>
+        <Label Content="Usuario: E-Mail" Margin="445,10,128.4,414.8" FontSize="35"/>
+        <TabControl Margin="0,87,0.4,-0.2" Grid.RowSpan="2">
+            <TabItem Header="Cartelera">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+                    <Label Content="Sala 1" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                    <Image x:Name="image1" Grid.Column="0" Grid.ColumnSpan="3" Grid.Row="1" Grid.RowSpan="3" HorizontalAlignment="Center" Source="Images/Films/bigfish.jpg" MouseDown="filmImage_MouseEnter">
+                        <Image.Effect>
+                            <DropShadowEffect/>
+                        </Image.Effect>
+                    </Image>
+                    <Button x:Name="button_Loadsits1Cartelera" Content="Ver Asientos" Grid.Column="1" Grid.Row="4" VerticalAlignment="Center" Click="button_Loadsits1Cartelera_Click"/>
+
+                    <Label Content="Sala 2" Grid.Column="3" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                    <Image  x:Name="image2" Grid.Column="2" Grid.ColumnSpan="3" Grid.Row="1" Grid.RowSpan="3" HorizontalAlignment="Center" Source="Images/Films/12.jpg">
+                        <Image.Effect>
+                            <DropShadowEffect/>
+                        </Image.Effect>
+                    </Image>
+                    <Button x:Name="button_Loadsits2Cartelera" Content="Ver Asientos" Grid.Column="3" Grid.Row="4" VerticalAlignment="Center" Click="button_Loadsits2Cartelera_Click"/>
+
+                    <Label Content="Sala 3" Grid.Column="5" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                    <Image x:Name="image3" Grid.Column="4" Grid.ColumnSpan="3" Grid.Row="1" Grid.RowSpan="3" HorizontalAlignment="Center" Source="Images/Films/hannah.jpg">
+                        <Image.Effect>
+                            <DropShadowEffect/>
+                        </Image.Effect>
+                    </Image>
+                    <Button x:Name="button_Loadsits3Cartelera" Content="Ver Asientos" Grid.Column="5" Grid.Row="4" VerticalAlignment="Center" Click="button_Loadsits3artelera_Click"/>
+
+                    <Label Content="Sala 4" Grid.Column="1" Grid.Row="5" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                    <Image x:Name="image4" Grid.Column="0" Grid.ColumnSpan="3" Grid.Row="6" Grid.RowSpan="3" HorizontalAlignment="Center" Source="Images/Films/jaws.png">
+                        <Image.Effect>
+                            <DropShadowEffect/>
+                        </Image.Effect>
+                    </Image>
+                    <Button x:Name="button_Loadsits4Cartelera" Content="Ver Asientos" Grid.Column="1" Grid.Row="9" VerticalAlignment="Center" Click="button_Loadsits4Cartelera_Click" HorizontalAlignment="Right" Margin="0,12.8" Width="120"/>
+
+                    <Label Content="Sala 5" Grid.Column="3" Grid.Row="5" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                    <Image x:Name="image5" Grid.Column="2" Grid.ColumnSpan="3" Grid.Row="6" Grid.RowSpan="3" HorizontalAlignment="Center" Source="Images/Films/goodfellas.jpg">
+                        <Image.Effect>
+                            <DropShadowEffect/>
+                        </Image.Effect>
+                    </Image>
+                    <Button x:Name="button_Loadsits5Cartelera" Content="Ver Asientos" Grid.Column="2" Grid.Row="9" VerticalAlignment="Center" Grid.ColumnSpan="2" HorizontalAlignment="Right" Margin="0,12.8,0.2,12.8" Width="120" Click="button_Loadsits5Cartelera_Click"/>
+
+                    <Label Content="Sala 6" Grid.Column="5" Grid.Row="5" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                    <Image x:Name="image6" Grid.Column="4" Grid.ColumnSpan="3" Grid.Row="6" Grid.RowSpan="3" HorizontalAlignment="Center" Source="Images/Films/memento.jpg">
+                        <Image.Effect>
+                            <DropShadowEffect/>
+                        </Image.Effect>
+                    </Image>
+                    <Button x:Name="button_Loadsits6Cartelera" Content="Ver Asientos" Grid.Column="5" Grid.Row="9" VerticalAlignment="Center" Click="button_Loadsits6artelera_Click"/>
+                </Grid>
+            </TabItem>
+            <TabItem Header="Alquileres">
+
+            </TabItem>
+            <TabItem Header="Tus Reservas">
+
+            </TabItem>
+            <TabItem Header="Tus Alquileres">
+
+            </TabItem>
+            <TabItem Header="Películas">
+                <Grid Name="GridFilms">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+
+                    <Label Content="Nombre" VerticalAlignment="Bottom" FontSize="20" Grid.ColumnSpan="2" Margin="72,0,48,0"/>
+                    <Label Content="Cartel" Grid.Column="2" VerticalAlignment="Bottom" FontSize="20" Grid.ColumnSpan="2" Margin="57,0,62,0"/>
+
+                    <Label Content="Género" Grid.Row="1" VerticalAlignment="Top" FontSize="20" Grid.ColumnSpan="2" Margin="75,38,30,0" Grid.RowSpan="2"/>
+                    <Label Content="Trailer" Grid.Column="2" Grid.Row="1" VerticalAlignment="Top" FontSize="20" Grid.ColumnSpan="2" Margin="57,38,48,0" Grid.RowSpan="2"/>
+                    <Label Content="Año" Grid.Row="2" VerticalAlignment="Bottom" FontSize="20" Grid.ColumnSpan="2" Margin="75,0,30,45" Grid.RowSpan="2"/>
+                    <Label Content="Proveedor" Grid.Column="2" Grid.Row="2" VerticalAlignment="Bottom" FontSize="20" Grid.ColumnSpan="2" Margin="60,0,45,44" Grid.RowSpan="2"/>
+                    <Label Content="Precio" Grid.Column="4" Grid.Row="2" VerticalAlignment="Bottom" FontSize="20" Grid.ColumnSpan="2" Margin="57,0,48,44" Grid.RowSpan="2"/>
+
+                    <Label Content="Cartel Preview" Grid.Column="4" Grid.ColumnSpan="3" FontSize="20" Foreground="Gray" Margin="62,0,58,0"/>
+                    <Label Content="------>" Grid.Column="5" FontSize="20" Foreground="Gray" VerticalAlignment="Bottom" HorizontalAlignment="Left" Margin="33,0,0,0"/>
+                    <Label Content="Trailer Preview" Grid.Column="4" Grid.Row="2" Grid.ColumnSpan="3" FontSize="20" Foreground="Gray" Margin="62,3,42,6"/>
+                    <Label Content="------>" Grid.Column="5" Grid.Row="2" FontSize="20" Foreground="Gray" VerticalAlignment="Bottom" HorizontalAlignment="Left" Margin="33,0,0,0"/>
+
+                    <TextBox x:Name="textbox_NameFilm" FontSize="18" Height="27" Grid.ColumnSpan="3" VerticalAlignment="Top" Margin="75,67,70,0" Text="{Binding Path=NombrePelicula, Mode=TwoWay}" Grid.RowSpan="2"/>
+                    <TextBox x:Name="textbox_PosterFilm" FontSize="18" Grid.Column="2" Height="27" Grid.ColumnSpan="3" VerticalAlignment="Top" Margin="60,67,72,0" Text="{Binding Path=CartelPelicula, Mode=TwoWay}" Grid.RowSpan="2"/>
+                    <ComboBox x:Name="textbox_TypeFilm" FontSize="18" Grid.Row="2" Height="27" Grid.ColumnSpan="3" VerticalAlignment="Bottom" Margin="75,0,70,28.6" Text="{Binding Path=GeneroPelicula, Mode=TwoWay}">
+                        <ComboBoxItem Content="CONTENIDO" />
+                    </ComboBox>
+                    <TextBox x:Name="textbox_TrailerFilm" FontSize="18" Grid.Column="2" Grid.Row="2" Height="27" Grid.ColumnSpan="3" VerticalAlignment="Bottom" Margin="60,0,72,28.6" Text="{Binding Path=TrailerPelicula, Mode=TwoWay}"/>
+                    <TextBox x:Name="textbox_YearFilm" FontSize="18" Grid.Row="3" Height="27" Grid.ColumnSpan="3" VerticalAlignment="Top" Margin="75,21.4,70,0" Text="{Binding Path=AñoPelicula, Mode=TwoWay}"/>
+                    <ComboBox x:Name="textbox_ProducerFilm" FontSize="18" Grid.Column="2" Grid.Row="3" Height="27" Grid.ColumnSpan="3" VerticalAlignment="Top" Margin="60,21.4,69,0" Text="{Binding Path=ProveedorIdPelicula, Mode=TwoWay}">
+                        <ComboBoxItem Content="112233" />
+                    </ComboBox>
+                    <TextBox x:Name="textbox_PriceFilm" FontSize="18" Grid.Column="4" Grid.Row="3" Height="27" Grid.ColumnSpan="2" VerticalAlignment="Top" Margin="62,21.4,54,0" Text="{Binding Path=PrecioPelicula, Mode=TwoWay}"/>
+                    <TextBox Text="€" FontSize="18" Grid.Column="5" Grid.Row="3" Height="27" HorizontalAlignment="Right" VerticalAlignment="Top" IsEnabled="False" Margin="0,21.4,38,0"/>
+
+                    <Image Name="Image_Poster" Grid.ColumnSpan="2" Grid.Column="6" Margin="47.2,17,36.6,40.8" Grid.RowSpan="3" Source="/Images/Icons/defaultPoster.jpg"/>
+                    <Image Name="Image_VideoFake" Source="/Images/Random/videoError.jpg" Grid.ColumnSpan="2" Grid.Column="6" Margin="32.2,42.8,19.6,0.4" Grid.Row="2" Grid.RowSpan="2"/>
+                    <MediaElement Name="MediaElement_Trailer" Grid.ColumnSpan="2" Grid.Column="6" Margin="32,39,20,41" Grid.Row="2" Grid.RowSpan="3" IsMuted="True"/>
+
+                    <Button x:Name="button_PosterSelect" Content="..." Grid.Column="4" Height="27" VerticalAlignment="Top" HorizontalAlignment="Left" Width="25" Click="button_PosterSelect_Click" RenderTransformOrigin="-3.26,0.45" Margin="32,67,0,0" Grid.RowSpan="2"/>
+                    <Button x:Name="button_TrailerSelect" Content="..." Grid.Column="4" Grid.Row="2" HorizontalAlignment="Left" Width="25" Margin="32,11.6,0,28.6" Click="button_TrailerSelect_Click"/>
+
+                    <Button x:Name="button_SaveFilm" Content="Guardar" Grid.Column="6" Margin="71,0,53.8,30.2" Grid.Row="5" Click="button_SaveFilm_Click" Grid.ColumnSpan="2"/>
+                    <Button x:Name="button_ModifyFilm" Content="Modificar" Grid.Column="6" Margin="71,67,53.8,31.4" Grid.Row="5" Click="button_ModifyFilm_Click" Grid.ColumnSpan="2" Grid.RowSpan="2"/>
+                    <Button x:Name="button_DeleteFilm" Content="Borrar" Grid.Column="6" Margin="71,66.8,53.8,30.4" Grid.Row="6" Click="button_DeleteFilm_Click" Grid.ColumnSpan="2" Grid.RowSpan="2"/>
+
+                    <DataGrid x:Name="datagrid_Film" Grid.Column="0" Grid.Row="4" Grid.RowSpan="4" Grid.ColumnSpan="7" Margin="20,10.2,92,10.4" SelectionChanged="datagrid_Film_SelectionChanged"/>
+
+                </Grid>
+            </TabItem>
+
+            <TabItem Header="Proveedores">
+                <Grid Name="GridProvider">
+                    <Label Content="Nombre" FontSize="20" Margin="36,33,696.8,461.4"/>
+                    <Label Content="E-Mail" FontSize="20" Margin="195,194,537.8,303.4"/>
+                    <Label Content="Teléfono" FontSize="20" Margin="404,110,328.8,383.4"/>
+                    <Label Content="Dirección" FontSize="20" Margin="404,33,328.8,461.4"/>
+                    <Label Content="País" FontSize="20" Margin="36,110,696.8,383.4"/>
+
+                    <TextBox x:Name="textbox_NameProvider" Text="{Binding Path=NombreProveedor, Mode=TwoWay}" FontSize="18" Margin="41,68,499.8,443.4"/>
+                    <TextBox x:Name="textbox_AddressProvider" Text="{Binding Path=DireccionProveedor, Mode=TwoWay}" FontSize="18" Margin="408,68,132.8,443.4"/>
+                    <TextBox x:Name="textbox_CountryProvider" Text="{Binding Path=PaisProveedor, Mode=TwoWay}" FontSize="18" Margin="41,147,499.8,364.4"/>
+                    <TextBox x:Name="textbox_PhoneProvider" Text="{Binding Path=TelefonoProveedor, Mode=TwoWay}" FontSize="18" Margin="408,147,132.8,364.4"/>
+                    <TextBox x:Name="textbox_EmailProvider" Text="{Binding Path=CorreoContactoProveedor, Mode=TwoWay}" FontSize="18" Margin="195,235,326.8,276.4"/>
+
+                    <Button x:Name="button_SaveProvider" Content="Guardar" Margin="695,337,53.8,164.4" Click="button_SaveProvider_Click"/>
+                    <Button x:Name="button_ModifyProvider" Content="Modificar" Margin="695,402,53.8,99.4" Click="button_ModifyProvider_Click"/>
+                    <Button x:Name="button_DeleteProvider" Content="Borrar" Margin="695,468,53.8,33.4" Click="button_DeleteProvider_Click"/>
+
+                    <DataGrid x:Name="datagrid_Provider" Margin="20,278,197.8,10.4" SelectionChanged="datagrid_Provider_SelectionChanged"/>
+                </Grid>
+            </TabItem>
+
+            <TabItem Header="SuperAdmin">
+
+            </TabItem>
+
+        </TabControl>
+    </Grid>
+</Window>

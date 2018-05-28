@@ -1,0 +1,272 @@
+﻿<Window x:Class="ProyectoFinal.Salas.Auditorium4Window"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ProyectoFinal.Salas"
+        mc:Ignorable="d"
+        Title="Auditorium4Window" Height="518.049" Width="680.366" ResizeMode="NoResize">
+    <Grid>
+        <Label Content="P          A          N          T          A          L          L          A" HorizontalContentAlignment="Center" HorizontalAlignment="Left" VerticalAlignment="Top" Width="674" Background="Black" Foreground="Red" Margin="0,0,-0.4,0" FontWeight="Bold"/>
+        <Label Content="ENTRADA" HorizontalContentAlignment="Center" HorizontalAlignment="Left" VerticalAlignment="Top" Width="67" Background="Black" Foreground="BLUE" Margin="628,70,-21.4,0" Height="30" RenderTransformOrigin="0.5,0.5">
+            <Label.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="89.844"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Label.RenderTransform>
+        </Label>
+        <Button x:Name="silla1" Margin="260,84,365.6,355.8" BorderThickness="0" Height="49" Click="MarkChair">
+            <Button.Background>
+                <ImageBrush ImageSource="/Images/Icons/seatG.png"/>
+            </Button.Background>
+        </Button>
+        <Button x:Name="silla2" Margin="313,84,312.6,355.8" BorderThickness="0" Height="49" Click="MarkChair">
+            <Button.Background>
+                <ImageBrush ImageSource="/Images/Icons/seatG.png"/>
+            </Button.Background>
+        </Button>
+        <Button x:Name="silla3" Margin="366,84,259.6,355.8" BorderThickness="0" Height="49" Click="MarkChair">
+            <Button.Background>
+                <ImageBrush ImageSource="/Images/Icons/seatG.png"/>
+            </Button.Background>
+        </Button>
+
+        <Button x:Name="silla4" Margin="207,150,418.6,289.8" BorderThickness="0" Height="49" Click="MarkChair">
+            <Button.Background>
+                <ImageBrush ImageSource="/Images/Icons/seatG.png"/>
+            </Button.Background>
+        </Button>
+        <Button x:Name="silla5" Margin="260,150,365.6,289.8" BorderThickness="0" Height="49" Click="MarkChair">
+            <Button.Background>
+                <ImageBrush ImageSource="/Images/Icons/seatG.png"/>
+            </Button.Background>
+        </Button>
+        <Button x:Name="silla6" Margin="313,150,312.6,289.8" BorderThickness="0" Height="49" Click="MarkChair">
+            <Button.Background>
+                <ImageBrush ImageSource="/Images/Icons/seatG.png"/>
+            </Button.Background>
+        </Button>
+        <Button x:Name="silla7" Margin="366,150,259.6,289.8" BorderThickness="0" Height="49" Click="MarkChair">
+            <Button.Background>
+                <ImageBrush ImageSource="/Images/Icons/seatG.png"/>
+            </Button.Background>
+        </Button>
+        <Button x:Name="silla8" Margin="419,150,206.6,289.8" BorderThickness="0" Height="49" Click="MarkChair">
+            <Button.Background>
+                <ImageBrush ImageSource="/Images/Icons/seatG.png"/>
+            </Button.Background>
+        </Button>
+
+        <Button x:Name="silla9" Margin="154,220,471.6,219.8" BorderThickness="0" Height="49" Click="MarkChair">
+            <Button.Background>
+                <ImageBrush ImageSource="/Images/Icons/seatG.png"/>
+            </Button.Background>
+        </Button>
+        <Button x:Name="silla10" Margin="207,220,418.6,219.8" BorderThickness="0" Height="49" Click="MarkChair">
+            <Button.Background>
+                <ImageBrush ImageSource="/Images/Icons/seatG.png"/>
+            </Button.Background>
+        </Button>
+        <Button x:Name="silla11" Margin="260,220,365.6,219.8" BorderThickness="0" Height="49" Click="MarkChair">
+            <Button.Background>
+                <ImageBrush ImageSource="/Images/Icons/seatG.png"/>
+            </Button.Background>
+        </Button>
+        <Button x:Name="silla12" Margin="313,220,312.6,219.8" BorderThickness="0" Height="49" Click="MarkChair">
+            <Button.Background>
+                <ImageBrush ImageSource="/Images/Icons/seatG.png"/>
+            </Button.Background>
+        </Button>
+        <Button x:Name="silla13" Margin="366,220,259.6,219.8" BorderThickness="0" Height="49" Click="MarkChair">
+            <Button.Background>
+                <ImageBrush ImageSource="/Images/Icons/seatG.png"/>
+            </Button.Background>
+        </Button>
+        <Button x:Name="silla14" Margin="419,220,206.6,219.8" BorderThickness="0" Height="49" Click="MarkChair">
+            <Button.Background>
+                <ImageBrush ImageSource="/Images/Icons/seatG.png"/>
+            </Button.Background>
+        </Button>
+        <Button x:Name="silla15" Margin="472,220,153.6,219.8" BorderThickness="0" Height="49" Click="MarkChair">
+            <Button.Background>
+                <ImageBrush ImageSource="/Images/Icons/seatG.png"/>
+            </Button.Background>
+        </Button>
+
+        <Button x:Name="silla16" Margin="154,288,471.6,151.8" BorderThickness="0" Height="49" Click="MarkChair">
+            <Button.Background>
+                <ImageBrush ImageSource="/Images/Icons/seatG.png"/>
+            </Button.Background>
+        </Button>
+        <Button x:Name="silla17" Margin="207,288,418.6,151.8" BorderThickness="0" Height="49" Click="MarkChair">
+            <Button.Background>
+                <ImageBrush ImageSource="/Images/Icons/seatG.png"/>
+            </Button.Background>
+        </Button>
+        <Button x:Name="silla18" Margin="260,288,365.6,151.8" BorderThickness="0" Height="49" Click="MarkChair">
+            <Button.Background>
+                <ImageBrush ImageSource="/Images/Icons/seatG.png"/>
+            </Button.Background>
+        </Button>
+        <Button x:Name="silla19" Margin="313,288,312.6,151.8" BorderThickness="0" Height="49" Click="MarkChair">
+            <Button.Background>
+                <ImageBrush ImageSource="/Images/Icons/seatG.png"/>
+            </Button.Background>
+        </Button>
+        <Button x:Name="silla20" Margin="366,288,259.6,151.8" BorderThickness="0" Height="49" Click="MarkChair">
+            <Button.Background>
+                <ImageBrush ImageSource="/Images/Icons/seatG.png"/>
+            </Button.Background>
+        </Button>
+        <Button x:Name="silla21" Margin="419,288,206.6,151.8" BorderThickness="0" Height="49" Click="MarkChair">
+            <Button.Background>
+                <ImageBrush ImageSource="/Images/Icons/seatG.png"/>
+            </Button.Background>
+        </Button>
+        <Button x:Name="silla22" Margin="472,288,153.6,151.8" BorderThickness="0" Height="49" Click="MarkChair">
+            <Button.Background>
+                <ImageBrush ImageSource="/Images/Icons/seatG.png"/>
+            </Button.Background>
+        </Button>
+
+        <Button x:Name="silla23" Margin="154,358,471.6,81.8" BorderThickness="0" Height="49" Click="MarkChair">
+            <Button.Background>
+                <ImageBrush ImageSource="/Images/Icons/seatG.png"/>
+            </Button.Background>
+        </Button>
+        <Button x:Name="silla24" Margin="207,358,418.6,81.8" BorderThickness="0" Height="49" Click="MarkChair">
+            <Button.Background>
+                <ImageBrush ImageSource="/Images/Icons/seatG.png"/>
+            </Button.Background>
+        </Button>
+        <Button x:Name="silla25" Margin="260,358,365.6,81.8" BorderThickness="0" Height="49" Click="MarkChair">
+            <Button.Background>
+                <ImageBrush ImageSource="/Images/Icons/seatG.png"/>
+            </Button.Background>
+        </Button>
+        <Button x:Name="silla26" Margin="313,358,312.6,81.8" BorderThickness="0" Height="49" Click="MarkChair">
+            <Button.Background>
+                <ImageBrush ImageSource="/Images/Icons/seatG.png"/>
+            </Button.Background>
+        </Button>
+        <Button x:Name="silla27" Margin="366,358,259.6,81.8" BorderThickness="0" Height="49" Click="MarkChair">
+            <Button.Background>
+                <ImageBrush ImageSource="/Images/Icons/seatG.png"/>
+            </Button.Background>
+        </Button>
+        <Button x:Name="silla28" Margin="419,358,206.6,81.8" BorderThickness="0" Height="49" Click="MarkChair">
+            <Button.Background>
+                <ImageBrush ImageSource="/Images/Icons/seatG.png"/>
+            </Button.Background>
+        </Button>
+        <Button x:Name="silla29" Margin="472,358,153.6,81.8" BorderThickness="0" Height="49" Click="MarkChair">
+            <Button.Background>
+                <ImageBrush ImageSource="/Images/Icons/seatG.png"/>
+            </Button.Background>
+        </Button>
+
+        <Button x:Name="silla30" Margin="101,430,524.6,9.8" BorderThickness="0" Height="49" Click="MarkChair">
+            <Button.Background>
+                <ImageBrush ImageSource="/Images/Icons/seatG.png"/>
+            </Button.Background>
+        </Button>
+        <Button x:Name="silla31" Margin="154,430,471.6,9.8" BorderThickness="0" Height="49" Click="MarkChair">
+            <Button.Background>
+                <ImageBrush ImageSource="/Images/Icons/seatG.png"/>
+            </Button.Background>
+        </Button>
+        <Button x:Name="silla32" Margin="207,430,418.6,9.8" BorderThickness="0" Height="49" Click="MarkChair">
+            <Button.Background>
+                <ImageBrush ImageSource="/Images/Icons/seatG.png"/>
+            </Button.Background>
+        </Button>
+        <Button x:Name="silla33" Margin="260,430,365.6,9.8" BorderThickness="0" Height="49" Click="MarkChair">
+            <Button.Background>
+                <ImageBrush ImageSource="/Images/Icons/seatG.png"/>
+            </Button.Background>
+        </Button>
+        <Button x:Name="silla34" Margin="313,430,312.6,9.8" BorderThickness="0" Height="49" Click="MarkChair">
+            <Button.Background>
+                <ImageBrush ImageSource="/Images/Icons/seatG.png"/>
+            </Button.Background>
+        </Button>
+        <Button x:Name="silla35" Margin="366,430,259.6,9.8" BorderThickness="0" Height="49" Click="MarkChair">
+            <Button.Background>
+                <ImageBrush ImageSource="/Images/Icons/seatG.png"/>
+            </Button.Background>
+        </Button>
+        <Button x:Name="silla36" Margin="419,430,206.6,9.8" BorderThickness="0" Height="49" Click="MarkChair">
+            <Button.Background>
+                <ImageBrush ImageSource="/Images/Icons/seatG.png"/>
+            </Button.Background>
+        </Button>
+        <Button x:Name="silla37" Margin="472,430,153.6,9.8" BorderThickness="0" Height="49" Click="MarkChair">
+            <Button.Background>
+                <ImageBrush ImageSource="/Images/Icons/seatG.png"/>
+            </Button.Background>
+        </Button>
+        <Button x:Name="silla38" Margin="525,430,100.6,9.8" BorderThickness="0" Height="49" Click="MarkChair">
+            <Button.Background>
+                <ImageBrush ImageSource="/Images/Icons/seatG.png"/>
+            </Button.Background>
+        </Button>
+        <Button x:Name="silla39" Margin="48,150,577.6,289.8" BorderThickness="0" Height="49" Click="MarkChair">
+            <Button.Background>
+                <ImageBrush ImageSource="/Images/Icons/seatG.png"/>
+            </Button.Background>
+        </Button>
+        <Button x:Name="silla40" Margin="48,220,577.6,219.8" BorderThickness="0" Height="49" Click="MarkChair">
+            <Button.Background>
+                <ImageBrush ImageSource="/Images/Icons/seatG.png"/>
+            </Button.Background>
+        </Button>
+        <Button x:Name="silla41" Margin="48,288,577.6,151.8" BorderThickness="0" Height="49" Click="MarkChair">
+            <Button.Background>
+                <ImageBrush ImageSource="/Images/Icons/seatG.png"/>
+            </Button.Background>
+        </Button>
+        <Button x:Name="silla42" Margin="48,358,577.6,81.8" BorderThickness="0" Height="49" Click="MarkChair">
+            <Button.Background>
+                <ImageBrush ImageSource="/Images/Icons/seatG.png"/>
+            </Button.Background>
+        </Button>
+        <Button x:Name="silla43" Margin="48,430,577.6,9.8" BorderThickness="0" Height="49" Click="MarkChair">
+            <Button.Background>
+                <ImageBrush ImageSource="/Images/Icons/seatG.png"/>
+            </Button.Background>
+        </Button>
+
+        <Button x:Name="silla44" Margin="578,150,47.6,289.8" BorderThickness="0" Height="49" Click="MarkChair">
+            <Button.Background>
+                <ImageBrush ImageSource="/Images/Icons/seatG.png"/>
+            </Button.Background>
+        </Button>
+
+        <Button x:Name="silla45" Margin="578,220,47.6,219.8" BorderThickness="0" Height="49" Click="MarkChair">
+            <Button.Background>
+                <ImageBrush ImageSource="/Images/Icons/seatG.png"/>
+            </Button.Background>
+        </Button>
+
+        <Button x:Name="silla46" Margin="578,288,47.6,151.8" BorderThickness="0" Height="49" Click="MarkChair">
+            <Button.Background>
+                <ImageBrush ImageSource="/Images/Icons/seatG.png"/>
+            </Button.Background>
+        </Button>
+
+        <Button x:Name="silla47" Margin="578,358,47.6,81.8" BorderThickness="0" Height="49" Click="MarkChair">
+            <Button.Background>
+                <ImageBrush ImageSource="/Images/Icons/seatG.png"/>
+            </Button.Background>
+        </Button>
+
+        <Button x:Name="silla48" Margin="578,430,47.6,9.8" BorderThickness="0" Height="49" Click="MarkChair">
+            <Button.Background>
+                <ImageBrush ImageSource="/Images/Icons/seatG.png"/>
+            </Button.Background>
+        </Button>
+    </Grid>
+</Window>

@@ -1,0 +1,15 @@
+﻿<Window x:Class="ProyectoFinal.TrailerWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ProyectoFinal"
+        mc:Ignorable="d"
+        Title="TrailerWindow" Height="450" Width="531.139">
+    <Grid>
+        <Image Source="/Images/Random/backgroundTheatre.jpg"/>
+        <Button x:Name="button_PlayTrailer" Content="▶" Margin="185,265,309.8,125" Click="button_PlayTrailer_Click"/>
+        <Button x:Name="button_PauseTrailer" Content=" ▎ ▎" Margin="240,265,254.8,125" Click="button_PauseTrailer_Click"/>
+        <MediaElement x:Name="MediaElement_Trailer" Source="/Videos/Trailers/JawsTrailer.wmv" Margin="82,22,74,110" LoadedBehavior="Manual" IsMuted="False"/>
+    </Grid>
+</Window>

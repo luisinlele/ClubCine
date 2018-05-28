@@ -1,0 +1,45 @@
+﻿<Window x:Class="ProyectoFinal.LoginWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ProyectoFinal"
+        mc:Ignorable="d"
+        Title="LoginWindow" Height="450" Width="800">
+
+    <Window.Background>
+        <ImageBrush ImageSource="Images/Random/backgroundGrey.jpg"/>
+    </Window.Background>
+    <Grid>
+        <Rectangle Margin="151,28,156.6,29" RenderTransformOrigin="0.5,0.5">
+            <Rectangle.Fill>
+                <ImageBrush ImageSource="Images/Icons/claqueta.png"/>
+            </Rectangle.Fill>
+            <Rectangle.RenderTransform>
+
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="0.288"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Rectangle.RenderTransform>
+            <Rectangle.Effect>
+                <DropShadowEffect Color="#FF4C4C49" ShadowDepth="25" Direction="415"/>
+            </Rectangle.Effect>
+        </Rectangle>
+        <Label Content="E-Mail" FontSize="23" Margin="211,232,494.6,146" Foreground="#FFFF8305" FontFamily="Rockwell"/>
+        <Label Content="Contraseña" FontSize="23" Margin="164,273,489.6,101"  Foreground="#FFFF8305" FontFamily="Rockwell"/>
+        <TextBox x:Name="textbox_EmailLogin" FontSize="15" Margin="304,240,205.6,151"/>
+        <PasswordBox x:Name="textbox_PassLogin" FontSize="15" Margin="304,283,205.6,108" />
+        <TextBlock x:Name="button_NewAccountLogin" Margin="378,339,302.6,55">
+            <Hyperlink FontSize="16" FontStyle="Normal" Click="button_NewAccountMain_Click">Crear cuenta</Hyperlink>
+        </TextBlock>
+        <Button x:Name="button_Login" Content="Entrar" Click="button_Login_Click" Margin="304,335,420.6,58"/>
+        <Button x:Name="button_Exit" Margin="726,362,9.6,10" Click="button_Exit_Click" Foreground="Transparent" BorderBrush="Transparent">
+            <Button.Background>
+                <ImageBrush ImageSource="Images/Icons/exitHighlight.png"/>
+            </Button.Background>
+        </Button>
+    </Grid>
+</Window>

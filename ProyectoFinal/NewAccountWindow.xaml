@@ -1,0 +1,45 @@
+﻿<Window x:Class="ProyectoFinal.NewAccountWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+        xmlns:local="clr-namespace:ProyectoFinal"
+        mc:Ignorable="d"
+        Title="NewAccountWindow" Height="481.612" Width="957.493" ResizeMode="NoResize">
+    <Window.Background>
+        <ImageBrush ImageSource="Images/Random/backgroundLogin.png" Stretch="None"/>
+    </Window.Background>
+    <Grid Name="GridUser">
+
+        <Label Content="CREAR CUENTA" FontSize="25" Margin="395,10,337.2,388" Foreground="#FFFFFFFF"/>
+        <Label FontSize="25" Margin="36,22,10.2,379" Foreground="#FFFFFFFF" Content="______________________________________________________________________________________________________________________________________________________________________"/>
+        <Label Content="Nombre" FontSize="15" Foreground="#D9D9D9" FontFamily="Rockwell" Margin="88,108,716.2,310"/>
+        <Label Content="Apellidos" FontSize="16" Foreground="#D9D9D9" FontFamily="Rockwell" Margin="74,158,788.2,257"/>
+        <Label Content="Teléfono" FontSize="14" Foreground="#D9D9D9" FontFamily="Rockwell" Margin="88,208,733.2,207"/>
+        <Label Content="Contraseña" FontSize="15" Foreground="#D9D9D9" FontFamily="Rockwell" Margin="66,303,788.2,112"/>
+        <Label Content="Repite Contraseña" FontSize="13" Foreground="#D9D9D9" FontFamily="Rockwell" Margin="36,356,780.2,59"/>
+        <Label Content="Correo Electrónico" FontSize="12" Foreground="#D9D9D9" FontFamily="Rockwell" Margin="39,257,786.2,164" RenderTransformOrigin="1.553,1.514"/>
+        <Label Content="Imagen Perfil" Margin="549,354,298.2,65" FontFamily="Rockwell" Foreground="#D9D9D9"/>
+
+        <TextBox x:Name="textbox_NameNewAccount" FontSize="16" Margin="152,108,584.2,311" Height="25" Text="{Binding Path=NombreUsuario, Mode=TwoWay}"/>
+        <TextBox x:Name="textbox_SurnameNewAccount" FontSize="16" Margin="152,157,490.2,262" Height="25" Text="{Binding Path=ApellidosUsuario, Mode=TwoWay}"/>
+        <TextBox x:Name="textbox_PhoneNewAccount" FontSize="16" Margin="152,207,507.2,212" Height="25" Text="{Binding Path=TelefonoUsuario, Mode=TwoWay}"/>
+        <TextBox x:Name="textbox_EmailNewAccount" FontSize="16" Margin="152,256,418.2,163" Height="25" Text="{Binding Path=EmailUsuario, Mode=TwoWay}"/>
+        <PasswordBox x:Name="textbox_PasswordNewAccount" FontSize="16" Margin="152,305,584.2,114" Height="25"/>
+        <PasswordBox x:Name="textbox_PasswordcheckNewAccount" FontSize="16" Margin="152,354,584.2,65" Height="25"/>
+        <TextBox x:Name="textbox_ProfilePic" Margin="638,354,109.2,66" Height="25"/>
+
+        <Label x:Name="label_PasswordError" Content="¡¡Las contraseñas no coinciden!!" Margin="367,331,406.2,94" Foreground="Black" Background="Red" Visibility="Hidden"/>
+
+        <Image x:Name="image_ProfilePicPreview" Margin="635,84,71.2,103" Source="/Images/Random/defaultProfilePic.png" Stretch="Fill" />
+
+        <Button x:Name="button_SelectProfilePic" Content=".." Margin="846,358,77.2,70" Click="button_SelectProfilePic_Click"/>
+        <Button x:Name="button_SaveNewAccount" Content="Crear Cuenta" Margin="362,401,476.2,10" Click="button_SaveNewAccount_Click"/>
+        <Button x:Name="button_CancelNewAccount" Content="Cancelar" Margin="527,401,282.2,10"/>
+        <Button x:Name="button_Exit" Margin="892,388,0.2,10" Click="button_Exit_Click" Foreground="Transparent" BorderBrush="Transparent">
+            <Button.Background>
+                <ImageBrush ImageSource="Images/Icons/exitHighlight.png"/>
+            </Button.Background>
+        </Button>
+    </Grid>
+</Window>
