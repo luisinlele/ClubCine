@@ -117,25 +117,27 @@ namespace ProyectoFinal.Salas
 
         private void button_ReservationAuditorium1_Click(object sender, RoutedEventArgs e)
         {
-            var brushTest = new ImageBrush();
-            brushTest.ImageSource = yellow;
-
-            foreach (UIElement element in Auditorium1Grid.Children)
+            MessageBoxResult result = MessageBox.Show("¿Seguro que quieres hacer esta reserva?", "Confirmación", MessageBoxButton.YesNo, MessageBoxImage.Question);
+            switch (result)
             {
-                if (element.GetType().ToString().Equals("System.Windows.Controls.Button"))
-                {
-                    Button button = element as Button;
-                    if (button.Tag != null)
+                case MessageBoxResult.Yes:
+                    foreach (UIElement element in Auditorium1Grid.Children)
                     {
-                        
-                        Asiento asiento = uow.RepositorioAsiento.ObtenerUno(c => c.NumeroAsiento.Equals(button.Name) && c.SalaIdAsiento == 1);
-                        asiento.OcupadoAsiento = true;
-                        uow.RepositorioAsiento.Actualizar(asiento);
+                        if (element.GetType().ToString().Equals("System.Windows.Controls.Button"))
+                        {
+                            Button button = element as Button;
+                            if (button.Tag != null)
+                            {
+                                Asiento asiento = uow.RepositorioAsiento.ObtenerUno(c => c.NumeroAsiento.Equals(button.Name) && c.SalaIdAsiento == 1);
+                                asiento.OcupadoAsiento = true;
+                                uow.RepositorioAsiento.Actualizar(asiento);
+                            }
+                        }
                     }
-                }
+                    MessageBoxResult confirmation = MessageBox.Show("Reserva hecha Correctamente", "Información", MessageBoxButton.OK, MessageBoxImage.Information);
+                    this.Close();
+                    break;
             }
-
-
         }
     }
 }
