@@ -132,16 +132,23 @@ namespace ProyectoFinal.Salas
                             }
                         }
                     }
-                    reserva.UsuarioIdReserva = Convert.ToInt32(usuario.UsuarioId);
-                    reserva.PeliculaPrecioReserva = 10 * contadorAsientos;
-                    DateTime data = new DateTime();
-                    data = DateTime.Today;
-                    reserva.FechaReserva = data.ToString("dd/MM/yyyy");
-                    reserva.HoraReserva = "22:00";
-                    reserva.SalaIdReserva = 1;
-                    uow.RepositorioReserva.Crear(reserva);
-                     
-                    MessageBoxResult confirmation = MessageBox.Show("Reserva hecha Correctamente. Debes " +10*contadorAsientos, "Información", MessageBoxButton.OK, MessageBoxImage.Information);
+                    if (contadorAsientos != 0)
+                    {
+                        reserva.UsuarioIdReserva = Convert.ToInt32(usuario.UsuarioId);
+                        reserva.PeliculaPrecioReserva = 10 * contadorAsientos;
+                        DateTime data = new DateTime();
+                        data = DateTime.Today;
+                        reserva.FechaReserva = data.ToString("dd/MM/yyyy");
+                        reserva.HoraReserva = "22:00";
+                        reserva.SalaIdReserva = 1;
+                        uow.RepositorioReserva.Crear(reserva);
+
+                        MessageBoxResult confirmation = MessageBox.Show("Reserva hecha Correctamente. Debes " + 10 * contadorAsientos, "Información", MessageBoxButton.OK, MessageBoxImage.Information);
+                    }
+                    else
+                    {
+                        MessageBoxResult confirmation = MessageBox.Show("No has seleccionado ningún asiento.", "Información", MessageBoxButton.OK, MessageBoxImage.Information);
+                    }
                     this.Close();
                     break;
             }

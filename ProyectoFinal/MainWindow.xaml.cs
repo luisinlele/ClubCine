@@ -51,6 +51,7 @@ namespace ProyectoFinal
 
         Usuario usuario;
 
+        //The rol of the user
         String rol;
        
 
@@ -70,6 +71,7 @@ namespace ProyectoFinal
             CleanTextboxProveedor();
 
             this.usuario = usuario;
+
             label_UserEmail.Content = "Usuario: "+ usuario.EmailUsuario;
             label_UserId.Content = "Id: " + usuario.UsuarioId;
             rol = usuario.RolUsuario;
@@ -301,7 +303,6 @@ namespace ProyectoFinal
             textbox_TypeFilm.Text = "";
             textbox_TrailerFilm.Text = "";
             textbox_YearFilm.Text = "";
-            textbox_ProducerFilm.Text = "";
             textbox_PriceFilm.Text = "0";
         }
 
