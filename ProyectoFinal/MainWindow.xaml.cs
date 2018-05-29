@@ -68,6 +68,8 @@ namespace ProyectoFinal
             this.usuario = usuario;
             label_UserEmail.Content = "Usuario: "+ usuario.EmailUsuario;
             label_UserId.Content = "Id: " + usuario.UsuarioId;
+
+            datagrid_Book.ItemsSource = uow.RepositorioReserva.ObtenerTodo().ToList();
         }
 
 
