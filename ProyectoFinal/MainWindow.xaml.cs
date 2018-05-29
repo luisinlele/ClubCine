@@ -50,11 +50,15 @@ namespace ProyectoFinal
         Proveedor proveedor = new Proveedor();
 
         Usuario usuario;
+
+        String rol;
        
 
         public MainWindow(Usuario usuario)
         {
             InitializeComponent();
+
+            UnloadAll();
 
             GridFilms.DataContext = pelicula;
             datagrid_Film.ItemsSource = uow.RepositorioPelicula.ObtenerTodo().ToList();
@@ -68,6 +72,8 @@ namespace ProyectoFinal
             this.usuario = usuario;
             label_UserEmail.Content = "Usuario: "+ usuario.EmailUsuario;
             label_UserId.Content = "Id: " + usuario.UsuarioId;
+            rol = usuario.RolUsuario;
+            CheckUser();
 
             datagrid_Book.ItemsSource = uow.RepositorioReserva.ObtenerTodo().ToList();
         }
@@ -239,7 +245,6 @@ namespace ProyectoFinal
 
         #endregion General
 
-
         #region Methods
 
         //Shows a preview of the Film's Poster
@@ -319,6 +324,64 @@ namespace ProyectoFinal
             {
                 textbox_ProducerFilm.Items.Add(item.ProveedorId);
             }
+        }
+
+        //Hides all the Tabs
+        private void UnloadAll()
+        {
+            TabCartelera.Visibility = Visibility.Hidden;
+            TabAlquileres.Visibility = Visibility.Hidden;
+            TabTuCartelera.Visibility = Visibility.Hidden;
+            TabTuAlquiler.Visibility = Visibility.Hidden;
+            TabPeliculas.Visibility = Visibility.Hidden;
+            TabProveedores.Visibility = Visibility.Hidden;
+            TabSuperAdmin.Visibility = Visibility.Hidden;
+        }
+
+        //Makes the normal user tabs visibles
+        private void LoadNormal()
+        {
+            TabCartelera.Visibility = Visibility.Visible;
+            TabAlquileres.Visibility = Visibility.Visible;
+            TabTuCartelera.Visibility = Visibility.Visible;
+            TabTuAlquiler.Visibility = Visibility.Visible;
+        }
+
+        //Makes the admin user tabs visibles
+        private void LoadAdmin()
+        {
+            TabCartelera.Visibility = Visibility.Visible;
+            TabAlquileres.Visibility = Visibility.Visible;
+            TabTuCartelera.Visibility = Visibility.Visible;
+            TabTuAlquiler.Visibility = Visibility.Visible;
+            TabPeliculas.Visibility = Visibility.Visible;
+            TabProveedores.Visibility = Visibility.Visible;
+        }
+
+        //Makes the SuperAdmin user tabs visibles
+        private void LoadSuperadmin()
+        {
+            TabCartelera.Visibility = Visibility.Visible;
+            TabAlquileres.Visibility = Visibility.Visible;
+            TabTuCartelera.Visibility = Visibility.Visible;
+            TabTuAlquiler.Visibility = Visibility.Visible;
+            TabPeliculas.Visibility = Visibility.Visible;
+            TabProveedores.Visibility = Visibility.Visible;
+            TabSuperAdmin.Visibility = Visibility.Visible;
+        }
+
+        //This checks the Type of User
+        private void CheckUser()
+        {
+            if (rol.Equals("SuperAdmin"))
+            {
+                LoadSuperadmin();
+            }
+            else if (rol.Equals("Admin"))
+            {
+                LoadAdmin();
+            }
+            else { LoadNormal(); }
         }
 
 

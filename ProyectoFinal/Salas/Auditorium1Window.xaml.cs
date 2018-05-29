@@ -71,11 +71,6 @@ namespace ProyectoFinal.Salas
             Console.WriteLine(button.Name); //esto nos saca el nombre del boton!!!
         }
 
-        //var brush = new ImageBrush();
-        //brush.ImageSource = temp;
-        //    silla2.Background = brush;
-
-
         public void CheckChairs()
         {
             foreach(Asiento asiento in uow.RepositorioAsiento.ObtenerVarios(x => x.SalaIdAsiento == 1))
@@ -93,11 +88,9 @@ namespace ProyectoFinal.Salas
                                 var brush = new ImageBrush();
                                 brush.ImageSource = red;
                                 button.Background = brush;
-                               
                             }
                         }
                     }
-                    
                 }
             }
         }
@@ -147,6 +140,7 @@ namespace ProyectoFinal.Salas
                     reserva.HoraReserva = "22:00";
                     reserva.SalaIdReserva = 1;
                     uow.RepositorioReserva.Crear(reserva);
+                     
                     MessageBoxResult confirmation = MessageBox.Show("Reserva hecha Correctamente. Debes " +10*contadorAsientos, "Información", MessageBoxButton.OK, MessageBoxImage.Information);
                     this.Close();
                     break;

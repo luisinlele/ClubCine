@@ -15,7 +15,7 @@
         <Label x:Name="label_UserEmail" Content="Usuario: E-Mail" Margin="280,0,47.4,424.8" FontSize="30"/>
         <Label x:Name="label_UserId" Content="Id: id" Margin="389,41,184.4,383.8" FontSize="30"/>
         <TabControl Margin="0,87,0.4,-0.2" Grid.RowSpan="2">
-            <TabItem Header="Cartelera">
+            <TabItem Header="Cartelera" Name="TabCartelera">
                 <Grid>
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition/>
@@ -87,19 +87,19 @@
                     <Button x:Name="button_Loadsits6Cartelera" Content="Ver Asientos" Grid.Column="5" Grid.Row="9" VerticalAlignment="Center" Click="button_Loadsits6artelera_Click"/>
                 </Grid>
             </TabItem>
-            <TabItem Header="Alquileres">
+            <TabItem Header="Alquileres" Name="TabAlquileres">
 
             </TabItem>
-            <TabItem Header="Tus Reservas">
+            <TabItem Header="Tus Reservas" Name="TabTuCartelera">
                 <Grid Name="GridReservas">
                     <DataGrid x:Name="datagrid_Book" Margin="113,156,119.8,50.4"/>
                 </Grid>
 
             </TabItem>
-            <TabItem Header="Tus Alquileres">
+            <TabItem Header="Tus Alquileres" Name="TabTuAlquiler">
 
             </TabItem>
-            <TabItem Header="Películas">
+            <TabItem Header="Películas" Name="TabPeliculas">
                 <Grid Name="GridFilms">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition/>
@@ -165,7 +165,7 @@
                 </Grid>
             </TabItem>
 
-            <TabItem Header="Proveedores">
+            <TabItem Header="Proveedores" Name="TabProveedores">
                 <Grid Name="GridProvider">
                     <Label Content="Nombre" FontSize="20" Margin="36,33,696.8,461.4"/>
                     <Label Content="E-Mail" FontSize="20" Margin="195,194,537.8,303.4"/>
@@ -187,8 +187,13 @@
                 </Grid>
             </TabItem>
 
-            <TabItem Header="SuperAdmin">
+            <TabItem Header="SuperAdmin" Name="TabSuperAdmin">
+                
+                <Grid>
+                    <DataGrid x:Name="datagrid_Users" Margin="48,136,53.8,38.4"/>
 
+                </Grid>
+            
             </TabItem>
 
         </TabControl>
