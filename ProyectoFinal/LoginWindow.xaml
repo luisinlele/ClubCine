@@ -30,8 +30,8 @@
         </Rectangle>
         <Label Content="E-Mail" FontSize="23" Margin="211,232,494.6,146" Foreground="#FFFF8305" FontFamily="Rockwell"/>
         <Label Content="Contraseña" FontSize="23" Margin="164,273,489.6,101"  Foreground="#FFFF8305" FontFamily="Rockwell"/>
-        <TextBox x:Name="textbox_EmailLogin" FontSize="15" Margin="304,240,205.6,151"/>
-        <PasswordBox x:Name="textbox_PassLogin" FontSize="15" Margin="304,283,205.6,108" />
+        <TextBox x:Name="textbox_EmailLogin" FontSize="15" Margin="304,240,205.6,151" Text="admin"/>
+        <PasswordBox x:Name="textbox_PassLogin" FontSize="15" Margin="304,283,205.6,108" Password="admin"/>
         <TextBlock x:Name="button_NewAccountLogin" Margin="378,339,302.6,55">
             <Hyperlink FontSize="16" FontStyle="Normal" Click="button_NewAccountMain_Click">Crear cuenta</Hyperlink>
         </TextBlock>

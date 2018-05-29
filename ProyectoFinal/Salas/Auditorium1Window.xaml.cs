@@ -35,9 +35,10 @@ namespace ProyectoFinal.Salas
         BitmapFrame red = BitmapFrame.Create(streamInfoRed.Stream);
 
         UnitOfWork uow = new UnitOfWork();
+
         List<Asiento> asientos;
 
-        public Auditorium1Window()
+        public Auditorium1Window(Usuario usuario)
         {
             InitializeComponent();
             CheckChairs();
@@ -66,10 +67,6 @@ namespace ProyectoFinal.Salas
             Console.WriteLine(button.Name); //esto nos saca el nombre del boton!!!
         }
 
-
-
-
-
         //var brush = new ImageBrush();
         //brush.ImageSource = temp;
         //    silla2.Background = brush;
@@ -77,7 +74,7 @@ namespace ProyectoFinal.Salas
 
         public void CheckChairs()
         {
-foreach(Asiento asiento in uow.RepositorioAsiento.ObtenerVarios(x => x.SalaIdAsiento == 1))
+            foreach(Asiento asiento in uow.RepositorioAsiento.ObtenerVarios(x => x.SalaIdAsiento == 1))
             {
                 if (asiento.OcupadoAsiento)
                 {
@@ -88,10 +85,11 @@ foreach(Asiento asiento in uow.RepositorioAsiento.ObtenerVarios(x => x.SalaIdAsi
                             Button button = element as Button;
                             if (button.Name.Equals(asiento.NumeroAsiento))
                             {
+                                button.IsEnabled = false;
                                 var brush = new ImageBrush();
                                 brush.ImageSource = red;
                                 button.Background = brush;
-                                //button.IsEnabled= false;
+                               
                             }
                         }
                     }
@@ -117,5 +115,27 @@ foreach(Asiento asiento in uow.RepositorioAsiento.ObtenerVarios(x => x.SalaIdAsi
             }
         }
 
+        private void button_ReservationAuditorium1_Click(object sender, RoutedEventArgs e)
+        {
+            var brushTest = new ImageBrush();
+            brushTest.ImageSource = yellow;
+
+            foreach (UIElement element in Auditorium1Grid.Children)
+            {
+                if (element.GetType().ToString().Equals("System.Windows.Controls.Button"))
+                {
+                    Button button = element as Button;
+                    if (button.Tag != null)
+                    {
+                        
+                        Asiento asiento = uow.RepositorioAsiento.ObtenerUno(c => c.NumeroAsiento.Equals(button.Name) && c.SalaIdAsiento == 1);
+                        asiento.OcupadoAsiento = true;
+                        uow.RepositorioAsiento.Actualizar(asiento);
+                    }
+                }
+            }
+
+
+        }
     }
 }

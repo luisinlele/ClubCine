@@ -49,8 +49,10 @@ namespace ProyectoFinal
         //Proveedor
         Proveedor proveedor = new Proveedor();
 
+        Usuario usuario;
+       
 
-        public MainWindow()
+        public MainWindow(Usuario usuario)
         {
             InitializeComponent();
 
@@ -62,6 +64,10 @@ namespace ProyectoFinal
             GridProvider.DataContext = proveedor;
             datagrid_Provider.ItemsSource = uow.RepositorioProveedor.ObtenerTodo().ToList();
             CleanTextboxProveedor();
+
+            this.usuario = usuario;
+            label_UserEmail.Content = "Usuario: "+ usuario.EmailUsuario;
+            label_UserId.Content = "Id: " + usuario.UsuarioId;
         }
 
 
@@ -69,7 +75,7 @@ namespace ProyectoFinal
 
         private void button_Loadsits1Cartelera_Click(object sender, RoutedEventArgs e)
         {
-            auditorium1 = new Auditorium1Window();
+            auditorium1 = new Auditorium1Window(usuario);
             auditorium1.Show();
         }
         private void button_Loadsits2Cartelera_Click(object sender, RoutedEventArgs e)

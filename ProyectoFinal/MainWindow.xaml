@@ -12,7 +12,8 @@
             <RowDefinition Height="172*"/>
         </Grid.RowDefinitions>
         <Image Source="/Images/Random/logo.png" Margin="10,-63,476.4,334.2"/>
-        <Label Content="Usuario: E-Mail" Margin="445,10,128.4,414.8" FontSize="35"/>
+        <Label x:Name="label_UserEmail" Content="Usuario: E-Mail" Margin="280,0,47.4,424.8" FontSize="30"/>
+        <Label x:Name="label_UserId" Content="Id: id" Margin="389,41,184.4,383.8" FontSize="30"/>
         <TabControl Margin="0,87,0.4,-0.2" Grid.RowSpan="2">
             <TabItem Header="Cartelera">
                 <Grid>
@@ -90,6 +91,9 @@
 
             </TabItem>
             <TabItem Header="Tus Reservas">
+                <Grid Name="GridReservas">
+                    <DataGrid x:Name="datagrid_Book" Margin="113,156,119.8,50.4"/>
+                </Grid>
 
             </TabItem>
             <TabItem Header="Tus Alquileres">

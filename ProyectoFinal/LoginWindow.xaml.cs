@@ -1,4 +1,6 @@
-﻿using System;
+﻿using ProyectoFinal.BD.DAL;
+using ProyectoFinal.Model;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -20,6 +22,9 @@ namespace ProyectoFinal
     /// </summary>
     public partial class LoginWindow : Window
     {
+        //The Unit Of Work
+        UnitOfWork uow = new UnitOfWork();
+
         public LoginWindow()
         {
             InitializeComponent();
@@ -33,9 +38,29 @@ namespace ProyectoFinal
 
         private void button_Login_Click(object sender, RoutedEventArgs e)
         {
-            MainWindow main = new MainWindow();
-            main.Show();
-            this.Close();
+            Usuario user = uow.RepositorioUsuario.ObtenerUno(c => c.EmailUsuario.Equals(textbox_EmailLogin.Text));
+            if (user != null)
+            {
+
+                if (user.ContraseñaUsuario.Equals(textbox_PassLogin.Password))
+                {
+                    System.Windows.MessageBox.Show("Bienvenido :)", "Saludos", MessageBoxButton.OK, MessageBoxImage.Information);
+                    MainWindow main = new MainWindow(user);
+                    main.Show();
+                    this.Close();
+                }
+                else
+                {
+                    System.Windows.MessageBox.Show("Error! Contraseña Incorrecta", "Error", MessageBoxButton.OK, MessageBoxImage.Hand);
+                }
+            }
+            else
+            {
+                System.Windows.MessageBox.Show("Error! Email o Contraseña Incorrecto", "Error", MessageBoxButton.OK, MessageBoxImage.Hand);
+            }
+
+            textbox_EmailLogin.Text = "";
+            textbox_PassLogin.Password = "";
         }
         private void button_Exit_Click(object sender, RoutedEventArgs e)
         {
