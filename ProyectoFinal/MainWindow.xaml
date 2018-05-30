@@ -137,7 +137,7 @@
                     <Label Content="------>" Grid.Column="5" Grid.Row="2" FontSize="20" Foreground="Gray" VerticalAlignment="Bottom" HorizontalAlignment="Left" Margin="33,0,0,0"/>
 
                     <TextBox x:Name="textbox_NameFilm" FontSize="18" Height="27" Grid.ColumnSpan="3" VerticalAlignment="Top" Margin="75,67,70,0" Text="{Binding Path=NombrePelicula, Mode=TwoWay}" Grid.RowSpan="2"/>
-                    <TextBox x:Name="textbox_PosterFilm" FontSize="18" Grid.Column="2" Height="27" Grid.ColumnSpan="3" VerticalAlignment="Top" Margin="60,67,72,0" Grid.RowSpan="2"/>
+                    <TextBox x:Name="textbox_PosterFilm" FontSize="18" Grid.Column="2" Height="27" Grid.ColumnSpan="3" VerticalAlignment="Top" Margin="60,67,72,0" Grid.RowSpan="2" Text="{Binding Path=CartelPelicula, Mode=TwoWay}"/>
                     <ComboBox x:Name="textbox_TypeFilm" FontSize="18" Grid.Row="2" Height="27" Grid.ColumnSpan="3" VerticalAlignment="Bottom" Margin="75,0,70,28.6" Text="{Binding Path=GeneroPelicula, Mode=TwoWay}">
                         <ComboBoxItem Content="Acción" />
                         <ComboBoxItem Content="Drama"/>
@@ -148,7 +148,7 @@
                         <ComboBoxItem Content="Terror"/>
                         <ComboBoxItem Content="Musical"/>
                     </ComboBox>
-                    <TextBox x:Name="textbox_TrailerFilm" FontSize="18" Grid.Column="2" Grid.Row="2" Height="27" Grid.ColumnSpan="3" VerticalAlignment="Bottom" Margin="60,0,72,28.6"/>
+                    <TextBox x:Name="textbox_TrailerFilm" FontSize="18" Grid.Column="2" Grid.Row="2" Height="27" Grid.ColumnSpan="3" VerticalAlignment="Bottom" Margin="60,0,72,28.6" Text="{Binding Path=TrailerPelicula, Mode=TwoWay}"/>
                     <TextBox x:Name="textbox_YearFilm" FontSize="18" Grid.Row="3" Height="27" Grid.ColumnSpan="3" VerticalAlignment="Top" Margin="75,21.4,70,0" Text="{Binding Path=AñoPelicula, Mode=TwoWay}"/>
                     <ComboBox x:Name="textbox_ProducerFilm" FontSize="18" Grid.Column="2" Grid.Row="3" Height="27" Grid.ColumnSpan="3" VerticalAlignment="Top" Margin="60,21.4,69,0" Text="{Binding Path=ProveedorIdPelicula, Mode=TwoWay}">
                         <ComboBoxItem Content="112233" />
@@ -167,7 +167,28 @@
                     <Button x:Name="button_ModifyFilm" Content="Modificar" Grid.Column="6" Margin="71,67,53.8,31.4" Grid.Row="5" Click="button_ModifyFilm_Click" Grid.ColumnSpan="2" Grid.RowSpan="2"/>
                     <Button x:Name="button_DeleteFilm" Content="Borrar" Grid.Column="6" Margin="71,66.8,53.8,30.4" Grid.Row="6" Click="button_DeleteFilm_Click" Grid.ColumnSpan="2" Grid.RowSpan="2"/>
 
-                    <DataGrid x:Name="datagrid_Film" Grid.Column="0" Grid.Row="4" Grid.RowSpan="4" Grid.ColumnSpan="7" Margin="20,10.2,92,10.4" SelectionChanged="datagrid_Film_SelectionChanged"/>
+                    <DataGrid x:Name="datagrid_Film" Grid.Column="0" Grid.Row="4" Grid.RowSpan="4" Grid.ColumnSpan="7" Margin="20,10.2,92,10.4" SelectionChanged="datagrid_Film_SelectionChanged" >
+                        <DataGrid.CellStyle>
+                            <Style TargetType="DataGridCell">
+                                <Style.Triggers>
+                                    <Trigger Property="IsSelected" Value="True">
+                                        <Setter Property="Background" Value="White" />
+                                        <Setter Property="Foreground" Value="Black" />
+                                    </Trigger>
+                                </Style.Triggers>
+                            </Style>
+                        </DataGrid.CellStyle>
+                        <DataGrid.RowStyle>
+                            <Style TargetType="DataGridRow">
+                                <Style.Triggers>
+                                    <Trigger Property="IsSelected" Value="True">
+                                        <Setter Property="BorderBrush" Value="Green" />
+                                        <Setter Property="BorderThickness" Value="2" />
+                                    </Trigger>
+                                </Style.Triggers>
+                            </Style>
+                        </DataGrid.RowStyle>
+                    </DataGrid>
 
                 </Grid>
             </TabItem>

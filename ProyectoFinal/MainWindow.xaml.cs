@@ -164,6 +164,7 @@ namespace ProyectoFinal
         {
             try
             {
+                
                 pelicula = (Pelicula)datagrid_Film.SelectedItem;
                 GridFilms.DataContext = pelicula;
             }
