@@ -139,7 +139,7 @@
                     <TextBox x:Name="textbox_NameFilm" FontSize="18" Height="27" Grid.ColumnSpan="3" VerticalAlignment="Top" Margin="75,67,70,0" Text="{Binding Path=NombrePelicula, Mode=TwoWay}" Grid.RowSpan="2"/>
                     <TextBox x:Name="textbox_PosterFilm" FontSize="18" Grid.Column="2" Height="27" Grid.ColumnSpan="3" VerticalAlignment="Top" Margin="60,67,72,0" Grid.RowSpan="2" Text="{Binding Path=CartelPelicula, Mode=TwoWay}"/>
                     <ComboBox x:Name="textbox_TypeFilm" FontSize="18" Grid.Row="2" Height="27" Grid.ColumnSpan="3" VerticalAlignment="Bottom" Margin="75,0,70,28.6" Text="{Binding Path=GeneroPelicula, Mode=TwoWay}">
-                        <ComboBoxItem Content="Acción" />
+                        <ComboBoxItem Content="Acción"/>
                         <ComboBoxItem Content="Drama"/>
                         <ComboBoxItem Content="Comedia"/>
                         <ComboBoxItem Content="Ciencia Ficción"/>
@@ -172,7 +172,7 @@
                             <Style TargetType="DataGridCell">
                                 <Style.Triggers>
                                     <Trigger Property="IsSelected" Value="True">
-                                        <Setter Property="Background" Value="White" />
+                                        <Setter Property="Background" Value="LightGreen" />
                                         <Setter Property="Foreground" Value="Black" />
                                     </Trigger>
                                 </Style.Triggers>
@@ -183,7 +183,7 @@
                                 <Style.Triggers>
                                     <Trigger Property="IsSelected" Value="True">
                                         <Setter Property="BorderBrush" Value="Green" />
-                                        <Setter Property="BorderThickness" Value="2" />
+                                        <Setter Property="BorderThickness" Value="3" />
                                     </Trigger>
                                 </Style.Triggers>
                             </Style>
@@ -211,7 +211,28 @@
                     <Button x:Name="button_ModifyProvider" Content="Modificar" Margin="695,402,53.8,99.4" Click="button_ModifyProvider_Click"/>
                     <Button x:Name="button_DeleteProvider" Content="Borrar" Margin="695,468,53.8,33.4" Click="button_DeleteProvider_Click"/>
 
-                    <DataGrid x:Name="datagrid_Provider" Margin="20,278,197.8,10.4" SelectionChanged="datagrid_Provider_SelectionChanged"/>
+                    <DataGrid x:Name="datagrid_Provider" Margin="20,278,197.8,10.4" SelectionChanged="datagrid_Provider_SelectionChanged">
+                        <DataGrid.CellStyle>
+                            <Style TargetType="DataGridCell">
+                                <Style.Triggers>
+                                    <Trigger Property="IsSelected" Value="True">
+                                        <Setter Property="Background" Value="LightGreen" />
+                                        <Setter Property="Foreground" Value="Black" />
+                                    </Trigger>
+                                </Style.Triggers>
+                            </Style>
+                        </DataGrid.CellStyle>
+                        <DataGrid.RowStyle>
+                            <Style TargetType="DataGridRow">
+                                <Style.Triggers>
+                                    <Trigger Property="IsSelected" Value="True">
+                                        <Setter Property="BorderBrush" Value="Green" />
+                                        <Setter Property="BorderThickness" Value="3" />
+                                    </Trigger>
+                                </Style.Triggers>
+                            </Style>
+                        </DataGrid.RowStyle>
+                    </DataGrid>
                 </Grid>
             </TabItem>
 
