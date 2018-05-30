@@ -10,6 +10,6 @@
         <Image Source="/Images/Random/backgroundTheatre.jpg"/>
         <Button x:Name="button_PlayTrailer" Content="▶" Margin="185,265,309.8,125" Click="button_PlayTrailer_Click"/>
         <Button x:Name="button_PauseTrailer" Content=" ▎ ▎" Margin="240,265,254.8,125" Click="button_PauseTrailer_Click"/>
-        <MediaElement x:Name="MediaElement_Trailer" Source="/Videos/Trailers/Jaws.mp4" Margin="82,22,74,110" LoadedBehavior="Manual" IsMuted="True"/>
+        <MediaElement x:Name="MediaElement_Trailer" Margin="82,22,74,110" LoadedBehavior="Manual"/>
     </Grid>
 </Window>

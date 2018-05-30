@@ -135,6 +135,8 @@ namespace ProyectoFinal
         //Save Button of Pelicula
         private void button_SaveFilm_Click(object sender, RoutedEventArgs e)
         {
+            pelicula.CartelPelicula = textbox_PosterFilm.Text;
+            pelicula.TrailerPelicula = textbox_TrailerFilm.Text;
             uow.RepositorioPelicula.Crear(pelicula);
             MessageBoxResult confirmation = MessageBox.Show("Película añadida Correctamente", "Información", MessageBoxButton.OK, MessageBoxImage.Information);
             datagrid_Film.ItemsSource = uow.RepositorioPelicula.ObtenerTodo().ToList();
@@ -172,7 +174,7 @@ namespace ProyectoFinal
 
         private void button_PosterSelect_Click(object sender, RoutedEventArgs e)
         {
-            explorador.Filter = "Image Files(*.BMP;*.JPG;*.GIF)|*.BMP;*.JPG;*.GIF|All files (*.*)|*.*";
+            explorador.Filter = "Image Files(*.BMP;*.JPG;*.GIF;*.PNG)|*.BMP;*.JPG;*.GIF;*.PNG|All files (*.*)|*.*";
             explorador.ShowDialog();
             textbox_PosterFilm.Text = explorador.FileName.ToString();
             ShowPreviewPoster(textbox_PosterFilm.Text);
@@ -185,11 +187,9 @@ namespace ProyectoFinal
             explorador.ShowDialog();
             textbox_TrailerFilm.Text = explorador.FileName.ToString();
             Image_VideoFake.Visibility = Visibility.Hidden;
+            MediaElement_Trailer.Visibility = Visibility.Visible;
             ShowPreviewTrailer(textbox_TrailerFilm.Text);
         }
-
-       
-
 
         #endregion Peliculas
 
@@ -275,8 +275,9 @@ namespace ProyectoFinal
             {
                 Uri pathUri = new Uri(ruta);
                 MediaElement_Trailer.Source = pathUri;
-                MediaElement_Trailer.Width = 189;
-                MediaElement_Trailer.Height = 108;
+                MediaElement_Trailer.Width = 156.8;
+                MediaElement_Trailer.Height = 121.6;
+                MediaElement_Trailer.Play();
             }
             catch (Exception)
             {
@@ -304,6 +305,9 @@ namespace ProyectoFinal
             textbox_TrailerFilm.Text = "";
             textbox_YearFilm.Text = "";
             textbox_PriceFilm.Text = "0";
+            Image_VideoFake.Visibility = Visibility.Visible;
+            MediaElement_Trailer.Stop();
+            MediaElement_Trailer.Visibility = Visibility.Hidden;
         }
 
         //Cleans all the textboxes from Proveedores

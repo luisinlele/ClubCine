@@ -24,7 +24,7 @@ namespace ProyectoFinal
         public TrailerWindow()
         {
             InitializeComponent();
-            MediaElement_Trailer.Stop();
+            //MediaElement_Trailer.Stop();
         }
 
         private void button_PlayTrailer_Click(object sender, RoutedEventArgs e)

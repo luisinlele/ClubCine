@@ -255,9 +255,13 @@
     <Resource Include="Images\Random\videoError.jpg" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Videos\Trailers\Memento.mp4" />
     <Resource Include="Images\Random\LOGO.png" />
     <Resource Include="Images\Icons\defaultPoster.jpg" />
-    <Content Include="Videos\Trailers\JawsTrailer.wmv" />
+    <Content Include="Videos\Trailers\12AngryMen.mp4" />
+    <Content Include="Videos\Trailers\BigFish.mp4" />
+    <Content Include="Videos\Trailers\GoodFellas.mp4" />
+    <Content Include="Videos\Trailers\Hannah.mp4" />
     <Resource Include="Images\Random\backgroundTheatre.jpg" />
     <Content Include="Videos\Trailers\Jaws.mp4" />
   </ItemGroup>
