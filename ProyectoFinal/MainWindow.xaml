@@ -238,9 +238,31 @@
 
             <TabItem Header="SuperAdmin" Name="TabSuperAdmin">
 
-                <Grid>
-                    <DataGrid x:Name="datagrid_Users" Margin="48,136,53.8,38.4"/>
-
+                <Grid Name="GridUsuario">
+                    <DataGrid x:Name="datagrid_Users" Margin="48,136,53.8,110.4">
+                        <DataGrid.CellStyle>
+                            <Style TargetType="DataGridCell">
+                                <Style.Triggers>
+                                    <Trigger Property="IsSelected" Value="True">
+                                        <Setter Property="Background" Value="LightSalmon" />
+                                        <Setter Property="Foreground" Value="Black" />
+                                    </Trigger>
+                                </Style.Triggers>
+                            </Style>
+                        </DataGrid.CellStyle>
+                        <DataGrid.RowStyle>
+                            <Style TargetType="DataGridRow">
+                                <Style.Triggers>
+                                    <Trigger Property="IsSelected" Value="True">
+                                        <Setter Property="BorderBrush" Value="Red" />
+                                        <Setter Property="BorderThickness" Value="5" />
+                                    </Trigger>
+                                </Style.Triggers>
+                            </Style>
+                        </DataGrid.RowStyle>
+                    </DataGrid>
+                    <Button x:Name="button_UpgradeUser" Content="AAAAAAAAAAAAHHHHHHHHH" Margin="346,48,376.8,446.4" Click="button_UpgradeUser_Click"/>
+                    <TextBox x:Name="textbox_RoleUser" Text="{Binding Path=RolUsuario}" Margin="267,433,224.8,51.4"/>
                 </Grid>
 
             </TabItem>

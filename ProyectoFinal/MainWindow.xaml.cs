@@ -51,6 +51,8 @@ namespace ProyectoFinal
 
         Usuario usuario;
 
+        Usuario user = new Usuario();
+
         //The rol of the user
         String rol;
        
@@ -78,6 +80,9 @@ namespace ProyectoFinal
             CheckUser();
 
             datagrid_Book.ItemsSource = uow.RepositorioReserva.ObtenerTodo().ToList();
+
+            GridUsuario.DataContext = user;
+            datagrid_Users.ItemsSource = uow.RepositorioUsuario.ObtenerTodo().ToList();
         }
 
 
@@ -391,8 +396,18 @@ namespace ProyectoFinal
         }
 
 
+
         #endregion Methods
 
+        #region SuperUser
 
+        private void button_UpgradeUser_Click(object sender, RoutedEventArgs e)
+        {
+            textbox_RoleUser.Text = "SuperAdmin";
+            uow.RepositorioUsuario.Actualizar(user);
+            
+        }
+
+        #endregion SuperUser
     }
 }
