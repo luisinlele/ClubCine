@@ -55,6 +55,9 @@ namespace ProyectoFinal
 
         //The rol of the user
         String rol;
+
+        //This represents the trailer that TrailerWindow has to load
+        String trailerForWindow;
        
 
         public MainWindow(Usuario usuario)
@@ -123,13 +126,53 @@ namespace ProyectoFinal
             auditorium6.Show();
         }
 
-        //For when you click on an Film image
-        private void filmImage_MouseEnter(object sender, MouseButtonEventArgs e)
+        //For when you click on Film1 image
+        private void filmImage1_MouseEnter(object sender, MouseButtonEventArgs e)
         {
-            trailerWindow = new TrailerWindow();
+            trailerForWindow = "Sala1";
+            trailerWindow = new TrailerWindow(trailerForWindow);
             trailerWindow.ShowDialog();
         }
 
+        //For when you click on Film1 image
+        private void filmImage2_MouseEnter(object sender, MouseButtonEventArgs e)
+        {
+            trailerForWindow = "Sala2";
+            trailerWindow = new TrailerWindow(trailerForWindow);
+            trailerWindow.ShowDialog();
+        }
+
+        //For when you click on Film1 image
+        private void filmImage3_MouseEnter(object sender, MouseButtonEventArgs e)
+        {
+            trailerForWindow = "Sala3";
+            trailerWindow = new TrailerWindow(trailerForWindow);
+            trailerWindow.ShowDialog();
+        }
+
+        //For when you click on Film1 image
+        private void filmImage4_MouseEnter(object sender, MouseButtonEventArgs e)
+        {
+            trailerForWindow = "Sala4";
+            trailerWindow = new TrailerWindow(trailerForWindow);
+            trailerWindow.ShowDialog();
+        }
+
+        //For when you click on Film1 image
+        private void filmImage5_MouseEnter(object sender, MouseButtonEventArgs e)
+        {
+            trailerForWindow = "Sala5";
+            trailerWindow = new TrailerWindow(trailerForWindow);
+            trailerWindow.ShowDialog();
+        }
+
+        //For when you click on Film1 image
+        private void filmImage6_MouseEnter(object sender, MouseButtonEventArgs e)
+        {
+            trailerForWindow = "Sala6";
+            trailerWindow = new TrailerWindow(trailerForWindow);
+            trailerWindow.ShowDialog();
+        }
 
 
 
@@ -409,5 +452,7 @@ namespace ProyectoFinal
         }
 
         #endregion SuperUser
+
+
     }
 }

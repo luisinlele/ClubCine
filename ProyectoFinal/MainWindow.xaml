@@ -39,50 +39,98 @@
                         <RowDefinition/>
                     </Grid.RowDefinitions>
                     <Label Content="Sala 1" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center"/>
-                    <Image x:Name="image1" Grid.Column="0" Grid.ColumnSpan="3" Grid.Row="1" Grid.RowSpan="3" HorizontalAlignment="Center" Source="Images/Films/bigfish.jpg" MouseDown="filmImage_MouseEnter">
+                    <Image x:Name="image1" Grid.Column="0" Grid.ColumnSpan="3" Grid.Row="1" Grid.RowSpan="3" HorizontalAlignment="Center" Source="Images/Films/bigfish.jpg" MouseDown="filmImage1_MouseEnter">
                         <Image.Effect>
                             <DropShadowEffect/>
                         </Image.Effect>
+                        <Image.ToolTip>
+                            <ToolTip>
+                                <StackPanel>
+                                    <TextBlock FontWeight="Bold">Haz CLICK</TextBlock>
+                                    <TextBlock>Para ver el trailer de la película</TextBlock>
+                                </StackPanel>
+                            </ToolTip>
+                        </Image.ToolTip>
                     </Image>
                     <Button x:Name="button_Loadsits1Cartelera" Content="Ver Asientos" Grid.Column="1" Grid.Row="4" VerticalAlignment="Center" Click="button_Loadsits1Cartelera_Click"/>
 
                     <Label Content="Sala 2" Grid.Column="3" VerticalAlignment="Center" HorizontalAlignment="Center"/>
-                    <Image  x:Name="image2" Grid.Column="2" Grid.ColumnSpan="3" Grid.Row="1" Grid.RowSpan="3" HorizontalAlignment="Center" Source="Images/Films/12.jpg">
+                    <Image  x:Name="image2" Grid.Column="2" Grid.ColumnSpan="3" Grid.Row="1" Grid.RowSpan="3" HorizontalAlignment="Center" Source="Images/Films/12.jpg" MouseDown="filmImage2_MouseEnter">
                         <Image.Effect>
                             <DropShadowEffect/>
                         </Image.Effect>
+                        <Image.ToolTip>
+                            <ToolTip>
+                                <StackPanel>
+                                    <TextBlock FontWeight="Bold">Haz CLICK</TextBlock>
+                                    <TextBlock>Para ver el trailer de la película</TextBlock>
+                                </StackPanel>
+                            </ToolTip>
+                        </Image.ToolTip>
                     </Image>
                     <Button x:Name="button_Loadsits2Cartelera" Content="Ver Asientos" Grid.Column="3" Grid.Row="4" VerticalAlignment="Center" Click="button_Loadsits2Cartelera_Click"/>
 
                     <Label Content="Sala 3" Grid.Column="5" VerticalAlignment="Center" HorizontalAlignment="Center"/>
-                    <Image x:Name="image3" Grid.Column="4" Grid.ColumnSpan="3" Grid.Row="1" Grid.RowSpan="3" HorizontalAlignment="Center" Source="Images/Films/hannah.jpg">
+                    <Image x:Name="image3" Grid.Column="4" Grid.ColumnSpan="3" Grid.Row="1" Grid.RowSpan="3" HorizontalAlignment="Center" Source="Images/Films/hannah.jpg" MouseDown="filmImage3_MouseEnter">
                         <Image.Effect>
                             <DropShadowEffect/>
                         </Image.Effect>
+                        <Image.ToolTip>
+                            <ToolTip>
+                                <StackPanel>
+                                    <TextBlock FontWeight="Bold">Haz CLICK</TextBlock>
+                                    <TextBlock>Para ver el trailer de la película</TextBlock>
+                                </StackPanel>
+                            </ToolTip>
+                        </Image.ToolTip>
                     </Image>
                     <Button x:Name="button_Loadsits3Cartelera" Content="Ver Asientos" Grid.Column="5" Grid.Row="4" VerticalAlignment="Center" Click="button_Loadsits3artelera_Click"/>
 
                     <Label Content="Sala 4" Grid.Column="1" Grid.Row="5" VerticalAlignment="Center" HorizontalAlignment="Center"/>
-                    <Image x:Name="image4" Grid.Column="0" Grid.ColumnSpan="3" Grid.Row="6" Grid.RowSpan="3" HorizontalAlignment="Center" Source="Images/Films/jaws.png">
+                    <Image x:Name="image4" Grid.Column="0" Grid.ColumnSpan="3" Grid.Row="6" Grid.RowSpan="3" HorizontalAlignment="Center" Source="Images/Films/jaws.png" MouseDown="filmImage4_MouseEnter">
                         <Image.Effect>
                             <DropShadowEffect/>
                         </Image.Effect>
+                        <Image.ToolTip>
+                            <ToolTip>
+                                <StackPanel>
+                                    <TextBlock FontWeight="Bold">Haz CLICK</TextBlock>
+                                    <TextBlock>Para ver el trailer de la película</TextBlock>
+                                </StackPanel>
+                            </ToolTip>
+                        </Image.ToolTip>
                     </Image>
                     <Button x:Name="button_Loadsits4Cartelera" Content="Ver Asientos" Grid.Column="1" Grid.Row="9" VerticalAlignment="Center" Click="button_Loadsits4Cartelera_Click" HorizontalAlignment="Right" Margin="0,12.8" Width="120"/>
 
                     <Label Content="Sala 5" Grid.Column="3" Grid.Row="5" VerticalAlignment="Center" HorizontalAlignment="Center"/>
-                    <Image x:Name="image5" Grid.Column="2" Grid.ColumnSpan="3" Grid.Row="6" Grid.RowSpan="3" HorizontalAlignment="Center" Source="Images/Films/goodfellas.jpg">
+                    <Image x:Name="image5" Grid.Column="2" Grid.ColumnSpan="3" Grid.Row="6" Grid.RowSpan="3" HorizontalAlignment="Center" Source="Images/Films/goodfellas.jpg" MouseDown="filmImage5_MouseEnter">
                         <Image.Effect>
                             <DropShadowEffect/>
                         </Image.Effect>
+                        <Image.ToolTip>
+                            <ToolTip>
+                                <StackPanel>
+                                    <TextBlock FontWeight="Bold">Haz CLICK</TextBlock>
+                                    <TextBlock>Para ver el trailer de la película</TextBlock>
+                                </StackPanel>
+                            </ToolTip>
+                        </Image.ToolTip>
                     </Image>
                     <Button x:Name="button_Loadsits5Cartelera" Content="Ver Asientos" Grid.Column="2" Grid.Row="9" VerticalAlignment="Center" Grid.ColumnSpan="2" HorizontalAlignment="Right" Margin="0,12.8,0.2,12.8" Width="120" Click="button_Loadsits5Cartelera_Click"/>
 
                     <Label Content="Sala 6" Grid.Column="5" Grid.Row="5" VerticalAlignment="Center" HorizontalAlignment="Center"/>
-                    <Image x:Name="image6" Grid.Column="4" Grid.ColumnSpan="3" Grid.Row="6" Grid.RowSpan="3" HorizontalAlignment="Center" Source="Images/Films/memento.jpg">
+                    <Image x:Name="image6" Grid.Column="4" Grid.ColumnSpan="3" Grid.Row="6" Grid.RowSpan="3" HorizontalAlignment="Center" Source="Images/Films/memento.jpg" MouseDown="filmImage6_MouseEnter">
                         <Image.Effect>
                             <DropShadowEffect/>
                         </Image.Effect>
+                        <Image.ToolTip>
+                            <ToolTip>
+                                <StackPanel>
+                                    <TextBlock FontWeight="Bold">Haz CLICK</TextBlock>
+                                    <TextBlock>Para ver el trailer de la película</TextBlock>
+                                </StackPanel>
+                            </ToolTip>
+                        </Image.ToolTip>
                     </Image>
                     <Button x:Name="button_Loadsits6Cartelera" Content="Ver Asientos" Grid.Column="5" Grid.Row="9" VerticalAlignment="Center" Click="button_Loadsits6artelera_Click"/>
                 </Grid>
