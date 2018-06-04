@@ -257,15 +257,9 @@
   <ItemGroup>
     <Resource Include="Images\Random\1.jpg" />
     <Resource Include="Images\Icons\lupa.png" />
-    <Content Include="Videos\Memento.mp4" />
     <Resource Include="Images\Random\LOGO.png" />
     <Resource Include="Images\Icons\defaultPoster.jpg" />
-    <Content Include="Videos\12AngryMen.mp4" />
-    <Content Include="Videos\BigFish.mp4" />
-    <Content Include="Videos\GoodFellas.mp4" />
-    <Content Include="Videos\Hannah.mp4" />
     <Resource Include="Images\Random\backgroundTheatre.jpg" />
-    <Content Include="Videos\Jaws.mp4" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\Fody.3.0.3\build\Fody.targets" Condition="Exists('..\packages\Fody.3.0.3\build\Fody.targets')" />

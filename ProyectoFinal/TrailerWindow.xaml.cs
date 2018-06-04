@@ -33,13 +33,13 @@ namespace ProyectoFinal
         private void button_PlayTrailer_Click(object sender, RoutedEventArgs e)
         {
 
-        //    MediaElement_Trailer.Play();
+            MediaElement_Trailer.Play();
             
         }
 
         private void button_PauseTrailer_Click(object sender, RoutedEventArgs e)
         {
-        //    MediaElement_Trailer.Pause();
+            MediaElement_Trailer.Pause();
         }
 
         private void CheckFilm(String trailer)
@@ -51,23 +51,23 @@ namespace ProyectoFinal
                     break;
 
                 case "Sala2":
-                    path = "/Videos/12AngryMen.mp4";
+                    path = "Videos/12AngryMen.mp4";
                     break;
 
                 case "Sala3":
-                    path = "/Videos/Hannah.mp4";
+                    path = "Videos/Hannah.mp4";
                     break;
 
                 case "Sala4":
-                    path = "/Videos/Jaws.mp4";
+                    path = "Videos/Jaws.mp4";
                     break;
 
                 case "Sala5":
-                    path = "/Videos/GoodFellas.mp4";
+                    path = "Videos/GoodFellas.mp4";
                     break;
 
                 case "Sala6":
-                    path = "/Videos/Memento.mp4";
+                    path = "Videos/Memento.mp4";
                     break;
             }
         }
@@ -77,7 +77,7 @@ namespace ProyectoFinal
         {
             try
             {
-                Uri pathUri = new Uri(ruta);
+                Uri pathUri = new Uri(ruta, UriKind.Relative);
                 MediaElement_Trailer.Source = pathUri;
                 MediaElement_Trailer.Width = 368.8;
                 MediaElement_Trailer.Height = 288;
