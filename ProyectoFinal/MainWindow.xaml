@@ -142,8 +142,11 @@
 
             </TabItem>
             <TabItem Header="Tus Reservas" Name="TabTuCartelera">
-                <Grid Name="GridReservas">
-                    <DataGrid x:Name="datagrid_Book" Margin="113,156,119.8,50.4"/>
+                <Grid Name="GridReservas" >
+
+                    <DataGrid x:Name="datagrid_Book" Margin="113,156,119.8,50.4" Visibility="Hidden"/>
+                    <TextBlock x:Name="label_ReservasError" TextWrapping="Wrap" Text="ACTUALMENTE NO TIENES RESERVAS"  FontSize="50" Margin="218,156,225.8,116.4" FontFamily="Segoe UI Black" Foreground="Red" TextAlignment="Center"/>
+
                 </Grid>
 
             </TabItem>
@@ -323,13 +326,16 @@
                             </Style>
                         </DataGrid.RowStyle>
                     </DataGrid>
-                    <Button x:Name="button_UpgradeUser" Content="AAAAAAAAAAAAHHHHHHHHH" Margin="346,48,376.8,446.4" Click="button_UpgradeUser_Click"/>
+                    <Button x:Name="button_UpgradeUser" Content="Subir de Rol" Margin="137,50,585.8,444.4" Click="button_UpgradeUser_Click"/>
                     <TextBox x:Name="textbox_SearchUser" FontSize="20" Margin="183,468,308.8,38.4"/>
                     <Button x:Name="button_SearchUser" Margin="538,468,259.8,38.4" Click="button_SearchUser_Click">
                         <Button.Background>
                             <ImageBrush ImageSource="Images/Icons/lupa.png"/>
                         </Button.Background>
                     </Button>
+                    
+                    
+                    
                 </Grid>
 
             </TabItem>

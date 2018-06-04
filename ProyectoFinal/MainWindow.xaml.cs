@@ -83,7 +83,7 @@ namespace ProyectoFinal
             rol = usuario.RolUsuario;
             CheckUser();
 
-            datagrid_Book.ItemsSource = uow.RepositorioReserva.ObtenerTodo().ToList();
+            CargarReservasPorUser();
 
             GridUsuario.DataContext = user;
             datagrid_Users.ItemsSource = uow.RepositorioUsuario.ObtenerTodo().ToList();
@@ -273,6 +273,31 @@ namespace ProyectoFinal
         }
 
         #endregion Peliculas
+
+        #region Reservas
+
+        public void CargarReservasPorUser()
+        {
+
+            List<Reserva> listaReservas = new List<Reserva>();
+            listaReservas = uow.RepositorioReserva.ObtenerVarios(c => c.UsuarioIdReserva == usuario.UsuarioId);
+            datagrid_Book.ItemsSource = listaReservas;
+            bool isEmpty = !listaReservas.Any();
+
+            if (isEmpty)
+            {
+                label_ReservasError.Visibility = Visibility.Visible;
+                datagrid_Book.Visibility = Visibility.Hidden;
+            }
+            else
+            {
+                label_ReservasError.Visibility = Visibility.Hidden;
+                datagrid_Book.Visibility = Visibility.Visible;
+            }
+        }
+
+        #endregion Reservas
+
 
         #region Proveedores
 
@@ -482,14 +507,20 @@ namespace ProyectoFinal
 
         private void button_UpgradeUser_Click(object sender, RoutedEventArgs e)
         {
-            if (userActualizar.RolUsuario == "Admin")
+            MessageBoxResult confirmation = MessageBox.Show("¿Seguro que quieres subir de Rango a " +userActualizar.NombreUsuario+ "?", "Confirmación", MessageBoxButton.YesNo, MessageBoxImage.Question);
+            switch (confirmation)
             {
-                userActualizar.RolUsuario = "SuperAdmin";
+                case MessageBoxResult.Yes:
+                    if (userActualizar.RolUsuario == "Admin")
+                    {
+                        userActualizar.RolUsuario = "SuperAdmin";
+                    }
+                    else userActualizar.RolUsuario = "Admin";
+
+                    uow.RepositorioUsuario.Actualizar(userActualizar);
+                    datagrid_Users.ItemsSource = uow.RepositorioUsuario.ObtenerTodo().ToList();
+                    break;
             }
-            else userActualizar.RolUsuario = "Admin";
-            
-            uow.RepositorioUsuario.Actualizar(userActualizar);
-            datagrid_Users.ItemsSource = uow.RepositorioUsuario.ObtenerTodo().ToList();
         }
 
         private void datagrid_Users_SelectionChanged(object sender, SelectionChangedEventArgs e)
