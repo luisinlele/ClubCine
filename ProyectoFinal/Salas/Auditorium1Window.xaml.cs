@@ -39,6 +39,7 @@ namespace ProyectoFinal.Salas
         List<Asiento> asientos;
 
         Usuario usuario;
+
         Reserva reserva = new Reserva();
         int contadorAsientos = 0;
 
@@ -134,8 +135,10 @@ namespace ProyectoFinal.Salas
                     }
                     if (contadorAsientos != 0)
                     {
+                        Pelicula pelicula = uow.RepositorioPelicula.ObtenerUno(c => c.NombrePelicula.Equals("Big Fish"));
+
                         reserva.UsuarioIdReserva = Convert.ToInt32(usuario.UsuarioId);
-                        reserva.PeliculaPrecioReserva = 10 * contadorAsientos;
+                        reserva.PeliculaPrecioReserva = Convert.ToInt32(pelicula.PrecioPelicula) * contadorAsientos;
                         DateTime data = new DateTime();
                         data = DateTime.Today;
                         reserva.FechaReserva = data.ToString("dd/MM/yyyy");

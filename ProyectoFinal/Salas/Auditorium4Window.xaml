@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:ProyectoFinal.Salas"
         mc:Ignorable="d"
         Title="Auditorium4Window" Height="518.049" Width="680.366" ResizeMode="NoResize">
-    <Grid>
+    <Grid Name="Auditorium4Grid">
         <Label Content="P          A          N          T          A          L          L          A" HorizontalContentAlignment="Center" HorizontalAlignment="Left" VerticalAlignment="Top" Width="674" Background="Black" Foreground="Red" Margin="0,0,-0.4,0" FontWeight="Bold"/>
         <Label Content="ENTRADA" HorizontalContentAlignment="Center" HorizontalAlignment="Left" VerticalAlignment="Top" Width="67" Background="Black" Foreground="BLUE" Margin="628,70,-21.4,0" Height="30" RenderTransformOrigin="0.5,0.5">
             <Label.RenderTransform>
@@ -18,6 +18,9 @@
                 </TransformGroup>
             </Label.RenderTransform>
         </Label>
+
+        <Button x:Name="button_ReservationAuditorium4" Content="Hacer Reserva" Margin="80,72,471.6,370.8" Click="button_ReservationAuditorium4_Click"/>
+
         <Button x:Name="silla1" Margin="260,84,365.6,355.8" BorderThickness="0" Height="49" Click="MarkChair">
             <Button.Background>
                 <ImageBrush ImageSource="/Images/Icons/seatG.png"/>

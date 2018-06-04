@@ -1,4 +1,6 @@
-﻿using System;
+﻿using ProyectoFinal.BD.DAL;
+using ProyectoFinal.Model;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -32,9 +34,14 @@ namespace ProyectoFinal.Salas
         BitmapFrame yellow = BitmapFrame.Create(streamInfoYellow.Stream);
         BitmapFrame red = BitmapFrame.Create(streamInfoRed.Stream);
 
-        public Auditorium6Window()
+        UnitOfWork uow = new UnitOfWork();
+
+        Usuario usuario;
+
+        public Auditorium6Window(Usuario usuario)
         {
             InitializeComponent();
+            this.usuario = usuario;
         }
 
         private void MarkChair(object sender, RoutedEventArgs e)
@@ -56,6 +63,28 @@ namespace ProyectoFinal.Salas
             button.Background = brush;
 
             Console.WriteLine(button.Name); //esto nos saca el nombre del boton!!!
+        }
+
+        private void button_ReservationAuditorium6_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void Create() //Aún no se hizo
+        {
+            foreach (UIElement element in Auditorium6Grid.Children)
+            {
+                if (element.GetType().ToString().Equals("System.Windows.Controls.Button"))
+                {
+                    Button button = element as Button;
+                    Asiento asiento = new Asiento();
+
+                    asiento.NumeroAsiento = button.Name;
+                    asiento.SalaIdAsiento = 1;
+                    uow.RepositorioAsiento.Crear(asiento);
+
+                }
+            }
         }
     }
 }

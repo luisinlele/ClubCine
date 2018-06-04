@@ -99,31 +99,31 @@ namespace ProyectoFinal
         }
         private void button_Loadsits2Cartelera_Click(object sender, RoutedEventArgs e)
         {
-            auditorium2 = new Auditorium2Window();
+            auditorium2 = new Auditorium2Window(usuario);
             auditorium2.Show();
         }
 
         private void button_Loadsits3artelera_Click(object sender, RoutedEventArgs e)
         {
-            auditorium3 = new Auditorium3Window();
+            auditorium3 = new Auditorium3Window(usuario);
             auditorium3.Show();
         }
 
         private void button_Loadsits4Cartelera_Click(object sender, RoutedEventArgs e)
         {
-            auditorium4 = new Auditorium4Window();
+            auditorium4 = new Auditorium4Window(usuario);
             auditorium4.Show();
         }
 
         private void button_Loadsits5Cartelera_Click(object sender, RoutedEventArgs e)
         {
-            auditorium5 = new Auditorium5Window();
+            auditorium5 = new Auditorium5Window(usuario);
             auditorium5.Show();
         }
 
         private void button_Loadsits6artelera_Click(object sender, RoutedEventArgs e)
         {
-            auditorium6 = new Auditorium6Window();
+            auditorium6 = new Auditorium6Window(usuario);
             auditorium6.Show();
         }
 
@@ -184,12 +184,43 @@ namespace ProyectoFinal
         //Save Button of Pelicula
         private void button_SaveFilm_Click(object sender, RoutedEventArgs e)
         {
-            pelicula.CartelPelicula = textbox_PosterFilm.Text;
-            pelicula.TrailerPelicula = textbox_TrailerFilm.Text;
-            uow.RepositorioPelicula.Crear(pelicula);
-            MessageBoxResult confirmation = MessageBox.Show("Película añadida Correctamente", "Información", MessageBoxButton.OK, MessageBoxImage.Information);
-            datagrid_Film.ItemsSource = uow.RepositorioPelicula.ObtenerTodo().ToList();
-            CleanTextboxPelicula();
+            if (textbox_NameFilm.Text == "")
+            {
+                MessageBoxResult error = MessageBox.Show("No has introducido el Nombre", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
+            else if (textbox_PosterFilm.Text == "")
+            {
+                MessageBoxResult error = MessageBox.Show("No has introducido el Cartel", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
+            else if (textbox_TypeFilm.Text == "")
+            {
+                MessageBoxResult error = MessageBox.Show("No has introducido el Género", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
+            else if (textbox_TrailerFilm.Text == "")
+            {
+                MessageBoxResult error = MessageBox.Show("No has introducido el Trailer", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
+            else if (textbox_YearFilm.Text == "")
+            {
+                MessageBoxResult error = MessageBox.Show("No has introducido el Año", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
+            else if (textbox_ProducerFilm.Text == "")
+            {
+                MessageBoxResult error = MessageBox.Show("No has introducido el Id de la Productora", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
+            else if (textbox_PriceFilm.Text == "")
+            {
+                MessageBoxResult error = MessageBox.Show("No has introducido el Precio", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
+            else
+            {
+                pelicula.CartelPelicula = textbox_PosterFilm.Text;
+                pelicula.TrailerPelicula = textbox_TrailerFilm.Text;
+                uow.RepositorioPelicula.Crear(pelicula);
+                MessageBoxResult confirmation = MessageBox.Show("Película añadida Correctamente", "Información", MessageBoxButton.OK, MessageBoxImage.Information);
+                datagrid_Film.ItemsSource = uow.RepositorioPelicula.ObtenerTodo().ToList();
+                CleanTextboxPelicula();
+            }
         }
 
         //Modify Button of Pelicula
@@ -325,8 +356,8 @@ namespace ProyectoFinal
             {
                 Uri pathUri = new Uri(ruta);
                 MediaElement_Trailer.Source = pathUri;
-                MediaElement_Trailer.Width = 156.8;
-                MediaElement_Trailer.Height = 121.6;
+                MediaElement_Trailer.Width = 157;
+                MediaElement_Trailer.Height = 95;
                 MediaElement_Trailer.Play();
             }
             catch (Exception)
@@ -439,6 +470,10 @@ namespace ProyectoFinal
             else { LoadNormal(); }
         }
 
+        public void CheckFilmTextbox()
+        {
+
+        }
 
 
         #endregion Methods

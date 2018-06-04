@@ -6,10 +6,12 @@
         xmlns:local="clr-namespace:ProyectoFinal.Salas"
         mc:Ignorable="d"
         Title="Auditorium3Window" Height="646.601" Width="800" ResizeMode="NoResize">
-    <Grid>
+    <Grid Name="Auditorium3Grid">
         <Label Content="P          A          N          T          A          L          L          A" HorizontalContentAlignment="Center" HorizontalAlignment="Left" VerticalAlignment="Top" Width="794" Background="Black" Foreground="Red" Margin="0,0,-0.4,0" FontWeight="Bold"/>
         <Label Content="ENTRADA1" HorizontalContentAlignment="Center" HorizontalAlignment="Left" VerticalAlignment="Top" Width="67" Background="Black" Foreground="BLUE" Margin="230,594,0,-5.2" Height="28"/>
         <Label Content="ENTRADA2" HorizontalContentAlignment="Center" HorizontalAlignment="Left" VerticalAlignment="Top" Width="67" Background="Black" Foreground="BLUE" Margin="495,594,0,-5.2" Height="28"/>
+
+        <Button x:Name="button_ReservationAuditorium3" Content="Hacer Reserva" Margin="315,308,320.6,265.8" Click="button_ReservationAuditorium3_Click"/>
 
         <Button x:Name="silla1" Margin="28,72,728.6,507.8" BorderThickness="0" Height="37" Click="MarkChair">
             <Button.Background>

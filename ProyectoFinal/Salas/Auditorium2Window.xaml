@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:ProyectoFinal.Salas"
         mc:Ignorable="d"
         Title="Auditorium2Window" Height="298.537" Width="744.012" ResizeMode="NoResize">
-    <Grid>
+    <Grid Name="Auditorium2Grid">
         <Grid.RowDefinitions>
             <RowDefinition/>
             <RowDefinition/>
@@ -35,6 +35,8 @@
         <Label Content="                                                                                  P       A       N       T       A       L       L       A" Background="Black" Foreground="Red" FontWeight="Bold" Grid.ColumnSpan="15" Margin="-21,0,-22,0"/>
         <Label Content="ENTRADA1" Background="Black" Foreground="BLUE" Grid.Row="5" Grid.ColumnSpan="2" Margin="-4,16,32,-16" />
         <Label Content="ENTRADA2" Background="Black" Foreground="BLUE" Grid.Row="5" Grid.Column="13" Grid.ColumnSpan="2" Margin="29,16,-6,-16"/>
+
+        <Button x:Name="button_ReservationAuditorium2" Content="Hacer Reserva" Grid.Column="6" Grid.Row="1" Grid.ColumnSpan="3" Margin="28.8,1.2,41.4,4.6" Click="button_ReservationAuditorium2_Click"/>
 
         <Button x:Name="silla1" Click="MarkChair" Grid.Column="1" Grid.Row="2" BorderBrush="#00707070">
             <Button.Background>
