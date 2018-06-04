@@ -255,6 +255,8 @@
     <Resource Include="Images\Random\videoError.jpg" />
   </ItemGroup>
   <ItemGroup>
+    <Resource Include="Images\Random\1.jpg" />
+    <Resource Include="Images\Icons\lupa.png" />
     <Content Include="Videos\Memento.mp4" />
     <Resource Include="Images\Random\LOGO.png" />
     <Resource Include="Images\Icons\defaultPoster.jpg" />

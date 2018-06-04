@@ -7,6 +7,9 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="682.4" Width="844.535" ResizeMode="NoResize" Closed="WindowClosed">
     <Grid>
+        <Grid.Background>
+            <ImageBrush ImageSource="Images/Random/1.jpg"/>
+        </Grid.Background>
         <Grid.RowDefinitions>
             <RowDefinition Height="481*"/>
             <RowDefinition Height="172*"/>
@@ -14,7 +17,7 @@
         <Image Source="/Images/Random/logo.png" Margin="10,-63,476.4,334.2"/>
         <Label x:Name="label_UserEmail" Content="Usuario: E-Mail" Margin="280,0,47.4,424.8" FontSize="30"/>
         <Label x:Name="label_UserId" Content="Id: id" Margin="389,41,184.4,383.8" FontSize="30"/>
-        <TabControl Margin="0,87,0.4,-0.2" Grid.RowSpan="2">
+        <TabControl Margin="0,87,0.4,-0.2" Grid.RowSpan="2" Background="#9BFFFFFF">
             <TabItem Header="Cartelera" Name="TabCartelera">
                 <Grid>
                     <Grid.ColumnDefinitions>
@@ -287,7 +290,7 @@
             <TabItem Header="SuperAdmin" Name="TabSuperAdmin">
 
                 <Grid Name="GridUsuario">
-                    <DataGrid x:Name="datagrid_Users" Margin="48,136,53.8,110.4">
+                    <DataGrid x:Name="datagrid_Users" Margin="48,136,53.8,110.4" SelectionChanged="datagrid_Users_SelectionChanged">
                         <DataGrid.CellStyle>
                             <Style TargetType="DataGridCell">
                                 <Style.Triggers>
@@ -310,7 +313,12 @@
                         </DataGrid.RowStyle>
                     </DataGrid>
                     <Button x:Name="button_UpgradeUser" Content="AAAAAAAAAAAAHHHHHHHHH" Margin="346,48,376.8,446.4" Click="button_UpgradeUser_Click"/>
-                    <TextBox x:Name="textbox_RoleUser" Text="{Binding Path=RolUsuario}" Margin="267,433,224.8,51.4"/>
+                    <TextBox x:Name="textbox_SearchUser" FontSize="20" Margin="183,468,308.8,38.4"/>
+                    <Button x:Name="button_SearchUser" Margin="538,468,259.8,38.4" Click="button_SearchUser_Click">
+                        <Button.Background>
+                            <ImageBrush ImageSource="Images/Icons/lupa.png"/>
+                        </Button.Background>
+                    </Button>
                 </Grid>
 
             </TabItem>

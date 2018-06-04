@@ -52,6 +52,7 @@ namespace ProyectoFinal
         Usuario usuario;
 
         Usuario user = new Usuario();
+        Usuario userActualizar = new Usuario();
 
         //The rol of the user
         String rol;
@@ -446,13 +447,33 @@ namespace ProyectoFinal
 
         private void button_UpgradeUser_Click(object sender, RoutedEventArgs e)
         {
-            textbox_RoleUser.Text = "SuperAdmin";
-            uow.RepositorioUsuario.Actualizar(user);
+            if (userActualizar.RolUsuario == "Admin")
+            {
+                userActualizar.RolUsuario = "SuperAdmin";
+            }
+            else userActualizar.RolUsuario = "Admin";
             
+            uow.RepositorioUsuario.Actualizar(userActualizar);
+            datagrid_Users.ItemsSource = uow.RepositorioUsuario.ObtenerTodo().ToList();
         }
+
+        private void datagrid_Users_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            try
+            {
+                userActualizar = (Usuario)datagrid_Users.SelectedItem;
+            }
+            catch (Exception)
+            {
+            }
+        }
+
 
         #endregion SuperUser
 
+        private void button_SearchUser_Click(object sender, RoutedEventArgs e)
+        {
 
+        }
     }
 }
