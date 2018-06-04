@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -11,6 +12,8 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using iTextSharp.text;
+using iTextSharp.text.pdf;
 using Microsoft.Win32;
 using ProyectoFinal.BD.DAL;
 using ProyectoFinal.Model;
@@ -78,7 +81,7 @@ namespace ProyectoFinal
 
             this.usuario = usuario;
 
-            label_UserEmail.Content = "Usuario: "+ usuario.EmailUsuario;
+            label_UserEmail.Text = "Usuario: "+ usuario.EmailUsuario;
             label_UserId.Content = "Id: " + usuario.UsuarioId;
             rol = usuario.RolUsuario;
             CheckUser();
@@ -298,7 +301,6 @@ namespace ProyectoFinal
 
         #endregion Reservas
 
-
         #region Proveedores
 
         //Save Button of Proveedor
@@ -407,7 +409,6 @@ namespace ProyectoFinal
         {
             textbox_NameFilm.Text = "";
             textbox_PosterFilm.Text = "";
-            textbox_TypeFilm.Text = "";
             textbox_TrailerFilm.Text = "";
             textbox_YearFilm.Text = "";
             textbox_PriceFilm.Text = "0";
@@ -541,5 +542,15 @@ namespace ProyectoFinal
         {
 
         }
+
+
+
+
+        #region testss
+
+
+
+        #endregion testss
+
     }
 }
