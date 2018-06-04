@@ -62,7 +62,12 @@ namespace ProyectoFinal
 
         //This represents the trailer that TrailerWindow has to load
         String trailerForWindow;
-       
+
+        //This boolean tells us if the Preview of the trailer is loaded on the Film Window
+        bool TrailerPreviewLoaded = false;
+
+        //This boolean tells us if the Preview of the Trailer is Playing on the film window
+        bool TrailerPlaying = true;
 
         public MainWindow(Usuario usuario)
         {
@@ -223,6 +228,7 @@ namespace ProyectoFinal
                 MessageBoxResult confirmation = MessageBox.Show("Película añadida Correctamente", "Información", MessageBoxButton.OK, MessageBoxImage.Information);
                 datagrid_Film.ItemsSource = uow.RepositorioPelicula.ObtenerTodo().ToList();
                 CleanTextboxPelicula();
+                TrailerPreviewLoaded = false;
             }
         }
 
@@ -232,6 +238,7 @@ namespace ProyectoFinal
             uow.RepositorioPelicula.Actualizar(pelicula);
             datagrid_Film.ItemsSource = uow.RepositorioPelicula.ObtenerTodo().ToList();
             CleanTextboxPelicula();
+            TrailerPreviewLoaded = false;
         }
 
         //Delete Button of Pelicula
@@ -240,6 +247,7 @@ namespace ProyectoFinal
             uow.RepositorioPelicula.Eliminar(pelicula);
             datagrid_Film.ItemsSource = uow.RepositorioPelicula.ObtenerTodo().ToList();
             CleanPelicula();
+            TrailerPreviewLoaded = false;
         }
 
         //When you click on data of the Pelicula DataGrid
@@ -273,7 +281,27 @@ namespace ProyectoFinal
             Image_VideoFake.Visibility = Visibility.Hidden;
             MediaElement_Trailer.Visibility = Visibility.Visible;
             ShowPreviewTrailer(textbox_TrailerFilm.Text);
+            TrailerPreviewLoaded = true;
         }
+
+        private void button_PlayTrailer_Click(object sender, RoutedEventArgs e)
+        {
+            if (TrailerPreviewLoaded && !TrailerPlaying)
+            {
+                MediaElement_Trailer.Play();
+                TrailerPlaying = true;
+            }
+        }
+
+        private void button_PauseTrailer_Click(object sender, RoutedEventArgs e)
+        {
+            if (TrailerPreviewLoaded && TrailerPlaying)
+            {
+                MediaElement_Trailer.Pause();
+                TrailerPlaying = false;
+            }
+        }
+
 
         #endregion Peliculas
 
@@ -552,5 +580,6 @@ namespace ProyectoFinal
 
         #endregion testss
 
+       
     }
 }
