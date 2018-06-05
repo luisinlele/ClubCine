@@ -95,6 +95,8 @@ namespace ProyectoFinal
 
             GridUsuario.DataContext = user;
             datagrid_Users.ItemsSource = uow.RepositorioUsuario.ObtenerTodo().ToList();
+
+            GenerarBotonesPeliculas();
         }
 
 
@@ -304,6 +306,84 @@ namespace ProyectoFinal
 
 
         #endregion Peliculas
+
+        #region Alquileres
+
+        //TPV
+        public void GenerarBotonesPeliculas()
+        {
+            List<Pelicula> listapelis = new List<Pelicula>();
+            this.AlquileresPeliculas.Children.Clear();
+            listapelis = uow.RepositorioPelicula.ObtenerTodo().ToList();
+            for (int i = 0; i < listapelis.Count; i++)
+            {
+                StackPanel stack = new StackPanel();
+                stack.VerticalAlignment = VerticalAlignment.Center;
+                stack.HorizontalAlignment = HorizontalAlignment.Stretch;
+                stack.Orientation = Orientation.Horizontal;
+                stack.Width = 832.8;
+                stack.Height = 521;
+
+                Label label = new Label();
+                label.Content = listapelis[i].NombrePelicula;
+                label.HorizontalAlignment = HorizontalAlignment.Center;
+                label.FontSize = 10;
+
+
+
+                Button boton = new Button();
+                boton.Width = 382;
+                boton.Height = 440;
+                boton.Margin = new Thickness(2);
+                //boton.Content = label.Content;
+
+                boton.Name = "buttonTPV_" + listapelis[i].PeliculaId;
+                boton.Click += peli_click;
+                //stack.Children.Add(boton);
+                stack.Children.Add(EnseñarCartel(listapelis[i].CartelPelicula));
+                stack.Children.Add(label);
+                boton.Content = stack;
+                AlquileresPeliculas.Children.Add(boton);
+            }
+        }
+
+        public void peli_click(object sender, RoutedEventArgs e)
+        {
+            var aux = e.OriginalSource;
+            if (aux.GetType() == typeof(Button))
+            {
+                Button boton = (Button)aux;
+                String[] btname = boton.Name.Split('_');
+                Console.WriteLine(btname);
+            }
+                
+        }
+
+
+
+        private System.Windows.Controls.Image EnseñarCartel(string ruta)
+        {
+            try
+            {
+                System.Windows.Controls.Image imagen = new System.Windows.Controls.Image();
+                BitmapImage bit3 = new BitmapImage();
+                bit3.BeginInit();
+                bit3.UriSource = new Uri(ruta);
+                bit3.EndInit();
+                imagen.Source = bit3;
+                imagen.Width = 382;
+                imagen.Height = 430;
+                return imagen;
+            }
+            catch (Exception)
+            {
+                return null;
+            }
+
+        }
+
+        #endregion Alquileres
+
 
         #region Reservas
 

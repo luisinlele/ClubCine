@@ -55,7 +55,7 @@
                             </ToolTip>
                         </Image.ToolTip>
                     </Image>
-                    <Button x:Name="button_Loadsits1Cartelera" Content="Ver Asientos" Grid.Column="1" Grid.Row="4" VerticalAlignment="Center" Click="button_Loadsits1Cartelera_Click"/>
+                    <Button x:Name="button_Loadsits1Cartelera" Content="22:00" Grid.Row="4" VerticalAlignment="Center" Click="button_Loadsits1Cartelera_Click" Background="black" Foreground="GreenYellow" Margin="37.8,9.6,38.4,24.8" Grid.Column="1" Height="20"/>
 
                     <Label Content="Sala 2" Grid.Column="3" VerticalAlignment="Center" HorizontalAlignment="Center"/>
                     <Image  x:Name="image2" Grid.Column="2" Grid.ColumnSpan="3" Grid.Row="1" Grid.RowSpan="3" HorizontalAlignment="Center" Source="Images/Films/12.jpg" MouseDown="filmImage2_MouseEnter">
@@ -139,7 +139,12 @@
                 </Grid>
             </TabItem>
             <TabItem Header="Alquileres" Name="TabAlquileres">
-
+                <Grid Name="GridAlquileresPeliculas">
+                    <ScrollViewer VerticalScrollBarVisibility="Hidden" HorizontalScrollBarVisibility="Visible">
+                        <StackPanel Name="AlquileresPeliculas" Orientation="Horizontal" />
+                        
+                    </ScrollViewer>
+                </Grid>
             </TabItem>
             <TabItem Header="Tus Reservas" Name="TabTuCartelera">
                 <Grid Name="GridReservas" >
@@ -244,7 +249,7 @@
                             <DataGridTextColumn Header="CartelURL" Binding="{Binding CartelPelicula}"/>
                             <DataGridTextColumn Header="TrailerURL" Binding="{Binding TrailerPelicula}"/>
                         </DataGrid.Columns>
-                        
+
                         <DataGrid.CellStyle>
                             <Style TargetType="DataGridCell">
                                 <Style.Triggers>
@@ -297,7 +302,7 @@
                             <DataGridTextColumn Header="Dirección" Binding="{Binding DireccionProveedor}"/>
                             <DataGridTextColumn Header="País" Binding="{Binding PaisProveedor}"/>
                         </DataGrid.Columns>
-                        
+
                         <DataGrid.CellStyle>
                             <Style TargetType="DataGridCell">
                                 <Style.Triggers>
@@ -354,9 +359,9 @@
                             <ImageBrush ImageSource="Images/Icons/lupa.png"/>
                         </Button.Background>
                     </Button>
-                    
-                    
-                    
+
+
+
                 </Grid>
 
             </TabItem>
