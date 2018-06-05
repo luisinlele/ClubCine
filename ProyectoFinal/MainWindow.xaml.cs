@@ -321,29 +321,27 @@ namespace ProyectoFinal
                 stack.VerticalAlignment = VerticalAlignment.Center;
                 stack.HorizontalAlignment = HorizontalAlignment.Stretch;
                 stack.Orientation = Orientation.Horizontal;
-                stack.Width = 832.8;
+                stack.Width = 250;
                 stack.Height = 521;
 
                 Label label = new Label();
                 label.Content = listapelis[i].NombrePelicula;
-                label.HorizontalAlignment = HorizontalAlignment.Center;
-                label.FontSize = 10;
-
-
+                //label.VerticalAlignment = VerticalAlignment.Bottom;
+                label.Width = 250;
+                label.Height = 50;
+                label.FontSize = 20;
 
                 Button boton = new Button();
-                boton.Width = 382;
-                boton.Height = 440;
+                boton.Width = 250;
+                boton.Height = 360;
                 boton.Margin = new Thickness(2);
-                //boton.Content = label.Content;
-
+                boton.Content = EnseñarCartel(listapelis[i].CartelPelicula);
                 boton.Name = "buttonTPV_" + listapelis[i].PeliculaId;
                 boton.Click += peli_click;
-                //stack.Children.Add(boton);
-                stack.Children.Add(EnseñarCartel(listapelis[i].CartelPelicula));
+
+                stack.Children.Add(boton);
                 stack.Children.Add(label);
-                boton.Content = stack;
-                AlquileresPeliculas.Children.Add(boton);
+                AlquileresPeliculas.Children.Add(stack);
             }
         }
 
@@ -354,7 +352,8 @@ namespace ProyectoFinal
             {
                 Button boton = (Button)aux;
                 String[] btname = boton.Name.Split('_');
-                Console.WriteLine(btname);
+                int cx = Convert.ToInt32(btname[1].Trim());
+                Console.WriteLine(cx);
             }
                 
         }
@@ -371,8 +370,8 @@ namespace ProyectoFinal
                 bit3.UriSource = new Uri(ruta);
                 bit3.EndInit();
                 imagen.Source = bit3;
-                imagen.Width = 382;
-                imagen.Height = 430;
+                imagen.Width = 245;
+                imagen.Height = 350;
                 return imagen;
             }
             catch (Exception)
@@ -654,12 +653,21 @@ namespace ProyectoFinal
 
 
 
+
         #region testss
 
 
 
         #endregion testss
 
-       
+        private void button_Loadsits1Cartelera_MouseEnter(object sender, MouseEventArgs e)
+        {
+
+        }
+
+        private void button_Loadsits1Cartelera_MouseLeave(object sender, MouseEventArgs e)
+        {
+
+        }
     }
 }
