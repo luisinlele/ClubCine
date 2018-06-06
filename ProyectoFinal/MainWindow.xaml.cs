@@ -52,9 +52,13 @@ namespace ProyectoFinal
         //Proveedor
         Proveedor proveedor = new Proveedor();
 
+        //User that signs in
         Usuario usuario;
 
+        //Usuarios
         Usuario user = new Usuario();
+
+        //User that shows on "SuperAdmin"
         Usuario userActualizar = new Usuario();
 
         //The rol of the user
@@ -102,6 +106,9 @@ namespace ProyectoFinal
 
         #region Cartelera
 
+        //Methods that open "AuditoriumWindow" depending on the Room
+        #region LoadAuditoriums
+        
         private void button_Loadsits1Cartelera_Click(object sender, RoutedEventArgs e)
         {
             auditorium1 = new Auditorium1Window(usuario);
@@ -136,8 +143,11 @@ namespace ProyectoFinal
             auditorium6 = new Auditorium6Window(usuario);
             auditorium6.Show();
         }
+        #endregion LoadAuditoriums
 
-        //For when you click on Film1 image
+        //Methods that open "TrailerWindow" depending on the Film
+        #region LoadTrailers
+        
         private void filmImage1_MouseEnter(object sender, MouseButtonEventArgs e)
         {
             trailerForWindow = "Sala1";
@@ -145,7 +155,6 @@ namespace ProyectoFinal
             trailerWindow.ShowDialog();
         }
 
-        //For when you click on Film1 image
         private void filmImage2_MouseEnter(object sender, MouseButtonEventArgs e)
         {
             trailerForWindow = "Sala2";
@@ -153,7 +162,6 @@ namespace ProyectoFinal
             trailerWindow.ShowDialog();
         }
 
-        //For when you click on Film1 image
         private void filmImage3_MouseEnter(object sender, MouseButtonEventArgs e)
         {
             trailerForWindow = "Sala3";
@@ -161,7 +169,6 @@ namespace ProyectoFinal
             trailerWindow.ShowDialog();
         }
 
-        //For when you click on Film1 image
         private void filmImage4_MouseEnter(object sender, MouseButtonEventArgs e)
         {
             trailerForWindow = "Sala4";
@@ -169,7 +176,6 @@ namespace ProyectoFinal
             trailerWindow.ShowDialog();
         }
 
-        //For when you click on Film1 image
         private void filmImage5_MouseEnter(object sender, MouseButtonEventArgs e)
         {
             trailerForWindow = "Sala5";
@@ -177,14 +183,15 @@ namespace ProyectoFinal
             trailerWindow.ShowDialog();
         }
 
-        //For when you click on Film1 image
         private void filmImage6_MouseEnter(object sender, MouseButtonEventArgs e)
         {
             trailerForWindow = "Sala6";
             trailerWindow = new TrailerWindow(trailerForWindow);
             trailerWindow.ShowDialog();
         }
+        #endregion LoadTrailers
 
+        //Methods that change the color when you put the mouse on the button of the time
         #region controlbotonesHora
         private void button_Loadsits1Cartelera_MouseEnter(object sender, MouseEventArgs e)
         {
@@ -248,6 +255,7 @@ namespace ProyectoFinal
         #endregion controlbotonesHora
 
         #endregion Cartelera
+
 
         #region Peliculas
 
@@ -333,6 +341,7 @@ namespace ProyectoFinal
             }
         }
 
+        //When you click on the button to select a Poster
         private void button_PosterSelect_Click(object sender, RoutedEventArgs e)
         {
             explorador.Filter = "Image Files(*.BMP;*.JPG;*.GIF;*.PNG)|*.BMP;*.JPG;*.GIF;*.PNG|All files (*.*)|*.*";
@@ -341,7 +350,7 @@ namespace ProyectoFinal
             ShowPreviewPoster(textbox_PosterFilm.Text);
         }
 
-
+        //When you click on the button to select a Trailer
         private void button_TrailerSelect_Click(object sender, RoutedEventArgs e)
         {
             explorador.Filter = "All Video Files(*.MP4;*.3GP;*.WEBM;*.WMV)|*.MP4;*.3GP;*.WEBM;*.WMV|All files (*.*)|*.*";
@@ -353,6 +362,7 @@ namespace ProyectoFinal
             TrailerPreviewLoaded = true;
         }
 
+        //Button Play below the preview of the Trailer
         private void button_PlayTrailer_Click(object sender, RoutedEventArgs e)
         {
             if (TrailerPreviewLoaded && !TrailerPlaying)
@@ -362,6 +372,7 @@ namespace ProyectoFinal
             }
         }
 
+        //Button Pause below the preview of the Trailer
         private void button_PauseTrailer_Click(object sender, RoutedEventArgs e)
         {
             if (TrailerPreviewLoaded && TrailerPlaying)
@@ -374,9 +385,10 @@ namespace ProyectoFinal
 
         #endregion Peliculas
 
+
         #region Alquileres
 
-        //TPV
+        //This generates the buttons depending on the Pelicula data on the database
         public void GenerarBotonesPeliculas()
         {
             List<Pelicula> listapelis = new List<Pelicula>();
@@ -411,21 +423,7 @@ namespace ProyectoFinal
             }
         }
 
-        public void peli_click(object sender, RoutedEventArgs e)
-        {
-            var aux = e.OriginalSource;
-            if (aux.GetType() == typeof(Button))
-            {
-                Button boton = (Button)aux;
-                String[] btname = boton.Name.Split('_');
-                int cx = Convert.ToInt32(btname[1].Trim());
-                Console.WriteLine(cx);
-            }
-                
-        }
-
-
-
+        //Method that opens an image
         private System.Windows.Controls.Image EnseñarCartel(string ruta)
         {
             try
@@ -447,14 +445,28 @@ namespace ProyectoFinal
 
         }
 
+        //For when you click a generated button of "GenerarBotonesPeliculas()"
+        public void peli_click(object sender, RoutedEventArgs e)
+        {
+            var aux = e.OriginalSource;
+            if (aux.GetType() == typeof(Button))
+            {
+                Button boton = (Button)aux;
+                String[] btname = boton.Name.Split('_');
+                int cx = Convert.ToInt32(btname[1].Trim());
+                Console.WriteLine(cx);
+            }
+                
+        }
+
         #endregion Alquileres
 
 
         #region Reservas
 
+        //Method that Loads the reservations on the datagrid for the user that is Signed In
         public void CargarReservasPorUser()
         {
-
             List<Reserva> listaReservas = new List<Reserva>();
             listaReservas = uow.RepositorioReserva.ObtenerVarios(c => c.UsuarioIdReserva == usuario.UsuarioId);
             datagrid_Book.ItemsSource = listaReservas;
@@ -473,6 +485,7 @@ namespace ProyectoFinal
         }
 
         #endregion Reservas
+
 
         #region Proveedores
 
@@ -524,9 +537,10 @@ namespace ProyectoFinal
 
         #endregion Proveedores
 
+
         #region General
 
-        //When you close the window, this opens the Login Window
+        //Method that opens the LoginWindow when this MainWindow gets closed
         private void WindowClosed(object sender, EventArgs e)
         {
             loginWindow = new LoginWindow();
@@ -534,6 +548,7 @@ namespace ProyectoFinal
         }
 
         #endregion General
+
 
         #region Methods
 
@@ -574,11 +589,14 @@ namespace ProyectoFinal
 
         }
 
+        //Method that cleans "GridFilms"
         private void CleanPelicula()
         {
             pelicula = new Pelicula();
             GridFilms.DataContext = pelicula;
         }
+
+        //Method that cleans "GridProvider"
         private void CleanProveedor()
         {
             proveedor = new Proveedor();
@@ -619,6 +637,8 @@ namespace ProyectoFinal
             }
         }
 
+        #region ControlPestañas
+        
         //Hides all the Tabs
         private void UnloadAll()
         {
@@ -663,7 +683,9 @@ namespace ProyectoFinal
             TabSuperAdmin.Visibility = Visibility.Visible;
         }
 
-        //This checks the Type of User
+        #endregion ControlPestañas
+
+        //Method that checks the Type of User
         private void CheckUser()
         {
             if (rol.Equals("SuperAdmin"))
@@ -677,16 +699,12 @@ namespace ProyectoFinal
             else { LoadNormal(); }
         }
 
-        public void CheckFilmTextbox()
-        {
-
-        }
-
-
         #endregion Methods
+
 
         #region SuperUser
 
+        //Upgrades an user to the next role from "Normal" to "Admin" to "SuperAdmin"
         private void button_UpgradeUser_Click(object sender, RoutedEventArgs e)
         {
             MessageBoxResult confirmation = MessageBox.Show("¿Seguro que quieres subir de Rango a " +userActualizar.NombreUsuario+ "?", "Confirmación", MessageBoxButton.YesNo, MessageBoxImage.Question);
@@ -705,6 +723,7 @@ namespace ProyectoFinal
             }
         }
 
+        //when you select an item in "datagrid_Users"
         private void datagrid_Users_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             try
@@ -716,6 +735,7 @@ namespace ProyectoFinal
             }
         }
 
+        //Deletes or 'bans' an user
         private void button_DeleteUser_Click(object sender, RoutedEventArgs e)
         {
             MessageBoxResult confirmation = MessageBox.Show("Vas a eliminar a un usuario, ¿estás seguro? Nota: esta acción no se puede revertir.", "ALERTA", MessageBoxButton.YesNo, MessageBoxImage.Exclamation);
@@ -729,8 +749,7 @@ namespace ProyectoFinal
                     
         }
 
-
-
+        //Checks if there is some user in the database whose name is the same as in "textbox_SearchUser.Text"
         private void button_SearchUser_Click(object sender, RoutedEventArgs e)
         {
             Usuario user = uow.RepositorioUsuario.ObtenerUno(c => c.NombreUsuario.Equals(textbox_SearchUser.Text));
@@ -740,21 +759,17 @@ namespace ProyectoFinal
             }
         }
 
+        //Loads all the users in the dataGrid
         private void button_LoadUsers_Click(object sender, RoutedEventArgs e)
         {
             datagrid_Users.ItemsSource = uow.RepositorioUsuario.ObtenerTodo().ToList();
         }
 
-
-
-
-
-
-
-
         #endregion SuperUser
 
-        #region testss
+
+        //Nada
+        #region testss 
 
 
 
