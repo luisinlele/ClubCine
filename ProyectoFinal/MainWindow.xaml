@@ -71,7 +71,7 @@
                             </ToolTip>
                         </Image.ToolTip>
                     </Image>
-                    <Button x:Name="button_Loadsits2Cartelera" Content="22:15" Grid.Column="3" Grid.Row="4" VerticalAlignment="Center" Click="button_Loadsits2Cartelera_Click" Margin="34.2,41.6,42,45.4" Height="21" Grid.RowSpan="2" Background="black" Foreground="GreenYellow"/>
+                    <Button x:Name="button_Loadsits2Cartelera" Content="22:15" Grid.Column="3" Grid.Row="4" VerticalAlignment="Center" Click="button_Loadsits2Cartelera_Click" Margin="34.2,41.6,42,45.4" Height="21" Grid.RowSpan="2" Background="black" Foreground="GreenYellow" MouseEnter="button_Loadsits2Cartelera_MouseEnter" MouseLeave="button_Loadsits2Cartelera_MouseLeave"/>
 
                     <Label Background="Black" Foreground="Red" Content="Sala 3" Grid.Column="5" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="53.8,9,23.4,18.6"/>
                     <Image x:Name="image3" Grid.Column="4" Grid.RowSpan="5" HorizontalAlignment="Center" Source="Images/Films/hannah.jpg" MouseDown="filmImage3_MouseEnter" Margin="119,37,92.8,9.8" Grid.ColumnSpan="3" Width="145">
@@ -87,7 +87,7 @@
                             </ToolTip>
                         </Image.ToolTip>
                     </Image>
-                    <Button x:Name="button_Loadsits3Cartelera" Content="19:00" Grid.Column="5" Grid.Row="4" VerticalAlignment="Bottom" Click="button_Loadsits3artelera_Click" Margin="53.8,0,21.4,45.4" Height="20" Grid.RowSpan="2" Background="black" Foreground="GreenYellow"/>
+                    <Button x:Name="button_Loadsits3Cartelera" Content="19:00" Grid.Column="5" Grid.Row="4" VerticalAlignment="Bottom" Click="button_Loadsits3artelera_Click" Margin="53.8,0,21.4,45.4" Height="20" Grid.RowSpan="2" Background="black" Foreground="GreenYellow" MouseEnter="button_Loadsits3Cartelera_MouseEnter" MouseLeave="button_Loadsits3Cartelera_MouseLeave"/>
 
                     <Label Background="Black" Foreground="Red" Content="Sala 4" Grid.Column="1" Grid.Row="5" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="16.2,11.2,61.6,18.4"/>
                     <Image x:Name="image4" Grid.Column="0" Grid.ColumnSpan="2" Grid.Row="5" Grid.RowSpan="5" HorizontalAlignment="Left" Source="Images/Films/jaws.png" MouseDown="filmImage4_MouseEnter" Margin="78,27.2,0,10.4" Width="153">
@@ -103,7 +103,7 @@
                             </ToolTip>
                         </Image.ToolTip>
                     </Image>
-                    <Button x:Name="button_Loadsits4Cartelera" Content="21:00" Grid.Column="1" Grid.Row="9" VerticalAlignment="Center" Click="button_Loadsits4Cartelera_Click" HorizontalAlignment="Right" Margin="0,32,58.6,2.4" Width="43" Height="20" Background="black" Foreground="GreenYellow"/>
+                    <Button x:Name="button_Loadsits4Cartelera" Content="21:00" Grid.Column="1" Grid.Row="9" VerticalAlignment="Center" Click="button_Loadsits4Cartelera_Click" HorizontalAlignment="Right" Margin="0,32,58.6,2.4" Width="43" Height="20" Background="black" Foreground="GreenYellow" MouseEnter="button_Loadsits4Cartelera_MouseEnter" MouseLeave="button_Loadsits4Cartelera_MouseLeave"/>
 
                     <Label Background="Black" Foreground="Red" Content="Sala 5" Grid.Column="3" Grid.Row="5" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="32.2,8.2,45,19.4"/>
                     <Image x:Name="image5" Grid.Column="2" Grid.Row="5" Grid.RowSpan="5" HorizontalAlignment="Center" Source="Images/Films/goodfellas.jpg" MouseDown="filmImage5_MouseEnter" Margin="99.4,39.2,115.2,22.4" Grid.ColumnSpan="3" Width="143">
@@ -119,7 +119,7 @@
                             </ToolTip>
                         </Image.ToolTip>
                     </Image>
-                    <Button x:Name="button_Loadsits5Cartelera" Content="20:30" Grid.Column="3" Grid.Row="9" VerticalAlignment="Center" HorizontalAlignment="Right" Margin="0,32,42,3.4" Width="43" Click="button_Loadsits5Cartelera_Click" Height="19" Background="black" Foreground="GreenYellow"/>
+                    <Button x:Name="button_Loadsits5Cartelera" Content="20:30" Grid.Column="3" Grid.Row="9" VerticalAlignment="Center" HorizontalAlignment="Right" Margin="0,32,42,3.4" Width="43" Click="button_Loadsits5Cartelera_Click" Height="19" Background="black" Foreground="GreenYellow" MouseEnter="button_Loadsits5Cartelera_MouseEnter" MouseLeave="button_Loadsits5Cartelera_MouseLeave"/>
 
                     <Label Background="Black" Foreground="Red" Content="Sala 6" Grid.Column="5" Grid.Row="5" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="54.016,9.2,22.892,18.4"/>
                     <Image x:Name="image6" Grid.Column="5" Grid.Row="5" Grid.RowSpan="5" HorizontalAlignment="Center" Source="Images/Films/memento.jpg" MouseDown="filmImage6_MouseEnter" Margin="3.8,39.2,91.8,22.4" Grid.ColumnSpan="2" Width="142">
@@ -135,7 +135,7 @@
                             </ToolTip>
                         </Image.ToolTip>
                     </Image>
-                    <Button x:Name="button_Loadsits6Cartelera" Content="00:30" Grid.Column="5" Grid.Row="9" VerticalAlignment="Center" Click="button_Loadsits6artelera_Click" Margin="59.8,31,15.4,3.4" Height="20" Background="black" Foreground="GreenYellow"/>
+                    <Button x:Name="button_Loadsits6Cartelera" Content="00:30" Grid.Column="5" Grid.Row="9" VerticalAlignment="Center" Click="button_Loadsits6artelera_Click" Margin="59.8,31,15.4,3.4" Height="20" Background="black" Foreground="GreenYellow" MouseEnter="button_Loadsits6Cartelera_MouseEnter" MouseLeave="button_Loadsits6Cartelera_MouseLeave"/>
                 </Grid>
             </TabItem>
             <TabItem Header="Alquileres" Name="TabAlquileres">
@@ -362,7 +362,8 @@
                             <ImageBrush ImageSource="Images/Icons/lupa.png"/>
                         </Button.Background>
                     </Button>
-
+                    <Label Content="Buscar por nombre" FontSize="20" Margin="166,464,474.8,30.4" Foreground="Blue"/>
+                    <Button x:Name="button_LoadUsers" Content="Cargar Todos" Margin="10,476,739.8,24.4" Click="button_LoadUsers_Click"/>
 
 
                 </Grid>

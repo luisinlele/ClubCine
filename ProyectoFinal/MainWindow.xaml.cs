@@ -185,7 +185,67 @@ namespace ProyectoFinal
             trailerWindow.ShowDialog();
         }
 
+        #region controlbotonesHora
+        private void button_Loadsits1Cartelera_MouseEnter(object sender, MouseEventArgs e)
+        {
+            button_Loadsits1Cartelera.Foreground = Brushes.Red;
+        }
 
+        private void button_Loadsits1Cartelera_MouseLeave(object sender, MouseEventArgs e)
+        {
+            button_Loadsits1Cartelera.Foreground = Brushes.GreenYellow;
+        }
+
+        private void button_Loadsits2Cartelera_MouseLeave(object sender, MouseEventArgs e)
+        {
+            button_Loadsits2Cartelera.Foreground = Brushes.GreenYellow;
+        }
+
+        private void button_Loadsits2Cartelera_MouseEnter(object sender, MouseEventArgs e)
+        {
+            button_Loadsits2Cartelera.Foreground = Brushes.Red;
+        }
+
+        private void button_Loadsits3Cartelera_MouseEnter(object sender, MouseEventArgs e)
+        {
+            button_Loadsits3Cartelera.Foreground = Brushes.Red;
+        }
+
+        private void button_Loadsits3Cartelera_MouseLeave(object sender, MouseEventArgs e)
+        {
+            button_Loadsits3Cartelera.Foreground = Brushes.GreenYellow;
+        }
+
+        private void button_Loadsits4Cartelera_MouseEnter(object sender, MouseEventArgs e)
+        {
+            button_Loadsits4Cartelera.Foreground = Brushes.Red;
+        }
+
+        private void button_Loadsits4Cartelera_MouseLeave(object sender, MouseEventArgs e)
+        {
+            button_Loadsits4Cartelera.Foreground = Brushes.GreenYellow;
+        }
+
+        private void button_Loadsits5Cartelera_MouseEnter(object sender, MouseEventArgs e)
+        {
+            button_Loadsits5Cartelera.Foreground = Brushes.Red;
+        }
+
+        private void button_Loadsits5Cartelera_MouseLeave(object sender, MouseEventArgs e)
+        {
+            button_Loadsits5Cartelera.Foreground = Brushes.GreenYellow;
+        }
+
+        private void button_Loadsits6Cartelera_MouseEnter(object sender, MouseEventArgs e)
+        {
+            button_Loadsits6Cartelera.Foreground = Brushes.Red;
+        }
+
+        private void button_Loadsits6Cartelera_MouseLeave(object sender, MouseEventArgs e)
+        {
+            button_Loadsits6Cartelera.Foreground = Brushes.GreenYellow;
+        }
+        #endregion controlbotonesHora
 
         #endregion Cartelera
 
@@ -673,31 +733,32 @@ namespace ProyectoFinal
 
         private void button_SearchUser_Click(object sender, RoutedEventArgs e)
         {
-            //textbox_SearchUser.Text;
+            Usuario user = uow.RepositorioUsuario.ObtenerUno(c => c.NombreUsuario.Equals(textbox_SearchUser.Text));
+            if (user != null)
+            {
+                datagrid_Users.ItemsSource = uow.RepositorioUsuario.ObtenerVarios(c => c.NombreUsuario.Equals(textbox_SearchUser.Text));
+            }
         }
+
+        private void button_LoadUsers_Click(object sender, RoutedEventArgs e)
+        {
+            datagrid_Users.ItemsSource = uow.RepositorioUsuario.ObtenerTodo().ToList();
+        }
+
+
+
+
+
+
+
+
         #endregion SuperUser
-
-
-
-
-
-
 
         #region testss
 
 
 
         #endregion testss
-
-        private void button_Loadsits1Cartelera_MouseEnter(object sender, MouseEventArgs e)
-        {
-
-        }
-
-        private void button_Loadsits1Cartelera_MouseLeave(object sender, MouseEventArgs e)
-        {
-
-        }
 
 
     }
