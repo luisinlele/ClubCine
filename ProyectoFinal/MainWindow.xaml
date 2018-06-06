@@ -17,8 +17,8 @@
         <Image Source="/Images/Random/logo.png" Margin="10,-63,476.4,334.2"/>
         <TextBlock x:Name="label_UserEmail" Text="Usuario: E-Mail" Margin="280,0,47.4,424.8" FontSize="30"/>
         <Label x:Name="label_UserId" Content="Id: id" Margin="389,41,184.4,383.8" FontSize="30"/>
-        <TabControl Margin="0,87,0.4,-0.2" Grid.RowSpan="2" Background="#9B000000">
-            <TabItem Header="Cartelera" Name="TabCartelera">
+        <TabControl Margin="0,87,0.4,-0.2" Grid.RowSpan="2" Background="#bB000000">
+            <TabItem Header="Cartelera" Name="TabCartelera" >
                 <Grid>
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition/>
@@ -181,19 +181,19 @@
                         <RowDefinition/>
                     </Grid.RowDefinitions>
 
-                    <Label Content="Nombre" VerticalAlignment="Bottom" FontSize="20" Grid.ColumnSpan="2" Margin="72,0,48,0"/>
-                    <Label Content="Cartel" Grid.Column="2" VerticalAlignment="Bottom" FontSize="20" Grid.ColumnSpan="2" Margin="57,0,62,0"/>
+                    <Label Content="Nombre" VerticalAlignment="Bottom" FontSize="20" Grid.ColumnSpan="2" Margin="72,0,48,0" Foreground="Blue"/>
+                    <Label Content="Cartel" Grid.Column="2" VerticalAlignment="Bottom" FontSize="20" Grid.ColumnSpan="2" Margin="57,0,62,0" Foreground="Blue"/>
 
-                    <Label Content="Género" Grid.Row="1" VerticalAlignment="Top" FontSize="20" Grid.ColumnSpan="2" Margin="75,38,30,0" Grid.RowSpan="2"/>
-                    <Label Content="Trailer" Grid.Column="2" Grid.Row="1" VerticalAlignment="Top" FontSize="20" Grid.ColumnSpan="2" Margin="57,38,48,0" Grid.RowSpan="2"/>
-                    <Label Content="Año" Grid.Row="2" VerticalAlignment="Bottom" FontSize="20" Grid.ColumnSpan="2" Margin="75,0,30,45" Grid.RowSpan="2"/>
-                    <Label Content="Proveedor" Grid.Column="2" Grid.Row="2" VerticalAlignment="Bottom" FontSize="20" Grid.ColumnSpan="2" Margin="60,0,45,44" Grid.RowSpan="2"/>
-                    <Label Content="Precio" Grid.Column="4" Grid.Row="2" VerticalAlignment="Bottom" FontSize="20" Grid.ColumnSpan="2" Margin="57,0,48,44" Grid.RowSpan="2"/>
+                    <Label Content="Género" Grid.Row="1" VerticalAlignment="Top" FontSize="20" Grid.ColumnSpan="2" Margin="75,38,30,0" Grid.RowSpan="2" Foreground="Blue"/>
+                    <Label Content="Trailer" Grid.Column="2" Grid.Row="1" VerticalAlignment="Top" FontSize="20" Grid.ColumnSpan="2" Margin="57,38,48,0" Grid.RowSpan="2" Foreground="Blue"/>
+                    <Label Content="Año" Grid.Row="2" VerticalAlignment="Bottom" FontSize="20" Grid.ColumnSpan="2" Margin="75,0,30,45" Grid.RowSpan="2" Foreground="Blue"/>
+                    <Label Content="Proveedor" Grid.Column="2" Grid.Row="2" VerticalAlignment="Bottom" FontSize="20" Grid.ColumnSpan="2" Margin="60,0,45,44" Grid.RowSpan="2" Foreground="Blue"/>
+                    <Label Content="Precio" Grid.Column="4" Grid.Row="2" VerticalAlignment="Bottom" FontSize="20" Grid.ColumnSpan="2" Margin="57,0,48,44" Grid.RowSpan="2" Foreground="Blue"/>
 
-                    <Label Content="Cartel Preview" Grid.Column="4" Grid.ColumnSpan="3" FontSize="20" Foreground="Gray" Margin="62,0,58,0"/>
-                    <Label Content="------>" Grid.Column="5" FontSize="20" Foreground="Gray" VerticalAlignment="Bottom" HorizontalAlignment="Left" Margin="33,0,0,0"/>
-                    <Label Content="Trailer Preview" Grid.Column="4" Grid.Row="2" Grid.ColumnSpan="3" FontSize="20" Foreground="Gray" Margin="62,3,42,6"/>
-                    <Label Content="------>" Grid.Column="5" Grid.Row="2" FontSize="20" Foreground="Gray" VerticalAlignment="Bottom" HorizontalAlignment="Left" Margin="33,0,0,0"/>
+                    <Label Content="Cartel Preview" Grid.Column="4" Grid.ColumnSpan="3" FontSize="20" Foreground="LightGray" Margin="62,0,58,0"/>
+                    <Label Content="------>" Grid.Column="5" FontSize="20" Foreground="LightGray" VerticalAlignment="Bottom" HorizontalAlignment="Left" Margin="33,0,0,0"/>
+                    <Label Content="Trailer Preview" Grid.Column="4" Grid.Row="2" Grid.ColumnSpan="3" FontSize="20" Foreground="LightGray" Margin="62,3,42,6" Background="Transparent"/>
+                    <Label Content="------>" Grid.Column="5" Grid.Row="2" FontSize="20" Foreground="LightGray" VerticalAlignment="Bottom" HorizontalAlignment="Left" Margin="33,0,0,0"/>
 
                     <TextBox x:Name="textbox_NameFilm" FontSize="18" Height="27" Grid.ColumnSpan="3" VerticalAlignment="Top" Margin="75,67,70,0" Text="{Binding Path=NombrePelicula, Mode=TwoWay}" Grid.RowSpan="2"/>
                     <TextBox x:Name="textbox_PosterFilm" FontSize="18" Grid.Column="2" Height="27" Grid.ColumnSpan="3" VerticalAlignment="Top" Margin="60,67,72,0" Grid.RowSpan="2" Text="{Binding Path=CartelPelicula, Mode=TwoWay}"/>
@@ -236,7 +236,7 @@
                     <Button x:Name="button_SaveFilm" Content="Guardar" Grid.Column="6" Margin="71,0,53.8,30.2" Grid.Row="5" Click="button_SaveFilm_Click" Grid.ColumnSpan="2"/>
                     <Button x:Name="button_ModifyFilm" Content="Modificar" Grid.Column="6" Margin="71,67,53.8,31.4" Grid.Row="5" Click="button_ModifyFilm_Click" Grid.ColumnSpan="2" Grid.RowSpan="2"/>
                     <Button x:Name="button_DeleteFilm" Content="Borrar" Grid.Column="6" Margin="71,66.8,53.8,30.4" Grid.Row="6" Click="button_DeleteFilm_Click" Grid.ColumnSpan="2" Grid.RowSpan="2"/>
-
+                    
                     <DataGrid x:Name="datagrid_Film" Grid.Column="0" Grid.Row="4" Grid.RowSpan="4" Grid.ColumnSpan="7" Margin="20,10.2,92,10.4" SelectionChanged="datagrid_Film_SelectionChanged" AutoGenerateColumns="False" DataContext="{Binding Source=Pelicula}" IsReadOnly="True">
 
                         <DataGrid.Columns>
@@ -277,11 +277,11 @@
 
             <TabItem Header="Proveedores" Name="TabProveedores">
                 <Grid Name="GridProvider">
-                    <Label Content="Nombre" FontSize="20" Margin="36,33,696.8,461.4"/>
-                    <Label Content="E-Mail" FontSize="20" Margin="195,194,537.8,303.4"/>
-                    <Label Content="Teléfono" FontSize="20" Margin="404,110,328.8,383.4"/>
-                    <Label Content="Dirección" FontSize="20" Margin="404,33,328.8,461.4"/>
-                    <Label Content="País" FontSize="20" Margin="36,110,696.8,383.4"/>
+                    <Label Content="Nombre" FontSize="20" Margin="36,33,696.8,461.4" Foreground="Blue"/>
+                    <Label Content="E-Mail" FontSize="20" Margin="195,194,537.8,303.4" Foreground="Blue"/>
+                    <Label Content="Teléfono" FontSize="20" Margin="404,110,328.8,383.4" Foreground="Blue"/>
+                    <Label Content="Dirección" FontSize="20" Margin="404,33,328.8,461.4" Foreground="Blue"/>
+                    <Label Content="País" FontSize="20" Margin="36,110,696.8,383.4" Foreground="Blue"/>
 
                     <TextBox x:Name="textbox_NameProvider" Text="{Binding Path=NombreProveedor, Mode=TwoWay}" FontSize="18" Margin="41,68,499.8,443.4"/>
                     <TextBox x:Name="textbox_AddressProvider" Text="{Binding Path=DireccionProveedor, Mode=TwoWay}" FontSize="18" Margin="408,68,132.8,443.4"/>
@@ -330,7 +330,7 @@
             <TabItem Header="SuperAdmin" Name="TabSuperAdmin">
 
                 <Grid Name="GridUsuario">
-                    <DataGrid x:Name="datagrid_Users" Margin="48,136,53.8,110.4" SelectionChanged="datagrid_Users_SelectionChanged">
+                    <DataGrid x:Name="datagrid_Users" Margin="48,176,53.8,70.4" SelectionChanged="datagrid_Users_SelectionChanged">
                         <DataGrid.CellStyle>
                             <Style TargetType="DataGridCell">
                                 <Style.Triggers>
@@ -352,9 +352,12 @@
                             </Style>
                         </DataGrid.RowStyle>
                     </DataGrid>
-                    <Button x:Name="button_UpgradeUser" Content="Subir de Rol" Margin="137,50,585.8,444.4" Click="button_UpgradeUser_Click"/>
-                    <TextBox x:Name="textbox_SearchUser" FontSize="20" Margin="183,468,308.8,38.4"/>
-                    <Button x:Name="button_SearchUser" Margin="538,468,259.8,38.4" Click="button_SearchUser_Click">
+                    <Button x:Name="button_UpgradeUser" Content="Subir de Rol" Margin="140,67,582.8,427.4" Click="button_UpgradeUser_Click"/>
+                    <Rectangle Margin="469,42,104.8,398.4" Stroke="Red" StrokeThickness="4"/>
+                    <Label Content="OJOCUIDAO" Margin="469,16,237.8,486.4" Foreground="red" FontSize="20"/>
+                    <Button x:Name="button_DeleteUser" Content="Borrar Usuario" Margin="532,67,163.8,427.4" Click="button_DeleteUser_Click"/>
+                    <TextBox x:Name="textbox_SearchUser" FontSize="20" Margin="166,496,325.8,10.4"/>
+                    <Button x:Name="button_SearchUser" Margin="512,496,285.8,10.4" Click="button_SearchUser_Click">
                         <Button.Background>
                             <ImageBrush ImageSource="Images/Icons/lupa.png"/>
                         </Button.Background>

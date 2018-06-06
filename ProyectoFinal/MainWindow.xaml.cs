@@ -246,10 +246,17 @@ namespace ProyectoFinal
         //Delete Button of Pelicula
         private void button_DeleteFilm_Click(object sender, RoutedEventArgs e)
         {
-            uow.RepositorioPelicula.Eliminar(pelicula);
-            datagrid_Film.ItemsSource = uow.RepositorioPelicula.ObtenerTodo().ToList();
-            CleanPelicula();
-            TrailerPreviewLoaded = false;
+            MessageBoxResult confirmation = MessageBox.Show("Vas a eliminar una película, ¿estás seguro? Nota: esta acción no se puede revertir.", "ALERTA", MessageBoxButton.YesNo, MessageBoxImage.Exclamation);
+            switch (confirmation)
+            {
+                case MessageBoxResult.Yes:
+                    uow.RepositorioPelicula.Eliminar(pelicula);
+                    datagrid_Film.ItemsSource = uow.RepositorioPelicula.ObtenerTodo().ToList();
+                    CleanPelicula();
+                    TrailerPreviewLoaded = false;
+                    break;
+            }
+                    
         }
 
         //When you click on data of the Pelicula DataGrid
@@ -430,9 +437,16 @@ namespace ProyectoFinal
         //Delete Button of Proveedor
         private void button_DeleteProvider_Click(object sender, RoutedEventArgs e)
         {
-            uow.RepositorioProveedor.Eliminar(proveedor);
-            datagrid_Provider.ItemsSource = uow.RepositorioProveedor.ObtenerTodo().ToList();
-            CleanProveedor();
+            MessageBoxResult confirmation = MessageBox.Show("Vas a eliminar un proveedor, ¿estás seguro? Nota: esta acción no se puede revertir.", "ALERTA", MessageBoxButton.YesNo, MessageBoxImage.Exclamation);
+            switch (confirmation)
+            {
+                case MessageBoxResult.Yes:
+                    uow.RepositorioProveedor.Eliminar(proveedor);
+                    datagrid_Provider.ItemsSource = uow.RepositorioProveedor.ObtenerTodo().ToList();
+                    CleanProveedor();
+                    break;
+            }
+                    
         }
 
         //When you click on data of the Proveedor DataGrid
@@ -481,6 +495,7 @@ namespace ProyectoFinal
             }
 
         }
+
 
         //Shows a preview of the Film's Trailer
         private void ShowPreviewTrailer(string ruta)
@@ -641,13 +656,28 @@ namespace ProyectoFinal
             }
         }
 
+        private void button_DeleteUser_Click(object sender, RoutedEventArgs e)
+        {
+            MessageBoxResult confirmation = MessageBox.Show("Vas a eliminar a un usuario, ¿estás seguro? Nota: esta acción no se puede revertir.", "ALERTA", MessageBoxButton.YesNo, MessageBoxImage.Exclamation);
+            switch (confirmation)
+            {
+                case MessageBoxResult.Yes:
+                    uow.RepositorioUsuario.Eliminar(userActualizar);
+                    datagrid_Users.ItemsSource = uow.RepositorioUsuario.ObtenerTodo().ToList();
+                    break;
+            }
+                    
+        }
 
-        #endregion SuperUser
+
 
         private void button_SearchUser_Click(object sender, RoutedEventArgs e)
         {
 
         }
+        #endregion SuperUser
+
+
 
 
 
@@ -668,5 +698,7 @@ namespace ProyectoFinal
         {
 
         }
+
+
     }
 }
