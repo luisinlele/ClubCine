@@ -673,7 +673,7 @@ namespace ProyectoFinal
 
         private void button_SearchUser_Click(object sender, RoutedEventArgs e)
         {
-
+            //textbox_SearchUser.Text;
         }
         #endregion SuperUser
 
