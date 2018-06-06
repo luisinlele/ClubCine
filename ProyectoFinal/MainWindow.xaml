@@ -140,7 +140,7 @@
             </TabItem>
             <TabItem Header="Alquileres" Name="TabAlquileres">
                 <Grid Name="GridAlquileresPeliculas">
-                    <ScrollViewer VerticalScrollBarVisibility="Hidden" HorizontalScrollBarVisibility="Visible" Margin="0,65,-0.2,10.4">
+                    <ScrollViewer VerticalScrollBarVisibility="Hidden" HorizontalScrollBarVisibility="Visible" Margin="0,60,-0.2,10.4">
                         <StackPanel Name="AlquileresPeliculas" Orientation="Horizontal" />
 
                     </ScrollViewer>
