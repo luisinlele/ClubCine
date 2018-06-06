@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ProyectoFinal.Salas"
         mc:Ignorable="d"
-        Title="Auditorium4Window" Height="518.049" Width="680.366" ResizeMode="NoResize">
+        Title="Auditorium4Window" Height="518.049" Width="680.366" ResizeMode="NoResize" Background="#FF2B2727">
     <Grid Name="Auditorium4Grid">
         <Label Content="P          A          N          T          A          L          L          A" HorizontalContentAlignment="Center" HorizontalAlignment="Left" VerticalAlignment="Top" Width="674" Background="Black" Foreground="Red" Margin="0,0,-0.4,0" FontWeight="Bold"/>
         <Label Content="ENTRADA" HorizontalContentAlignment="Center" HorizontalAlignment="Left" VerticalAlignment="Top" Width="67" Background="Black" Foreground="BLUE" Margin="628,70,-21.4,0" Height="30" RenderTransformOrigin="0.5,0.5">

@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ProyectoFinal.Salas"
         mc:Ignorable="d"
-        Title="Auditorium2Window" Height="298.537" Width="744.012" ResizeMode="NoResize">
+        Title="Auditorium2Window" Height="298.537" Width="744.012" ResizeMode="NoResize" Background="#FF2B2727">
     <Grid Name="Auditorium2Grid">
         <Grid.RowDefinitions>
             <RowDefinition/>
@@ -32,7 +32,7 @@
             <ColumnDefinition/>
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
-        <Label Content="                                                                                  P       A       N       T       A       L       L       A" Background="Black" Foreground="Red" FontWeight="Bold" Grid.ColumnSpan="15" Margin="-21,0,-22,0"/>
+        <Label Content="                                                                                  P       A       N       T       A       L       L       A" Background="Black" Foreground="Red" FontWeight="Bold" Grid.ColumnSpan="15" Margin="-21,0,-22.4,15.8"/>
         <Label Content="ENTRADA1" Background="Black" Foreground="BLUE" Grid.Row="5" Grid.ColumnSpan="2" Margin="-4,16,32,-16" />
         <Label Content="ENTRADA2" Background="Black" Foreground="BLUE" Grid.Row="5" Grid.Column="13" Grid.ColumnSpan="2" Margin="29,16,-6,-16"/>
 

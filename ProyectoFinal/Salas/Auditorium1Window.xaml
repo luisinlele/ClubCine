@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ProyectoFinal.Salas"
         mc:Ignorable="d"
-        Height="601.2" Width="516.009" ResizeMode="NoResize">
+        Height="601.2" Width="516.009" ResizeMode="NoResize" Background="#FF2B2727">
 
     <Window.Resources>
         <Image x:Key="Free" Source="/Images/Icons/seatG.png"/>
@@ -38,7 +38,7 @@
             <RowDefinition/>
         </Grid.RowDefinitions>
 
-        <Label Content="                                              P       A       N       T       A       L       L       A" Background="Black" Foreground="Red" FontWeight="Bold" Grid.ColumnSpan="9" Margin="-17,0,-6,0"/>
+        <Label Content="                                              P       A       N       T       A       L       L       A" Background="Black" Foreground="Red" FontWeight="Bold" Grid.ColumnSpan="9" Margin="-17,0,-6.4,23"/>
         <Label Content="ENTRADA" Background="Black" Foreground="BLUE" RenderTransformOrigin="0.5,0.5" Grid.Row="5" Margin="-22,16,14,8">
             <Label.RenderTransform>
                 <TransformGroup>
