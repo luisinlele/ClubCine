@@ -28,6 +28,7 @@ namespace ProyectoFinal
             this.trailer = trailerForWindow;
             CheckFilm(trailer);
             ShowTrailer(path);
+            MediaElement_Trailer.Play();
         }
 
         private void button_PlayTrailer_Click(object sender, RoutedEventArgs e)
@@ -79,10 +80,10 @@ namespace ProyectoFinal
             {
                 Uri pathUri = new Uri(ruta, UriKind.Relative);
                 MediaElement_Trailer.Source = pathUri;
-                MediaElement_Trailer.Width = 368.8;
-                MediaElement_Trailer.Height = 288;
+                MediaElement_Trailer.Width = 446;
+                MediaElement_Trailer.Height = 282;
             }
-            catch (Exception)
+            catch (Exception e)
             {
             }
 

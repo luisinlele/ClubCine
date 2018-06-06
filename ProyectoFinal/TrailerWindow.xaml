@@ -6,10 +6,20 @@
         xmlns:local="clr-namespace:ProyectoFinal"
         mc:Ignorable="d"
         Title="TrailerWindow" Height="450" Width="531.139">
+    <Window.Background>
+        <ImageBrush ImageSource="Images/Random/theatre.png"/>
+    </Window.Background>
     <Grid>
-        <Image Source="/Images/Random/backgroundTheatre.jpg"/>
-        <Button x:Name="button_PlayTrailer" Content="▶" Margin="185,265,309.8,125" Click="button_PlayTrailer_Click"/>
-        <Button x:Name="button_PauseTrailer" Content=" ▎ ▎" Margin="240,265,254.8,125" Click="button_PauseTrailer_Click"/>
-        <MediaElement x:Name="MediaElement_Trailer" Margin="82,22,73.8,182" LoadedBehavior="Manual"/>
+        <Button x:Name="button_PlayTrailer" Margin="196,351,281.8,23" Click="button_PlayTrailer_Click" BorderBrush="Transparent">
+            <Button.Background>
+                <ImageBrush ImageSource="Images/Icons/play.png"/>
+            </Button.Background>
+        </Button>
+        <Button x:Name="button_PauseTrailer" Margin="289,351,188.8,23" Click="button_PauseTrailer_Click" BorderBrush="Transparent">
+            <Button.Background>
+                <ImageBrush ImageSource="Images/Icons/pause.png"/>
+            </Button.Background>
+        </Button>
+        <MediaElement x:Name="MediaElement_Trailer" Margin="43,39,35.8,99" LoadedBehavior="Manual" IsMuted="True" Stretch="Fill"/>
     </Grid>
 </Window>

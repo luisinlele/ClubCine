@@ -252,9 +252,6 @@
     <Resource Include="Images\Random\buat.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Images\Icons\play.png" />
-  </ItemGroup>
-  <ItemGroup>
     <Resource Include="Images\Icons\broken.jpg" />
   </ItemGroup>
   <ItemGroup>
@@ -267,13 +264,19 @@
     <Resource Include="Images\Random\backgroundTheatre.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Images\Icons\pause.png" />
-  </ItemGroup>
-  <ItemGroup>
     <Resource Include="Images\Random\water.jpeg" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Images\Random\blackgradient.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Random\theatre.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Icons\play.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Icons\pause.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\Fody.3.0.3\build\Fody.targets" Condition="Exists('..\packages\Fody.3.0.3\build\Fody.targets')" />

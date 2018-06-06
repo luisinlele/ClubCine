@@ -218,12 +218,12 @@
                     <Image Name="Image_Poster" Grid.ColumnSpan="2" Grid.Column="6" Margin="47.2,17,36.6,40.8" Grid.RowSpan="3" Source="/Images/Icons/defaultPoster.jpg"/>
                     <Image Name="Image_VideoFake" Source="/Images/Random/videoError.jpg" Grid.ColumnSpan="2" Grid.Column="6" Margin="32.2,42.8,19.6,0.4" Grid.Row="2" Grid.RowSpan="2"/>
                     <MediaElement Name="MediaElement_Trailer" Grid.ColumnSpan="2" Grid.Column="6" Margin="32,38.6,19.8,0.8" Grid.Row="2" Grid.RowSpan="2" LoadedBehavior="Manual" IsMuted="True"/>
-                    <Button x:Name="button_PlayTrailer" Grid.Column="6" Margin="66,4.2,15,41" Grid.Row="4" Click="button_PlayTrailer_Click">
+                    <Button x:Name="button_PlayTrailer" Grid.Column="6" Margin="66,4.2,15,41" Grid.Row="4" Click="button_PlayTrailer_Click" BorderBrush="Transparent">
                         <Button.Background>
                             <ImageBrush ImageSource="Images/Icons/play.png"/>
                         </Button.Background>
                     </Button>
-                    <Button x:Name="button_PauseTrailer" Grid.Column="7" Margin="33,4.2,48.8,41" Grid.Row="4" Click="button_PauseTrailer_Click">
+                    <Button x:Name="button_PauseTrailer" Grid.Column="7" Margin="33,4.2,48.8,41" Grid.Row="4" Click="button_PauseTrailer_Click" BorderBrush="Transparent">
                         <Button.Background>
                             <ImageBrush ImageSource="Images/Icons/pause.png"/>
                         </Button.Background>

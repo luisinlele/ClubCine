@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
         xmlns:local="clr-namespace:ProyectoFinal"
         mc:Ignorable="d"
-        Title="NewAccountWindow" Height="481.612" Width="957.493" ResizeMode="NoResize">
+        Title="Crear Cuenta" Height="481.612" Width="957.493" ResizeMode="NoResize">
     <Window.Background>
         <ImageBrush ImageSource="Images/Random/blackgradient.png"/>
     </Window.Background>
@@ -34,8 +34,8 @@
         <Image x:Name="image_ProfilePicPreview" Margin="635,84,71.2,103" Source="/Images/Random/defaultProfilePic.png" Stretch="Fill" />
 
         <Button x:Name="button_SelectProfilePic" Content=".." Margin="846,358,77.2,70" Click="button_SelectProfilePic_Click"/>
-        <Button x:Name="button_SaveNewAccount" Content="Crear Cuenta" Margin="362,401,476.2,10" Click="button_SaveNewAccount_Click"/>
-        <Button x:Name="button_CancelNewAccount" Content="Cancelar" Margin="527,401,282.2,10"/>
+        <Button x:Name="button_SaveNewAccount" Content="Crear Cuenta" Margin="362,411,490.2,10" Click="button_SaveNewAccount_Click" Background="White"/>
+        <Button x:Name="button_CancelNewAccount" Content="Cancelar" Margin="527,411,337.2,10" Background="White" Click="button_Exit_Click"/>
         <Button x:Name="button_Exit" Margin="892,388,0.2,10" Click="button_Exit_Click" Foreground="Transparent" BorderBrush="Transparent">
             <Button.Background>
                 <ImageBrush ImageSource="Images/Icons/exitHighlight.png"/>
