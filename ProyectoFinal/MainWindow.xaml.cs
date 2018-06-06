@@ -317,24 +317,23 @@ namespace ProyectoFinal
             listapelis = uow.RepositorioPelicula.ObtenerTodo().ToList();
             for (int i = 0; i < listapelis.Count; i++)
             {
-                StackPanel stack = new StackPanel();
-                stack.VerticalAlignment = VerticalAlignment.Center;
-                stack.HorizontalAlignment = HorizontalAlignment.Stretch;
+                WrapPanel stack = new WrapPanel();
                 stack.Orientation = Orientation.Horizontal;
-                stack.Width = 250;
-                stack.Height = 521;
+                stack.Width = 255;
+                stack.Height = 389;
+                stack.Margin = new Thickness(30);
 
-                Label label = new Label();
-                label.Content = listapelis[i].NombrePelicula;
-                //label.VerticalAlignment = VerticalAlignment.Bottom;
-                label.Width = 250;
-                label.Height = 50;
+                TextBlock label = new TextBlock();
+                label.Text = listapelis[i].NombrePelicula;
+                label.TextAlignment = TextAlignment.Center;
+                label.Width = 255;
+                label.Height = 40;
                 label.FontSize = 20;
 
                 Button boton = new Button();
-                boton.Width = 250;
-                boton.Height = 360;
-                boton.Margin = new Thickness(2);
+                boton.Width = 255;
+                boton.Height = 349;
+                //boton.Margin = new Thickness(1);
                 boton.Content = EnseñarCartel(listapelis[i].CartelPelicula);
                 boton.Name = "buttonTPV_" + listapelis[i].PeliculaId;
                 boton.Click += peli_click;
@@ -370,8 +369,8 @@ namespace ProyectoFinal
                 bit3.UriSource = new Uri(ruta);
                 bit3.EndInit();
                 imagen.Source = bit3;
-                imagen.Width = 245;
-                imagen.Height = 350;
+                imagen.Width = 255;
+                imagen.Height = 349;
                 return imagen;
             }
             catch (Exception)

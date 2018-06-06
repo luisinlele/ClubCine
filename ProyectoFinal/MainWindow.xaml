@@ -15,7 +15,7 @@
             <RowDefinition Height="172*"/>
         </Grid.RowDefinitions>
         <Image Source="/Images/Random/logo.png" Margin="10,-63,476.4,334.2"/>
-        <TextBlock x:Name="label_UserEmail" Text="Usuario: E-Mail" Margin="280,0,47.4,424.8" FontSize="30" />
+        <TextBlock x:Name="label_UserEmail" Text="Usuario: E-Mail" Margin="280,0,47.4,424.8" FontSize="30"/>
         <Label x:Name="label_UserId" Content="Id: id" Margin="389,41,184.4,383.8" FontSize="30"/>
         <TabControl Margin="0,87,0.4,-0.2" Grid.RowSpan="2" Background="#9BFFFFFF">
             <TabItem Header="Cartelera" Name="TabCartelera">
@@ -140,7 +140,7 @@
             </TabItem>
             <TabItem Header="Alquileres" Name="TabAlquileres">
                 <Grid Name="GridAlquileresPeliculas">
-                    <ScrollViewer VerticalScrollBarVisibility="Hidden" HorizontalScrollBarVisibility="Visible">
+                    <ScrollViewer VerticalScrollBarVisibility="Hidden" HorizontalScrollBarVisibility="Visible" Margin="0,65,-0.2,10.4">
                         <StackPanel Name="AlquileresPeliculas" Orientation="Horizontal" />
 
                     </ScrollViewer>
