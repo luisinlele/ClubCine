@@ -28,7 +28,7 @@
                     </Grid>
                     <ControlTemplate.Triggers>
                         <Trigger Property="IsSelected" Value="True">
-                            <Setter TargetName="Border" Property="Background" Value="#FF2B2727" />
+                            <Setter TargetName="Border" Property="Background" Value="#FF373737" />
                         </Trigger>
                         <Trigger Property="IsSelected" Value="False">
                             <Setter TargetName="Border" Property="Background">
@@ -67,7 +67,7 @@
         <Image x:Name="image_UserProfile" Source="images/Random/profilePictureDefault.png" Margin="697,0,26.4,370.8"/>
 
         <TabControl Margin="0,87,0.4,-0.2" Grid.RowSpan="2" Background="#bB000000">
-            <TabItem Header="Cartelera" Name="TabCartelera" Height="30" Background="Black" Foreground="White" Width="80">
+            <TabItem Header="Cartelera" Name="TabCartelera" Height="30" Background="Black" Foreground="White" Width="90">
                 <Grid>
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition/>
@@ -187,7 +187,7 @@
                     <Button x:Name="button_Loadsits6Cartelera" Content="00:30" Grid.Column="5" Grid.Row="9" VerticalAlignment="Center" Click="button_Loadsits6artelera_Click" Margin="54,16.8,21.4,16.8" Height="20" Background="black" Foreground="GreenYellow" MouseEnter="button_Loadsits6Cartelera_MouseEnter" MouseLeave="button_Loadsits6Cartelera_MouseLeave" BorderBrush="GreenYellow"/>
                 </Grid>
             </TabItem>
-            <TabItem Header="Alquileres" Name="TabAlquileres" Background="Black" Foreground="White" Height="30" Width="80">
+            <TabItem Header="Alquileres" Name="TabAlquileres" Background="Black" Foreground="White" Height="30" Width="90">
                 <Grid Name="GridAlquileresPeliculas">
                     <ScrollViewer VerticalScrollBarVisibility="Hidden" HorizontalScrollBarVisibility="Visible" Margin="0,60,-0.2,10.4">
                         <StackPanel Name="AlquileresPeliculas" Orientation="Horizontal" />
@@ -207,7 +207,7 @@
             <TabItem Header="Tus Alquileres" Name="TabTuAlquiler" Foreground="White" Height="30">
 
             </TabItem>
-            <TabItem Header="Películas" Name="TabPeliculas" Foreground="White" Height="30" Width="90">
+            <TabItem Header="Películas" Name="TabPeliculas" Foreground="White" Height="30" Width="100">
                 <Grid Name="GridFilms">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition/>
@@ -324,7 +324,7 @@
                 </Grid>
             </TabItem>
 
-            <TabItem Header="Proveedores" Name="TabProveedores" Foreground="White" Height="30">
+            <TabItem Header="Proveedores" Name="TabProveedores" Foreground="White" Height="30" Width="100">
                 <Grid Name="GridProvider">
                     <Label Content="Nombre" FontSize="20" Margin="36,33,696.8,461.4" Foreground="Blue"/>
                     <Label Content="E-Mail" FontSize="20" Margin="195,194,537.8,303.4" Foreground="Blue"/>
@@ -376,7 +376,7 @@
                 </Grid>
             </TabItem>
 
-            <TabItem Header="SuperAdmin" Name="TabSuperAdmin" Foreground="White" Height="30">
+            <TabItem Header="SuperAdmin" Name="TabSuperAdmin" Foreground="Red" Height="30" Width="100">
 
                 <Grid Name="GridUsuario">
                     <DataGrid x:Name="datagrid_Users" Margin="48,176,53.8,90.8" SelectionChanged="datagrid_Users_SelectionChanged">
@@ -403,7 +403,7 @@
                     </DataGrid>
                     <Button x:Name="button_UpgradeUser" Content="Subir de Rol" Margin="140,67,582.8,427.4" Click="button_UpgradeUser_Click"/>
                     <Rectangle Margin="469,42,104.8,398.4" Stroke="Red" StrokeThickness="4"/>
-                    <Label Content="OJOCUIDAO" Margin="469,16,237.8,466.8" Foreground="red" FontSize="20"/>
+                    <Label Content="ATENCIÓN ❗" Margin="469,4,194.8,478.8" Foreground="red" FontSize="25"/>
                     <Button x:Name="button_DeleteUser" Content="Borrar Usuario" Margin="532,67,163.8,427.4" Click="button_DeleteUser_Click"/>
                     <TextBox x:Name="textbox_SearchUser" FontSize="20" Margin="166,486,325.8,10.8"/>
                     <Button x:Name="button_SearchUser" Margin="512,486,285.8,10.8" Click="button_SearchUser_Click">
