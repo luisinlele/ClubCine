@@ -60,7 +60,7 @@ namespace ProyectoFinal
 
         private void button_SelectProfilePic_Click(object sender, RoutedEventArgs e)
         {
-            explorador.Filter = "Image Files(*.BMP;*.JPG;*.GIF)|*.BMP;*.JPG;*.GIF|All files (*.*)|*.*";
+            explorador.Filter = "Image Files(*.BMP;*.JPG;*.GIF;*.PNG)|*.BMP;*.JPG;*.GIF;*.PNG|All files (*.*)|*.*";
             explorador.ShowDialog();
             textbox_ProfilePic.Text = explorador.FileName.ToString();
             ShowPreview(textbox_ProfilePic.Text);
@@ -75,8 +75,8 @@ namespace ProyectoFinal
                 bit2.UriSource = new Uri(ruta);
                 bit2.EndInit();
                 image_ProfilePicPreview.Source = bit2;
-                image_ProfilePicPreview.Width = 245;
-                image_ProfilePicPreview.Height = 265;
+                image_ProfilePicPreview.Width = 218;
+                image_ProfilePicPreview.Height = 256;
             }
             catch (Exception)
             {

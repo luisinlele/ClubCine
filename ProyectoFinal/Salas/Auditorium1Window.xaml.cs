@@ -146,7 +146,6 @@ namespace ProyectoFinal.Salas
                         reserva.HoraReserva = "22:00";
                         reserva.SalaIdReserva = 1;
                         uow.RepositorioReserva.Crear(reserva);
-
                         MessageBoxResult confirmation = MessageBox.Show("Reserva hecha Correctamente. Debes " + 10 * contadorAsientos, "Información", MessageBoxButton.OK, MessageBoxImage.Information);
                     }
                     else

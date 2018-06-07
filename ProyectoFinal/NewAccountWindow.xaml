@@ -13,12 +13,12 @@
 
         <Label Content="CREAR CUENTA" FontSize="25" Margin="395,10,337.2,388" Foreground="#FFFFFFFF"/>
         <Label FontSize="25" Margin="36,22,10.2,379" Foreground="#FFFFFFFF" Content="______________________________________________________________________________________________________________________________________________________________________"/>
-        <Label Content="Nombre" FontSize="15" Foreground="#D9D9D9" FontFamily="Rockwell" Margin="88,108,716.2,310"/>
+        <Label Content="Nombre" FontSize="16" Foreground="#D9D9D9" FontFamily="Rockwell" Margin="84,108,720.2,310"/>
         <Label Content="Apellidos" FontSize="16" Foreground="#D9D9D9" FontFamily="Rockwell" Margin="74,158,788.2,257"/>
-        <Label Content="Teléfono" FontSize="14" Foreground="#D9D9D9" FontFamily="Rockwell" Margin="88,208,733.2,207"/>
-        <Label Content="Contraseña" FontSize="15" Foreground="#D9D9D9" FontFamily="Rockwell" Margin="66,303,788.2,112"/>
-        <Label Content="Repite Contraseña" FontSize="13" Foreground="#D9D9D9" FontFamily="Rockwell" Margin="36,356,780.2,59"/>
-        <Label Content="Correo Electrónico" FontSize="12" Foreground="#D9D9D9" FontFamily="Rockwell" Margin="39,257,786.2,164" RenderTransformOrigin="1.553,1.514"/>
+        <Label Content="Teléfono" FontSize="16" Foreground="#D9D9D9" FontFamily="Rockwell" Margin="80,207,741.2,208"/>
+        <Label Content="Contraseña" FontSize="16" Foreground="#D9D9D9" FontFamily="Rockwell" Margin="60,303,794.2,112"/>
+        <Label Content="Repite Contraseña" FontSize="16" Foreground="#D9D9D9" FontFamily="Rockwell" Margin="8,355,788.2,60"/>
+        <Label Content="Correo Electrónico" FontSize="16" Foreground="#D9D9D9" FontFamily="Rockwell" Margin="3,257,796.2,164" RenderTransformOrigin="1.553,1.514"/>
         <Label Content="Imagen Perfil" Margin="549,354,298.2,65" FontFamily="Rockwell" Foreground="#D9D9D9"/>
 
         <TextBox x:Name="textbox_NameNewAccount" FontSize="16" Margin="152,108,584.2,311" Height="25" Text="{Binding Path=NombreUsuario, Mode=TwoWay}"/>
@@ -31,7 +31,7 @@
 
         <Label x:Name="label_PasswordError" Content="¡¡Las contraseñas no coinciden!!" Margin="367,331,406.2,94" Foreground="Black" Background="Red" Visibility="Hidden"/>
 
-        <Image x:Name="image_ProfilePicPreview" Margin="638,84,77.2,103" Source="/Images/Random/defaultProfilePic.png" Stretch="Fill" />
+        <Image x:Name="image_ProfilePicPreview" Margin="643,78,90.2,118" Source="/Images/Random/defaultProfilePic.png" Stretch="Fill" />
 
         <Button x:Name="button_SelectProfilePic" Content=".." Margin="846,358,77.2,70" Click="button_SelectProfilePic_Click"/>
         <Button x:Name="button_SaveNewAccount" Content="Crear Cuenta" Margin="362,411,490.2,10" Click="button_SaveNewAccount_Click" Background="White"/>
