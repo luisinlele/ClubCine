@@ -50,7 +50,7 @@
             </Label.RenderTransform>
         </Label>
 
-        <Button x:Name="button_ReservationAuditorium1" Content="Hacer Reserva" Grid.Column="3" Grid.Row="5" Grid.ColumnSpan="3" Margin="35.6,3,35,3" Click="button_ReservationAuditorium1_Click"/>
+        <Button x:Name="button_ReservationAuditorium1" Content="Hacer Reserva" Grid.Column="3" Grid.Row="5" Grid.ColumnSpan="3" Margin="35.6,0,35,3" Click="button_ReservationAuditorium1_Click" Height="46" VerticalAlignment="Bottom"/>
 
         <Button x:Name="silla1" Click="MarkChair" Grid.Column="1" Grid.Row="2" BorderBrush="#00707070">
             <Button.Background>
