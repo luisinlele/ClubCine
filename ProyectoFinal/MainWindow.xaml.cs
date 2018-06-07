@@ -785,6 +785,10 @@ namespace ProyectoFinal
             {
                 datagrid_Users.ItemsSource = uow.RepositorioUsuario.ObtenerVarios(c => c.NombreUsuario.Equals(textbox_SearchUser.Text));
             }
+            else
+            {
+                MessageBoxResult error = MessageBox.Show("No existe ningún usuario con ese nombre.", "ERROR", MessageBoxButton.OK, MessageBoxImage.Error);
+            } 
         }
 
         //Loads all the users in the dataGrid

@@ -6,10 +6,7 @@
         xmlns:local="clr-namespace:ProyectoFinal"
         mc:Ignorable="d"
         Title="MainWindow" Height="682.4" Width="844.535" ResizeMode="NoResize" Closed="WindowClosed">
-    
-    <Window.Resources>
-        
-    </Window.Resources>
+
 
     <Grid>
         <Grid.Background>
@@ -370,13 +367,17 @@
                     <Label Content="ATENCIÓN ❗" Margin="469,4,194.8,478.8" Foreground="red" FontSize="25"/>
                     <Button x:Name="button_DeleteUser" Content="Borrar Usuario" Margin="532,67,163.8,427.4" Click="button_DeleteUser_Click"  Background="White" BorderBrush="White" />
                     <TextBox x:Name="textbox_SearchUser" FontSize="20" Margin="166,486,325.8,10.8"/>
-                    <Button x:Name="button_SearchUser" Margin="512,486,288.8,10.8" Click="button_SearchUser_Click">
+                    <Button x:Name="button_SearchUser" Margin="512,486,288.8,10.8" Click="button_SearchUser_Click" BorderBrush="Transparent">
                         <Button.Background>
                             <ImageBrush ImageSource="Images/Icons/lupa.png"/>
                         </Button.Background>
                     </Button>
                     <Label Content="Buscar por nombre" FontSize="20" Margin="162,450,478.8,44.8" Foreground="LightGray"/>
-                    <Button x:Name="button_LoadUsers" Content="Cargar Todos" Margin="10,476,739.8,24.4" Click="button_LoadUsers_Click"  Background="White" BorderBrush="White" />
+                    <Button x:Name="button_LoadUsers" Margin="782,410,22.8,90.8" Click="button_LoadUsers_Click" BorderBrush="Transparent" >
+                        <Button.Background>
+                            <ImageBrush ImageSource="Images/Icons/refresh.png"/>
+                        </Button.Background>
+                    </Button>
 
 
                 </Grid>
