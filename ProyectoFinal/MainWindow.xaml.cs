@@ -459,8 +459,17 @@ namespace ProyectoFinal
                 Button boton = (Button)aux;
                 String[] btname = boton.Name.Split('_');
                 int cx = Convert.ToInt32(btname[1].Trim());
-                Console.WriteLine(cx);
-            }
+
+                MessageBoxResult confirmation = MessageBox.Show("¿Quieres alquilar esta película? ", "Confirmación", MessageBoxButton.YesNo, MessageBoxImage.Question);
+                switch (confirmation)
+                {
+                    case MessageBoxResult.Yes:
+                        break;
+                }
+
+
+
+             }
                 
         }
 
