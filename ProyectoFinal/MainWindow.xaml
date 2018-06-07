@@ -241,7 +241,7 @@
 
 
                     <Button x:Name="button_PosterSelect" Content="..." Grid.Column="4" Height="27" VerticalAlignment="Top" HorizontalAlignment="Left" Width="25" Click="button_PosterSelect_Click" RenderTransformOrigin="-3.26,0.45" Margin="32,67,0,0" Grid.RowSpan="2" />
-                    <Button x:Name="button_TrailerSelect" Content="..." Grid.Column="4" Grid.Row="2" HorizontalAlignment="Left" Width="25" Margin="32,11.6,0,28.6" Click="button_TrailerSelect_Click"/>
+                    <Button x:Name="button_TrailerSelect" Content="..." Grid.Column="4" Grid.Row="2" HorizontalAlignment="Left" Width="25" Margin="32,9.2,0,29.4" Click="button_TrailerSelect_Click"/>
 
                     <Button x:Name="button_SaveFilm" Content="Guardar" Grid.Column="6" Margin="71,0,53.8,30.2" Grid.Row="5" Click="button_SaveFilm_Click" Grid.ColumnSpan="2" Background="White" BorderBrush="White" />
                     <Button x:Name="button_ModifyFilm" Content="Modificar" Grid.Column="6" Margin="71,67,53.8,31.4" Grid.Row="5" Click="button_ModifyFilm_Click" Grid.ColumnSpan="2" Grid.RowSpan="2" Background="White" BorderBrush="White"/>
