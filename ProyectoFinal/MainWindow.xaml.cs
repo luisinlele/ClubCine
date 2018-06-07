@@ -300,6 +300,7 @@ namespace ProyectoFinal
                 datagrid_Film.ItemsSource = uow.RepositorioPelicula.ObtenerTodo().ToList();
                 CleanTextboxPelicula();
                 TrailerPreviewLoaded = false;
+                GenerarBotonesPeliculas();
             }
         }
 
@@ -310,6 +311,8 @@ namespace ProyectoFinal
             datagrid_Film.ItemsSource = uow.RepositorioPelicula.ObtenerTodo().ToList();
             CleanTextboxPelicula();
             TrailerPreviewLoaded = false;
+            MessageBoxResult confirmation = MessageBox.Show("Película modificada Correctamente", "Información", MessageBoxButton.OK, MessageBoxImage.Information);
+            GenerarBotonesPeliculas();
         }
 
         //Delete Button of Pelicula
@@ -323,6 +326,7 @@ namespace ProyectoFinal
                     datagrid_Film.ItemsSource = uow.RepositorioPelicula.ObtenerTodo().ToList();
                     CleanPelicula();
                     TrailerPreviewLoaded = false;
+                    GenerarBotonesPeliculas();
                     break;
             }
                     
@@ -404,7 +408,7 @@ namespace ProyectoFinal
                 stack.Margin = new Thickness(30);
 
                 TextBlock label = new TextBlock();
-                label.Text = listapelis[i].NombrePelicula;
+                label.Text = listapelis[i].NombrePelicula + " - " +listapelis[i].AñoPelicula;
                 label.TextAlignment = TextAlignment.Center;
                 label.Width = 255;
                 label.Height = 40;
@@ -505,6 +509,7 @@ namespace ProyectoFinal
         {
             uow.RepositorioProveedor.Actualizar(proveedor);
             datagrid_Provider.ItemsSource = uow.RepositorioProveedor.ObtenerTodo().ToList();
+            MessageBoxResult confirmation = MessageBox.Show("Proveedor modificado Correctamente", "Información", MessageBoxButton.OK, MessageBoxImage.Information);
             CleanTextboxProveedor();
         }
 
@@ -544,6 +549,7 @@ namespace ProyectoFinal
         //Method that opens the LoginWindow when this MainWindow gets closed
         private void WindowClosed(object sender, EventArgs e)
         {
+
             loginWindow = new LoginWindow();
             loginWindow.Show();
         }
