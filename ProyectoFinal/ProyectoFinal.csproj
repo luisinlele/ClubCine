@@ -87,6 +87,9 @@
       <DependentUpon>201805250829287_migraciones.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="RentdataWindow.xaml.cs">
+      <DependentUpon>RentdataWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Repositories\RepositorioAlquiler.cs" />
     <Compile Include="Repositories\RepositorioAsiento.cs" />
     <Compile Include="Repositories\RepositorioPelicula.cs" />
@@ -132,6 +135,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="NewAccountWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="RentdataWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
