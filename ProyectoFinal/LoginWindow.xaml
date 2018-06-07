@@ -35,7 +35,7 @@
         <TextBlock x:Name="button_NewAccountLogin" Margin="378,339,302.6,55">
             <Hyperlink FontSize="16" FontStyle="Normal" Click="button_NewAccountMain_Click">Crear cuenta</Hyperlink>
         </TextBlock>
-        <Button x:Name="button_Login" Content="Entrar" Click="button_Login_Click" Margin="304,337,420.6,53"/>
+        <Button x:Name="button_Login" Content="Entrar" Click="button_Login_Click" Margin="304,337,420.6,53" Background="White"/>
         <Button x:Name="button_Exit" Margin="726,362,9.6,10" Click="button_Exit_Click" Foreground="Transparent" BorderBrush="Transparent">
             <Button.Background>
                 <ImageBrush ImageSource="Images/Icons/exitHighlight.png"/>

@@ -90,10 +90,11 @@ namespace ProyectoFinal
 
             this.usuario = usuario;
 
-            label_UserEmail.Text = "Usuario: "+ usuario.EmailUsuario;
-            label_UserId.Content = "Id: " + usuario.UsuarioId;
-            rol = usuario.RolUsuario;
             CheckUser();
+
+
+            rol = usuario.RolUsuario;
+            CheckUserType();
 
             CargarReservasPorUser();
 
@@ -685,8 +686,29 @@ namespace ProyectoFinal
 
         #endregion ControlPestañas
 
-        //Method that checks the Type of User
         private void CheckUser()
+        {
+            try
+            {
+                label_UserEmail.Text = "Usuario: " + usuario.EmailUsuario;
+                label_UserId.Content = "Id: " + usuario.UsuarioId;
+                BitmapImage bit = new BitmapImage();
+                bit.BeginInit();
+                bit.UriSource = new Uri(usuario.PerfilUsuario);
+                bit.EndInit();
+                image_UserProfile.Source = bit;
+                image_UserProfile.Width = 115;
+                image_UserProfile.Height = 110;
+            }
+            catch (Exception error)
+            {
+                Console.WriteLine("Error!: " +error.ToString());
+            }
+        }
+
+
+        //Method that checks the Type of User
+        private void CheckUserType()
         {
             if (rol.Equals("SuperAdmin"))
             {

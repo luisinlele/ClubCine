@@ -31,7 +31,7 @@
 
         <Label x:Name="label_PasswordError" Content="¡¡Las contraseñas no coinciden!!" Margin="367,331,406.2,94" Foreground="Black" Background="Red" Visibility="Hidden"/>
 
-        <Image x:Name="image_ProfilePicPreview" Margin="635,84,71.2,103" Source="/Images/Random/defaultProfilePic.png" Stretch="Fill" />
+        <Image x:Name="image_ProfilePicPreview" Margin="638,84,77.2,103" Source="/Images/Random/defaultProfilePic.png" Stretch="Fill" />
 
         <Button x:Name="button_SelectProfilePic" Content=".." Margin="846,358,77.2,70" Click="button_SelectProfilePic_Click"/>
         <Button x:Name="button_SaveNewAccount" Content="Crear Cuenta" Margin="362,411,490.2,10" Click="button_SaveNewAccount_Click" Background="White"/>

@@ -94,6 +94,7 @@ namespace ProyectoFinal
                 usuario.FechaCreacionUsuario = data;
                 usuario.ContraseñaUsuario = textbox_PasswordNewAccount.Password;
                 usuario.RolUsuario = "Normal";
+                usuario.PerfilUsuario = textbox_ProfilePic.Text;
                 uow.RepositorioUsuario.Crear(usuario);
                 MessageBoxResult confirmation = MessageBox.Show("Perfil creado correctamente", "Información", MessageBoxButton.OK, MessageBoxImage.Information);
                 switch (confirmation)

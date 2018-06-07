@@ -20,6 +20,7 @@ namespace ProyectoFinal
     public partial class TrailerWindow : Window
     {
         String trailer, path;
+        bool isDark = false;
 
         public TrailerWindow(String trailerForWindow)
         {
@@ -29,6 +30,7 @@ namespace ProyectoFinal
             CheckFilm(trailer);
             ShowTrailer(path);
             MediaElement_Trailer.Play();
+            rectangle.Opacity = 0;
         }
 
         private void button_PlayTrailer_Click(object sender, RoutedEventArgs e)
@@ -73,6 +75,23 @@ namespace ProyectoFinal
             }
         }
 
+        private void button_LightsOut_Click(object sender, RoutedEventArgs e)
+        {
+            if (!isDark)
+            {
+                rectangle.Opacity = 0.8;
+                isDark = true;
+                button_LightsOut.Content = "Encender Luces";
+            }
+            else
+            {
+                rectangle.Opacity = 0;
+                isDark = false;
+                button_LightsOut.Content = "Apagar Luces";
+            }
+            
+            
+        }
 
         private void ShowTrailer(string ruta)
         {
@@ -80,8 +99,8 @@ namespace ProyectoFinal
             {
                 Uri pathUri = new Uri(ruta, UriKind.Relative);
                 MediaElement_Trailer.Source = pathUri;
-                MediaElement_Trailer.Width = 446;
-                MediaElement_Trailer.Height = 282;
+                MediaElement_Trailer.Width = 623;
+                MediaElement_Trailer.Height = 392;
             }
             catch (Exception e)
             {
