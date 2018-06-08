@@ -14,7 +14,7 @@
         <Label Content="Teléfono de Contacto" Margin="295,80,346.6,306"/>
 
         <Label Content="Tu Alquiler" Margin="557,268,134.6,108"/>
-        <DataGrid Margin="377,298,9.6,25"/>
+        <DataGrid x:Name="datagrid_ToRent" Margin="377,298,9.6,25"/>
 
 
     </Grid>

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ProyectoFinal.Model;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -19,9 +20,15 @@ namespace ProyectoFinal
     /// </summary>
     public partial class RentdataWindow : Window
     {
-        public RentdataWindow()
+        Usuario usuario;
+        List<Pelicula> pelicula;
+
+        public RentdataWindow(Usuario usuario, List<Pelicula> aReservar)
         {
             InitializeComponent();
+            this.usuario = usuario;
+            this.pelicula = aReservar;
+            datagrid_ToRent.ItemsSource = aReservar;
         }
     }
 }

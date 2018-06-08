@@ -40,6 +40,9 @@ namespace ProyectoFinal
         //Login Window
         LoginWindow loginWindow;
 
+        //RentData Window
+        RentdataWindow rentWindow;
+
         //Explorer
         OpenFileDialog explorador = new OpenFileDialog();
 
@@ -458,12 +461,18 @@ namespace ProyectoFinal
             {
                 Button boton = (Button)aux;
                 String[] btname = boton.Name.Split('_');
-                int cx = Convert.ToInt32(btname[1].Trim());
+                int idPeli = Convert.ToInt32(btname[1].Trim());
+                List<Pelicula> aReservar = new List<Pelicula>();
+
+                aReservar = uow.RepositorioPelicula.ObtenerVarios(c => c.PeliculaId.Equals(idPeli));
+
 
                 MessageBoxResult confirmation = MessageBox.Show("¿Quieres alquilar esta película? ", "Confirmación", MessageBoxButton.YesNo, MessageBoxImage.Question);
                 switch (confirmation)
                 {
                     case MessageBoxResult.Yes:
+                        rentWindow = new RentdataWindow(usuario, aReservar);
+                        rentWindow.ShowDialog();
                         break;
                 }
 
