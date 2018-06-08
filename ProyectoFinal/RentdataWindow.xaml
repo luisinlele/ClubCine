@@ -6,15 +6,22 @@
         xmlns:local="clr-namespace:ProyectoFinal"
         mc:Ignorable="d"
         Title="RentdataWindow" Height="450" Width="800">
-    <Grid>
+    <Grid Name="GridFilms">
         <Label Content="Nombre" Margin="78,49,638.6,335"/>
         <Label Content="Apellidos" Margin="78,109,631.6,277"/>
         <Label Content="Dirección" Margin="80,170,568.6,216"/>
         <Label Content="Código Postal" Margin="80,228,603.6,158"/>
         <Label Content="Teléfono de Contacto" Margin="295,80,346.6,306"/>
 
-        <Label Content="Tu Alquiler" Margin="557,268,134.6,108"/>
-        <DataGrid x:Name="datagrid_ToRent" Margin="377,298,9.6,25"/>
+        <Label Content="Tu Alquiler" Margin="484,274,207.6,102"/>
+        <DataGrid x:Name="datagrid_ToRent" Margin="443,300,169.6,23" DataContext="{Binding Source=aReservar}" AutoGenerateColumns="False">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Nombre" Binding="{Binding NombrePelicula}"/>
+                <DataGridTextColumn Header="Género" Binding="{Binding GeneroPelicula}"/>
+                <DataGridTextColumn Header="Año" Binding="{Binding AñoPelicula}"/>
+                <DataGridTextColumn Header="Precio" Binding="{Binding PrecioPelicula}"/>
+            </DataGrid.Columns>
+        </DataGrid>
 
 
     </Grid>
