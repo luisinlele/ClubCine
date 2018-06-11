@@ -9,14 +9,14 @@
     <Window.Background>
         <ImageBrush ImageSource="Images/Random/blackgradient.png" Stretch="None"/>
     </Window.Background>
-    <Grid>
+    <Grid Name="UserUpdate">
         <Label Content="Nombre" FontSize="16" Foreground="#D9D9D9" FontFamily="Rockwell" Margin="38,44,357.6,453.8"/>
         <Label Content="Apellidos" FontSize="16" Foreground="#D9D9D9" FontFamily="Rockwell" Margin="27,92,379.6,402.8"/>
         <Label Content="Teléfono" FontSize="16" Foreground="#D9D9D9" FontFamily="Rockwell" Margin="292,44,100.6,453.8"/>
         <Label Content="Contraseña" FontSize="16" Foreground="#D9D9D9" FontFamily="Rockwell" Margin="14,190,366.6,296.8"/>
         <Label Content="Repite Contraseña" FontSize="12" Foreground="#D9D9D9" FontFamily="Rockwell" Margin="0,241,338.6,248.8"/>
         <Label Content="Correo" FontSize="16" Foreground="#D9D9D9" FontFamily="Rockwell" Margin="45,139,379.6,350.8" RenderTransformOrigin="1.553,1.514"/>
-        <Label Content="Imagen Perfil" Margin="38,476,334.6,12.8" FontFamily="Rockwell" Foreground="#D9D9D9"/>
+        <Label Content="Imagen Perfil" Margin="38,474,334.6,14.8" FontFamily="Rockwell" Foreground="#D9D9D9"/>
 
         <TextBox x:Name="textbox_NameUpdate" FontSize="16" Margin="113,45,233.6,453.8" Text="{Binding Path=NombreUsuario, Mode=TwoWay}"/>
         <TextBox x:Name="textbox_SurnameUpdate" FontSize="16" Margin="113,92,84.6,406.8" Text="{Binding Path=ApellidosUsuario, Mode=TwoWay}"/>
@@ -26,16 +26,17 @@
         <PasswordBox x:Name="textbox_PasswordcheckUpdate" FontSize="16" Margin="113,241,145.6,257.8"/>
         <TextBox x:Name="textbox_ProfilePic" Margin="124,470,179.6,28.8"/>
 
-        <Button x:Name="button_SelectProfilePic" Content=".." Margin="335,470,140.6,28.8"/>
+        <Button x:Name="button_SelectProfilePic" Content=".." Margin="335,470,140.6,28.8" Click="button_SelectProfilePic_Click"/>
 
-        <Image x:Name="image_ProfilePicPreview" Margin="159,289,197.6,73.8" Source="/Images/Random/defaultProfilePic.png" Stretch="Fill" />
+        <Image x:Name="image_ProfilePicPreview" Margin="159,284,179.6,67.8" Source="/Images/Random/defaultProfilePic.png"/>
 
-        <Button Margin="370,354,31.6,136.8" Content="Guardar Cambios"/>
-        <Button x:Name="button_Exit" Margin="451,476,3.6,9.8" Foreground="Transparent" BorderBrush="Transparent">
+        <Button Margin="370,354,31.6,136.8" Content="Guardar Cambios" Click="Button_Click"/>
+        <Button x:Name="button_Exit" Margin="451,476,3.6,9.8" Foreground="Transparent" BorderBrush="Transparent" Click="button_Exit_Click">
             <Button.Background>
                 <ImageBrush ImageSource="Images/Icons/exitHighlight.png"/>
             </Button.Background>
         </Button>
 
+        <Label x:Name="label_PasswordError" Content="¡¡Las contraseñas no coinciden!!" Margin="365,223,9.6,278.8" Foreground="Black" Background="Red" FontSize="8"/>
     </Grid>
 </Window>

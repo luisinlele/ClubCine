@@ -52,9 +52,12 @@ namespace ProyectoFinal
                 case MessageBoxResult.Yes:
 
                     DateTime data = new DateTime();
+                    DateTime minData = new DateTime();
                     data = DateTime.Today;
+                    minData = DateTime.MinValue;
                     alquiler.FechaAlquiler = data;
                     alquiler.FechaMaxAlquiler = data.AddDays(7);
+                    alquiler.FechaDevolucionAlquiler = minData;
                     alquiler.PrecioAlquiler = Convert.ToInt32(pelicula.PrecioPelicula);
                     alquiler.UsuarioIdReserva = Convert.ToInt32(usuario.UsuarioId);
                     uow.RepositorioAlquiler.Crear(alquiler);

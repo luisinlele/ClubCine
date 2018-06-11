@@ -409,30 +409,33 @@ namespace ProyectoFinal
             listapelis = uow.RepositorioPelicula.ObtenerTodo().ToList();
             for (int i = 0; i < listapelis.Count; i++)
             {
-                WrapPanel stack = new WrapPanel();
-                stack.Orientation = Orientation.Horizontal;
-                stack.Width = 255;
-                stack.Height = 389;
-                stack.Margin = new Thickness(30);
+                if (listapelis[i].HabilitadoPelicula == true)
+                {
+                    WrapPanel stack = new WrapPanel();
+                    stack.Orientation = Orientation.Horizontal;
+                    stack.Width = 255;
+                    stack.Height = 389;
+                    stack.Margin = new Thickness(30);
 
-                TextBlock label = new TextBlock();
-                label.Text = listapelis[i].NombrePelicula + " - " +listapelis[i].AñoPelicula;
-                label.TextAlignment = TextAlignment.Center;
-                label.Width = 255;
-                label.Height = 40;
-                label.FontSize = 20;
+                    TextBlock label = new TextBlock();
+                    label.Text = listapelis[i].NombrePelicula + " - " + listapelis[i].AñoPelicula;
+                    label.TextAlignment = TextAlignment.Center;
+                    label.Width = 255;
+                    label.Height = 40;
+                    label.FontSize = 20;
 
-                Button boton = new Button();
-                boton.Width = 255;
-                boton.Height = 349;
-                //boton.Margin = new Thickness(1);
-                boton.Content = EnseñarCartel(listapelis[i].CartelPelicula);
-                boton.Name = "buttonTPV_" + listapelis[i].PeliculaId;
-                boton.Click += peli_click;
+                    Button boton = new Button();
+                    boton.Width = 255;
+                    boton.Height = 349;
+                    //boton.Margin = new Thickness(1);
+                    boton.Content = EnseñarCartel(listapelis[i].CartelPelicula);
+                    boton.Name = "buttonTPV_" + listapelis[i].PeliculaId;
+                    boton.Click += peli_click;
 
-                stack.Children.Add(boton);
-                stack.Children.Add(label);
-                AlquileresPeliculas.Children.Add(stack);
+                    stack.Children.Add(boton);
+                    stack.Children.Add(label);
+                    AlquileresPeliculas.Children.Add(stack);
+                }
             }
         }
 
@@ -579,7 +582,7 @@ namespace ProyectoFinal
 
         private void button_UpdateUser_Click(object sender, RoutedEventArgs e)
         {
-            updateUserWindow = new UserUpdateWindow();
+            updateUserWindow = new UserUpdateWindow(usuario);
             updateUserWindow.ShowDialog();
         }
 
