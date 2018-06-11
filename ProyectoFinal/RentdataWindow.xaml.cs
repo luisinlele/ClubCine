@@ -52,9 +52,8 @@ namespace ProyectoFinal
                 case MessageBoxResult.Yes:
 
                     DateTime data = new DateTime();
-                    DateTime minData = new DateTime();
+                    DateTime minData = Convert.ToDateTime("01/01/1753");
                     data = DateTime.Today;
-                    minData = DateTime.MinValue;
                     alquiler.FechaAlquiler = data;
                     alquiler.FechaMaxAlquiler = data.AddDays(7);
                     alquiler.FechaDevolucionAlquiler = minData;
@@ -63,6 +62,7 @@ namespace ProyectoFinal
                     uow.RepositorioAlquiler.Crear(alquiler);
                     MessageBoxResult rent = MessageBox.Show("Alquiler hecho correctamente", "Información", MessageBoxButton.OK, MessageBoxImage.Information);
                     break;
+
 
             }
         }
