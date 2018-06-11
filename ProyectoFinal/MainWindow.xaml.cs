@@ -43,6 +43,9 @@ namespace ProyectoFinal
         //RentData Window
         RentdataWindow rentWindow;
 
+        //UpdateUser Window
+        UserUpdateWindow updateUserWindow;
+
         //Explorer
         OpenFileDialog explorador = new OpenFileDialog();
 
@@ -576,7 +579,8 @@ namespace ProyectoFinal
 
         private void button_UpdateUser_Click(object sender, RoutedEventArgs e)
         {
-
+            updateUserWindow = new UserUpdateWindow();
+            updateUserWindow.ShowDialog();
         }
 
         #endregion General
