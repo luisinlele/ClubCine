@@ -574,6 +574,11 @@ namespace ProyectoFinal
             loginWindow.Show();
         }
 
+        private void button_UpdateUser_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
         #endregion General
 
 
@@ -657,7 +662,7 @@ namespace ProyectoFinal
         private void LoadComboboxProviderId()
         {
             textbox_ProducerFilm.Items.Clear();
-            List<Proveedor> listaProveedores = uow.RepositorioProveedor.ObtenerTodo().ToList();
+            List<Proveedor> listaProveedores = uow.RepositorioProveedor.ObtenerVarios(c => c.HabilitadoProveedor == true).ToList();
             foreach (var item in listaProveedores)
             {
                 textbox_ProducerFilm.Items.Add(item.ProveedorId);
@@ -717,7 +722,6 @@ namespace ProyectoFinal
             try
             {
                 label_UserEmail.Text = "Usuario: " + usuario.EmailUsuario;
-                label_UserId.Content = "Id: " + usuario.UsuarioId;
                 BitmapImage bit = new BitmapImage();
                 bit.BeginInit();
                 bit.UriSource = new Uri(usuario.PerfilUsuario);
@@ -786,11 +790,11 @@ namespace ProyectoFinal
         //Deletes or 'bans' an user
         private void button_DeleteUser_Click(object sender, RoutedEventArgs e)
         {
-            MessageBoxResult confirmation = MessageBox.Show("Vas a eliminar a un usuario, ¿estás seguro? Nota: esta acción no se puede revertir.", "ALERTA", MessageBoxButton.YesNo, MessageBoxImage.Exclamation);
+            MessageBoxResult confirmation = MessageBox.Show("Vas a deshabilitar a un usuario, ¿estás seguro?", "ALERTA", MessageBoxButton.YesNo, MessageBoxImage.Exclamation);
             switch (confirmation)
             {
                 case MessageBoxResult.Yes:
-                    usuario.HabilitadoUsuario = true;
+                    usuario.HabilitadoUsuario = false;
                     uow.RepositorioUsuario.Crear(usuario);
                     datagrid_Users.ItemsSource = uow.RepositorioUsuario.ObtenerTodo().ToList();
                     break;
@@ -818,6 +822,7 @@ namespace ProyectoFinal
             datagrid_Users.ItemsSource = uow.RepositorioUsuario.ObtenerTodo().ToList();
         }
 
+
         #endregion SuperUser
 
 
@@ -828,6 +833,6 @@ namespace ProyectoFinal
 
         #endregion testss
 
-
+        
     }
 }

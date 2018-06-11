@@ -44,10 +44,18 @@ namespace ProyectoFinal
 
                 if (user.ContraseñaUsuario.Equals(textbox_PassLogin.Password))
                 {
-                    System.Windows.MessageBox.Show("Bienvenido :)", "Saludos", MessageBoxButton.OK, MessageBoxImage.Information);
-                    MainWindow main = new MainWindow(user);
-                    main.Show();
-                    this.Close();
+                    if(user.HabilitadoUsuario == true)
+                    {
+                        System.Windows.MessageBox.Show("Bienvenido :)", "Saludos", MessageBoxButton.OK, MessageBoxImage.Information);
+                        MainWindow main = new MainWindow(user);
+                        main.Show();
+                        this.Close();
+                    }
+                    else
+                    {
+                        System.Windows.MessageBox.Show("Error! Tu cuenta está deshabilitada", "Error", MessageBoxButton.OK, MessageBoxImage.Hand);
+                    }
+                    
                 }
                 else
                 {
