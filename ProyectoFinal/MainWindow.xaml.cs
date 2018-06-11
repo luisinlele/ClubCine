@@ -462,10 +462,8 @@ namespace ProyectoFinal
                 Button boton = (Button)aux;
                 String[] btname = boton.Name.Split('_');
                 int idPeli = Convert.ToInt32(btname[1].Trim());
-                List<Pelicula> aReservar = new List<Pelicula>();
 
-                aReservar = uow.RepositorioPelicula.ObtenerVarios(c => c.PeliculaId.Equals(idPeli));
-
+                Pelicula aReservar = uow.RepositorioPelicula.ObtenerUno(c => c.PeliculaId.Equals(idPeli));
 
                 MessageBoxResult confirmation = MessageBox.Show("¿Quieres alquilar esta película? ", "Confirmación", MessageBoxButton.YesNo, MessageBoxImage.Question);
                 switch (confirmation)

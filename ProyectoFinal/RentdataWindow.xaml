@@ -6,15 +6,25 @@
         xmlns:local="clr-namespace:ProyectoFinal"
         mc:Ignorable="d"
         Title="RentdataWindow" Height="450" Width="800">
+    <Window.Background>
+        <ImageBrush ImageSource="Images/Random/blackgradient.png" TileMode="FlipX" Stretch="UniformToFill"/>
+    </Window.Background>
     <Grid Name="GridFilms">
-        <Label Content="Nombre" Margin="78,49,638.6,335"/>
-        <Label Content="Apellidos" Margin="78,109,631.6,277"/>
-        <Label Content="Dirección" Margin="80,170,568.6,216"/>
-        <Label Content="Código Postal" Margin="80,228,603.6,158"/>
-        <Label Content="Teléfono de Contacto" Margin="295,80,346.6,306"/>
+        <Label Content="Nombre" Margin="76,47,640.6,337" Foreground="LightGray" FontSize="15"/>
+        <Label Content="Apellidos" Margin="336,47,369.6,328" Foreground="LightGray" FontSize="15"/>
+        <Label Content="Dirección" Margin="70,150,640.6,236" Foreground="LightGray" FontSize="15"/>
+        <Label Content="Código Postal" Margin="40,201,640.6,168" Foreground="LightGray" FontSize="15"/>
+        <Label Content="Teléfono" Margin="76,101,632.6,285" Foreground="LightGray" FontSize="15"/>
 
-        <Label Content="Tu Alquiler" Margin="484,274,207.6,102"/>
-        <DataGrid x:Name="datagrid_ToRent" Margin="443,300,169.6,23" DataContext="{Binding Source=aReservar}" AutoGenerateColumns="False">
+        <Label Content="Tu Alquiler" Margin="88,268,603.6,108" Foreground="Green"/>
+
+        <TextBox x:Name="textbox_NameUser" Margin="146,49,462.6,337" FontSize="18"/>
+        <TextBox x:Name="textbox_SurnameUser" Margin="409,49,79.6,337" FontSize="18"/>
+        <TextBox x:Name="textbox_PhoneUser" Margin="146,101,405.6,285" FontSize="18"/>
+        <TextBox x:Name="textbox_AdressUser" Margin="146,153,169.6,233" FontSize="18"/>
+        <TextBox x:Name="textbox_ZipUser" Margin="146,203,497.6,183" FontSize="18"/>
+
+        <DataGrid x:Name="datagrid_ToRent" Margin="20,292,548.6,31" DataContext="{Binding Source=pelicula}" AutoGenerateColumns="False">
             <DataGrid.Columns>
                 <DataGridTextColumn Header="Nombre" Binding="{Binding NombrePelicula}"/>
                 <DataGridTextColumn Header="Género" Binding="{Binding GeneroPelicula}"/>
@@ -22,7 +32,9 @@
                 <DataGridTextColumn Header="Precio" Binding="{Binding PrecioPelicula}"/>
             </DataGrid.Columns>
         </DataGrid>
+        <Image x:Name="image_FilmPoster" Source="Images/Icons/broken.jpg" Margin="251,276,427.6,10"/>
 
-
+        <Button x:Name="button_Rent" Content="Alquilar" Margin="476,334,207.6,47" Click="button_Rent_Click" Background="White" BorderBrush="White" />
+        <Button x:Name="button_Cancel" Content="Cancelar" Margin="628,334,54.6,47" Click="button_Cancel_Click" Background="White" BorderBrush="White" />
     </Grid>
 </Window>
