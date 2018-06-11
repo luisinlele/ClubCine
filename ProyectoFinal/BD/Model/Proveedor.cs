@@ -22,6 +22,7 @@ namespace ProyectoFinal.Model
         public string TelefonoProveedor { get; set; }
         public string DireccionProveedor { get; set; }
         public string PaisProveedor { get; set; }
+        public bool HabilitadoProveedor { get; set; }
 
         public virtual ICollection<Pelicula> Peliculas { get; set; }
     }

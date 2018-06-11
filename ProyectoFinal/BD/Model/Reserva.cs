@@ -21,6 +21,7 @@ namespace ProyectoFinal.Model
         public String FechaReserva { get; set; }
         public String HoraReserva { get; set; }
         public int PeliculaPrecioReserva { get; set; }
+        public bool HabilitadoReserva { get; set; }
 
         public int SalaIdReserva { get; set; }
         public virtual Sala Salas { get; set; }

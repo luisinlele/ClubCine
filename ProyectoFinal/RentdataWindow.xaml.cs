@@ -50,15 +50,15 @@ namespace ProyectoFinal
             switch (confirmation)
             {
                 case MessageBoxResult.Yes:
+
                     DateTime data = new DateTime();
                     data = DateTime.Today;
                     alquiler.FechaAlquiler = data;
                     alquiler.FechaMaxAlquiler = data.AddDays(7);
-                    //alquiler.PrecioAlquiler = Convert.ToInt32(pelicula.PrecioPelicula);
-                    //alquiler.UsuarioIdReserva = Convert.ToInt32(usuario.UsuarioId);
+                    alquiler.PrecioAlquiler = Convert.ToInt32(pelicula.PrecioPelicula);
+                    alquiler.UsuarioIdReserva = Convert.ToInt32(usuario.UsuarioId);
                     uow.RepositorioAlquiler.Crear(alquiler);
                     MessageBoxResult rent = MessageBox.Show("Alquiler hecho correctamente", "Información", MessageBoxButton.OK, MessageBoxImage.Information);
-                    //UPDATE
                     break;
 
             }

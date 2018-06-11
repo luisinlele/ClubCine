@@ -28,6 +28,8 @@ namespace ProyectoFinal.Model
 
         public int PrecioAlquiler { get; set; }
 
+        public bool HabilitadoAlquiler { get; set; }
+
         public int UsuarioIdReserva { get; set; }
         public virtual Usuario Usuarios { get; set; }
 

@@ -83,12 +83,12 @@ namespace ProyectoFinal
             UnloadAll();
 
             GridFilms.DataContext = pelicula;
-            datagrid_Film.ItemsSource = uow.RepositorioPelicula.ObtenerTodo().ToList();
+            datagrid_Film.ItemsSource = uow.RepositorioPelicula.ObtenerVarios(c => c.HabilitadoPelicula == true);
             LoadComboboxProviderId();
             CleanTextboxPelicula();
 
             GridProvider.DataContext = proveedor;
-            datagrid_Provider.ItemsSource = uow.RepositorioProveedor.ObtenerTodo().ToList();
+            datagrid_Provider.ItemsSource = uow.RepositorioProveedor.ObtenerVarios(c => c.HabilitadoProveedor == true);
             CleanTextboxProveedor();
 
             this.usuario = usuario;
@@ -298,9 +298,10 @@ namespace ProyectoFinal
             {
                 pelicula.CartelPelicula = textbox_PosterFilm.Text;
                 pelicula.TrailerPelicula = textbox_TrailerFilm.Text;
+                pelicula.HabilitadoPelicula = true;
                 uow.RepositorioPelicula.Crear(pelicula);
                 MessageBoxResult confirmation = MessageBox.Show("Película añadida Correctamente", "Información", MessageBoxButton.OK, MessageBoxImage.Information);
-                datagrid_Film.ItemsSource = uow.RepositorioPelicula.ObtenerTodo().ToList();
+                datagrid_Film.ItemsSource = uow.RepositorioPelicula.ObtenerVarios(c => c.HabilitadoPelicula == true);
                 CleanTextboxPelicula();
                 TrailerPreviewLoaded = false;
                 GenerarBotonesPeliculas();
@@ -311,7 +312,7 @@ namespace ProyectoFinal
         private void button_ModifyFilm_Click(object sender, RoutedEventArgs e)
         {
             uow.RepositorioPelicula.Actualizar(pelicula);
-            datagrid_Film.ItemsSource = uow.RepositorioPelicula.ObtenerTodo().ToList();
+            datagrid_Film.ItemsSource = uow.RepositorioPelicula.ObtenerVarios(c => c.HabilitadoPelicula == true);
             CleanTextboxPelicula();
             TrailerPreviewLoaded = false;
             MessageBoxResult confirmation = MessageBox.Show("Película modificada Correctamente", "Información", MessageBoxButton.OK, MessageBoxImage.Information);
@@ -321,12 +322,13 @@ namespace ProyectoFinal
         //Delete Button of Pelicula
         private void button_DeleteFilm_Click(object sender, RoutedEventArgs e)
         {
-            MessageBoxResult confirmation = MessageBox.Show("Vas a eliminar una película, ¿estás seguro? Nota: esta acción no se puede revertir.", "ALERTA", MessageBoxButton.YesNo, MessageBoxImage.Exclamation);
+            MessageBoxResult confirmation = MessageBox.Show("Vas a eliminar una película, ¿estás seguro?", "ALERTA", MessageBoxButton.YesNo, MessageBoxImage.Exclamation);
             switch (confirmation)
             {
                 case MessageBoxResult.Yes:
-                    uow.RepositorioPelicula.Eliminar(pelicula);
-                    datagrid_Film.ItemsSource = uow.RepositorioPelicula.ObtenerTodo().ToList();
+                    pelicula.HabilitadoPelicula = false;
+                    uow.RepositorioPelicula.Actualizar(pelicula);
+                    datagrid_Film.ItemsSource = uow.RepositorioPelicula.ObtenerVarios(c => c.HabilitadoPelicula == true);
                     CleanPelicula();
                     TrailerPreviewLoaded = false;
                     GenerarBotonesPeliculas();
@@ -513,9 +515,10 @@ namespace ProyectoFinal
         //Save Button of Proveedor
         private void button_SaveProvider_Click(object sender, RoutedEventArgs e)
         {
+            proveedor.HabilitadoProveedor = true;
             uow.RepositorioProveedor.Crear(proveedor);
             MessageBoxResult confirmation = MessageBox.Show("Proveedor añadido Correctamente", "Información", MessageBoxButton.OK, MessageBoxImage.Information);
-            datagrid_Provider.ItemsSource = uow.RepositorioProveedor.ObtenerTodo().ToList();
+            datagrid_Provider.ItemsSource = uow.RepositorioProveedor.ObtenerVarios(c => c.HabilitadoProveedor == true);
             LoadComboboxProviderId();
             CleanTextboxProveedor();
         }
@@ -524,7 +527,7 @@ namespace ProyectoFinal
         private void button_ModifyProvider_Click(object sender, RoutedEventArgs e)
         {
             uow.RepositorioProveedor.Actualizar(proveedor);
-            datagrid_Provider.ItemsSource = uow.RepositorioProveedor.ObtenerTodo().ToList();
+            datagrid_Provider.ItemsSource = uow.RepositorioProveedor.ObtenerVarios(c => c.HabilitadoProveedor == true);
             MessageBoxResult confirmation = MessageBox.Show("Proveedor modificado Correctamente", "Información", MessageBoxButton.OK, MessageBoxImage.Information);
             CleanTextboxProveedor();
         }
@@ -532,12 +535,13 @@ namespace ProyectoFinal
         //Delete Button of Proveedor
         private void button_DeleteProvider_Click(object sender, RoutedEventArgs e)
         {
-            MessageBoxResult confirmation = MessageBox.Show("Vas a eliminar un proveedor, ¿estás seguro? Nota: esta acción no se puede revertir.", "ALERTA", MessageBoxButton.YesNo, MessageBoxImage.Exclamation);
+            MessageBoxResult confirmation = MessageBox.Show("Vas a eliminar un proveedor, ¿estás seguro?", "ALERTA", MessageBoxButton.YesNo, MessageBoxImage.Exclamation);
             switch (confirmation)
             {
                 case MessageBoxResult.Yes:
-                    uow.RepositorioProveedor.Eliminar(proveedor);
-                    datagrid_Provider.ItemsSource = uow.RepositorioProveedor.ObtenerTodo().ToList();
+                    proveedor.HabilitadoProveedor = false;
+                    uow.RepositorioProveedor.Actualizar(proveedor);
+                    datagrid_Provider.ItemsSource = uow.RepositorioProveedor.ObtenerVarios(c => c.HabilitadoProveedor == true);
                     CleanProveedor();
                     break;
             }
@@ -786,7 +790,8 @@ namespace ProyectoFinal
             switch (confirmation)
             {
                 case MessageBoxResult.Yes:
-                    uow.RepositorioUsuario.Eliminar(userActualizar);
+                    usuario.HabilitadoUsuario = true;
+                    uow.RepositorioUsuario.Crear(usuario);
                     datagrid_Users.ItemsSource = uow.RepositorioUsuario.ObtenerTodo().ToList();
                     break;
             }

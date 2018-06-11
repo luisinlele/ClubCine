@@ -29,6 +29,7 @@ namespace ProyectoFinal.Model
         public string RolUsuario { get; set; } //Normal o admin
         public DateTime FechaCreacionUsuario { get; set; }
         public string PerfilUsuario { get; set; }
+        public bool HabilitadoUsuario { get; set; }
 
         public virtual ICollection<Alquiler> Alquileres { get; set; }
         public virtual ICollection<Reserva> Reservas { get; set; }

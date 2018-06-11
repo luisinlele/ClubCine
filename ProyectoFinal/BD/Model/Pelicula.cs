@@ -31,6 +31,8 @@ namespace ProyectoFinal.Model
 
         public string TrailerPelicula { get; set; }
 
+        public bool HabilitadoPelicula { get; set; }
+
         public int ProveedorIdPelicula { get; set; }
         public virtual Proveedor Proveedores { get; set; }
 
