@@ -5,17 +5,9 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ProyectoFinal.Salas"
         mc:Ignorable="d"
-        Title="Auditorium6Window" Height="450" Width="571.707" Background="#FF2B2727">
+        Title="Auditorium6Window" Height="507.6" Width="714.507" Background="#FF2B2727">
     <Grid Name="Auditorium6Grid">
         <Grid.ColumnDefinitions>
-            <ColumnDefinition/>
-            <ColumnDefinition/>
-            <ColumnDefinition/>
-            <ColumnDefinition/>
-            <ColumnDefinition/>
-            <ColumnDefinition/>
-            <ColumnDefinition/>
-            <ColumnDefinition/>
             <ColumnDefinition/>
             <ColumnDefinition/>
             <ColumnDefinition/>
@@ -38,27 +30,237 @@
             <RowDefinition/>
             <RowDefinition/>
             <RowDefinition/>
-            <RowDefinition/>
-            <RowDefinition/>
-            <RowDefinition/>
-            <RowDefinition/>
-            <RowDefinition/>
-            <RowDefinition/>
         </Grid.RowDefinitions>
 
-        <Button x:Name="button_ReservationAuditorium6" Content="Hacer Reserva" Grid.Column="13" Grid.Row="1" Margin="0,0,10.4,12" Grid.RowSpan="2" Grid.ColumnSpan="4" Click="button_ReservationAuditorium6_Click"/>
+        <Label Content="                                                                          P       A       N       T       A       L       L       A" Background="Black" Foreground="Red" FontWeight="Bold" Grid.ColumnSpan="12" Margin="-17,0,-75,25"/>
+        <Label Content="ENTRADA" Background="Black" Foreground="BLUE" RenderTransformOrigin="0.5,0.5" Grid.Row="3" Margin="-23,25.8,24,59.2" Grid.RowSpan="2">
+            <Label.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="89.641"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Label.RenderTransform>
+        </Label>
+        <Button x:Name="button_ReservationAuditorium6" Content="Hacer Reserva" Grid.Column="8" Margin="38.6,40,36,20" Grid.ColumnSpan="3" Click="button_ReservationAuditorium6_Click" Grid.RowSpan="2"/>
 
-        <Button x:Name="silla1" Click="MarkChair" Grid.Column="2" Grid.Row="2" BorderBrush="#00707070">
+        <Button x:Name="silla1" Click="MarkChair" Grid.Column="3" Grid.Row="2" BorderBrush="#00707070">
             <Button.Background>
                 <ImageBrush ImageSource="/Images/Icons/seatG.png"/>
             </Button.Background>
         </Button>
-        <Button x:Name="silla2" Click="MarkChair" Grid.Column="3" Grid.Row="2" BorderBrush="#00707070">
+        <Button x:Name="silla2" Click="MarkChair" Grid.Column="4" Grid.Row="2" BorderBrush="#00707070">
             <Button.Background>
                 <ImageBrush ImageSource="/Images/Icons/seatG.png"/>
             </Button.Background>
         </Button>
-        <Button x:Name="silla3" Click="MarkChair" Grid.Column="4" Grid.Row="2" BorderBrush="#00707070">
+        <Button x:Name="silla3" Click="MarkChair" Grid.Column="6" Grid.Row="2" BorderBrush="#00707070">
+            <Button.Background>
+                <ImageBrush ImageSource="/Images/Icons/seatG.png"/>
+            </Button.Background>
+        </Button>
+        <Button x:Name="silla4" Click="MarkChair" Grid.Column="7" Grid.Row="2" BorderBrush="#00707070">
+            <Button.Background>
+                <ImageBrush ImageSource="/Images/Icons/seatG.png"/>
+            </Button.Background>
+        </Button>
+        
+        <Button x:Name="silla5" Click="MarkChair" Grid.Column="2" Grid.Row="3" BorderBrush="#00707070">
+            <Button.Background>
+                <ImageBrush ImageSource="/Images/Icons/seatG.png"/>
+            </Button.Background>
+        </Button>
+        <Button x:Name="silla6" Click="MarkChair" Grid.Column="3" Grid.Row="3" BorderBrush="#00707070">
+            <Button.Background>
+                <ImageBrush ImageSource="/Images/Icons/seatG.png"/>
+            </Button.Background>
+        </Button>
+        <Button x:Name="silla7" Click="MarkChair" Grid.Column="4" Grid.Row="3" BorderBrush="#00707070">
+            <Button.Background>
+                <ImageBrush ImageSource="/Images/Icons/seatG.png"/>
+            </Button.Background>
+        </Button>
+        <Button x:Name="silla8" Click="MarkChair" Grid.Column="6" Grid.Row="3" BorderBrush="#00707070">
+            <Button.Background>
+                <ImageBrush ImageSource="/Images/Icons/seatG.png"/>
+            </Button.Background>
+        </Button>
+        <Button x:Name="silla9" Click="MarkChair" Grid.Column="7" Grid.Row="3" BorderBrush="#00707070">
+            <Button.Background>
+                <ImageBrush ImageSource="/Images/Icons/seatG.png"/>
+            </Button.Background>
+        </Button>
+        <Button x:Name="silla10" Click="MarkChair" Grid.Column="8" Grid.Row="3" BorderBrush="#00707070">
+            <Button.Background>
+                <ImageBrush ImageSource="/Images/Icons/seatG.png"/>
+            </Button.Background>
+        </Button>
+
+        <Button x:Name="silla11" Click="MarkChair" Grid.Column="1" Grid.Row="4" BorderBrush="#00707070">
+            <Button.Background>
+                <ImageBrush ImageSource="/Images/Icons/seatG.png"/>
+            </Button.Background>
+        </Button>
+        <Button x:Name="silla12" Click="MarkChair" Grid.Column="2" Grid.Row="4" BorderBrush="#00707070">
+            <Button.Background>
+                <ImageBrush ImageSource="/Images/Icons/seatG.png"/>
+            </Button.Background>
+        </Button>
+        <Button x:Name="silla13" Click="MarkChair" Grid.Column="3" Grid.Row="4" BorderBrush="#00707070">
+            <Button.Background>
+                <ImageBrush ImageSource="/Images/Icons/seatG.png"/>
+            </Button.Background>
+        </Button>
+        <Button x:Name="silla14" Click="MarkChair" Grid.Column="4" Grid.Row="4" BorderBrush="#00707070">
+            <Button.Background>
+                <ImageBrush ImageSource="/Images/Icons/seatG.png"/>
+            </Button.Background>
+        </Button>
+        <Button x:Name="silla15" Click="MarkChair" Grid.Column="6" Grid.Row="4" BorderBrush="#00707070">
+            <Button.Background>
+                <ImageBrush ImageSource="/Images/Icons/seatG.png"/>
+            </Button.Background>
+        </Button>
+        <Button x:Name="silla16" Click="MarkChair" Grid.Column="7" Grid.Row="4" BorderBrush="#00707070">
+            <Button.Background>
+                <ImageBrush ImageSource="/Images/Icons/seatG.png"/>
+            </Button.Background>
+        </Button>
+        <Button x:Name="silla17" Click="MarkChair" Grid.Column="8" Grid.Row="4" BorderBrush="#00707070">
+            <Button.Background>
+                <ImageBrush ImageSource="/Images/Icons/seatG.png"/>
+            </Button.Background>
+        </Button>
+        <Button x:Name="silla18" Click="MarkChair" Grid.Column="9" Grid.Row="4" BorderBrush="#00707070">
+            <Button.Background>
+                <ImageBrush ImageSource="/Images/Icons/seatG.png"/>
+            </Button.Background>
+        </Button>
+
+        <Button x:Name="silla19" Click="MarkChair" Grid.Column="1" Grid.Row="5" BorderBrush="#00707070">
+            <Button.Background>
+                <ImageBrush ImageSource="/Images/Icons/seatG.png"/>
+            </Button.Background>
+        </Button>
+        <Button x:Name="silla20" Click="MarkChair" Grid.Column="2" Grid.Row="5" BorderBrush="#00707070">
+            <Button.Background>
+                <ImageBrush ImageSource="/Images/Icons/seatG.png"/>
+            </Button.Background>
+        </Button>
+        <Button x:Name="silla21" Click="MarkChair" Grid.Column="3" Grid.Row="5" BorderBrush="#00707070">
+            <Button.Background>
+                <ImageBrush ImageSource="/Images/Icons/seatG.png"/>
+            </Button.Background>
+        </Button>
+        <Button x:Name="silla22" Click="MarkChair" Grid.Column="4" Grid.Row="5" BorderBrush="#00707070">
+            <Button.Background>
+                <ImageBrush ImageSource="/Images/Icons/seatG.png"/>
+            </Button.Background>
+        </Button>
+        <Button x:Name="silla23" Click="MarkChair" Grid.Column="6" Grid.Row="5" BorderBrush="#00707070">
+            <Button.Background>
+                <ImageBrush ImageSource="/Images/Icons/seatG.png"/>
+            </Button.Background>
+        </Button>
+        <Button x:Name="silla24" Click="MarkChair" Grid.Column="7" Grid.Row="5" BorderBrush="#00707070">
+            <Button.Background>
+                <ImageBrush ImageSource="/Images/Icons/seatG.png"/>
+            </Button.Background>
+        </Button>
+        <Button x:Name="silla25" Click="MarkChair" Grid.Column="8" Grid.Row="5" BorderBrush="#00707070">
+            <Button.Background>
+                <ImageBrush ImageSource="/Images/Icons/seatG.png"/>
+            </Button.Background>
+        </Button>
+        <Button x:Name="silla26" Click="MarkChair" Grid.Column="9" Grid.Row="5" BorderBrush="#00707070">
+            <Button.Background>
+                <ImageBrush ImageSource="/Images/Icons/seatG.png"/>
+            </Button.Background>
+        </Button>
+
+        <Button x:Name="silla27" Click="MarkChair" Grid.Column="1" Grid.Row="6" BorderBrush="#00707070">
+            <Button.Background>
+                <ImageBrush ImageSource="/Images/Icons/seatG.png"/>
+            </Button.Background>
+        </Button>
+        <Button x:Name="silla28" Click="MarkChair" Grid.Column="2" Grid.Row="6" BorderBrush="#00707070">
+            <Button.Background>
+                <ImageBrush ImageSource="/Images/Icons/seatG.png"/>
+            </Button.Background>
+        </Button>
+        <Button x:Name="silla29" Click="MarkChair" Grid.Column="3" Grid.Row="6" BorderBrush="#00707070">
+            <Button.Background>
+                <ImageBrush ImageSource="/Images/Icons/seatG.png"/>
+            </Button.Background>
+        </Button>
+        <Button x:Name="silla30" Click="MarkChair" Grid.Column="4" Grid.Row="6" BorderBrush="#00707070">
+            <Button.Background>
+                <ImageBrush ImageSource="/Images/Icons/seatG.png"/>
+            </Button.Background>
+        </Button>
+        <Button x:Name="silla31" Click="MarkChair" Grid.Column="6" Grid.Row="6" BorderBrush="#00707070">
+            <Button.Background>
+                <ImageBrush ImageSource="/Images/Icons/seatG.png"/>
+            </Button.Background>
+        </Button>
+        <Button x:Name="silla32" Click="MarkChair" Grid.Column="7" Grid.Row="6" BorderBrush="#00707070">
+            <Button.Background>
+                <ImageBrush ImageSource="/Images/Icons/seatG.png"/>
+            </Button.Background>
+        </Button>
+        <Button x:Name="silla33" Click="MarkChair" Grid.Column="8" Grid.Row="6" BorderBrush="#00707070">
+            <Button.Background>
+                <ImageBrush ImageSource="/Images/Icons/seatG.png"/>
+            </Button.Background>
+        </Button>
+        <Button x:Name="silla34" Click="MarkChair" Grid.Column="9" Grid.Row="6" BorderBrush="#00707070">
+            <Button.Background>
+                <ImageBrush ImageSource="/Images/Icons/seatG.png"/>
+            </Button.Background>
+        </Button>
+        
+        <Button x:Name="silla35" Click="MarkChair" Grid.Column="1" Grid.Row="7" BorderBrush="#00707070">
+            <Button.Background>
+                <ImageBrush ImageSource="/Images/Icons/seatG.png"/>
+            </Button.Background>
+        </Button>
+        <Button x:Name="silla36" Click="MarkChair" Grid.Column="2" Grid.Row="7" BorderBrush="#00707070">
+            <Button.Background>
+                <ImageBrush ImageSource="/Images/Icons/seatG.png"/>
+            </Button.Background>
+        </Button>
+        <Button x:Name="silla37" Click="MarkChair" Grid.Column="3" Grid.Row="7" BorderBrush="#00707070">
+            <Button.Background>
+                <ImageBrush ImageSource="/Images/Icons/seatG.png"/>
+            </Button.Background>
+        </Button>
+        <Button x:Name="silla38" Click="MarkChair" Grid.Column="4" Grid.Row="7" BorderBrush="#00707070">
+            <Button.Background>
+                <ImageBrush ImageSource="/Images/Icons/seatG.png"/>
+            </Button.Background>
+        </Button>
+        <Button x:Name="silla39" Click="MarkChair" Grid.Column="5" Grid.Row="7" BorderBrush="#00707070">
+            <Button.Background>
+                <ImageBrush ImageSource="/Images/Icons/seatG.png"/>
+            </Button.Background>
+        </Button>
+        <Button x:Name="silla40" Click="MarkChair" Grid.Column="6" Grid.Row="7" BorderBrush="#00707070">
+            <Button.Background>
+                <ImageBrush ImageSource="/Images/Icons/seatG.png"/>
+            </Button.Background>
+        </Button>
+        <Button x:Name="silla41" Click="MarkChair" Grid.Column="7" Grid.Row="7" BorderBrush="#00707070">
+            <Button.Background>
+                <ImageBrush ImageSource="/Images/Icons/seatG.png"/>
+            </Button.Background>
+        </Button>
+        <Button x:Name="silla42" Click="MarkChair" Grid.Column="8" Grid.Row="7" BorderBrush="#00707070">
+            <Button.Background>
+                <ImageBrush ImageSource="/Images/Icons/seatG.png"/>
+            </Button.Background>
+        </Button>
+        <Button x:Name="silla43" Click="MarkChair" Grid.Column="9" Grid.Row="7" BorderBrush="#00707070">
             <Button.Background>
                 <ImageBrush ImageSource="/Images/Icons/seatG.png"/>
             </Button.Background>
