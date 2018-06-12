@@ -38,10 +38,14 @@ namespace ProyectoFinal.Salas
 
         Usuario usuario;
 
+        Reserva reserva = new Reserva();
+        int contadorAsientos = 0;
+
         public Auditorium5Window(Usuario usuario)
         {
             InitializeComponent();
             this.usuario = usuario;
+            CheckChairs();
         }
 
         private void MarkChair(object sender, RoutedEventArgs e)
@@ -68,7 +72,46 @@ namespace ProyectoFinal.Salas
 
         private void button_ReservationAuditorium5_Click(object sender, RoutedEventArgs e)
         {
+            MessageBoxResult result = MessageBox.Show("¿Seguro que quieres hacer esta reserva?", "Confirmación", MessageBoxButton.YesNo, MessageBoxImage.Question);
+            switch (result)
+            {
+                case MessageBoxResult.Yes:
+                    foreach (UIElement element in Auditorium5Grid.Children)
+                    {
+                        if (element.GetType().ToString().Equals("System.Windows.Controls.Button"))
+                        {
+                            Button button = element as Button;
+                            if (button.Tag != null)
+                            {
+                                contadorAsientos++;
+                                Asiento asiento = uow.RepositorioAsiento.ObtenerUno(c => c.NumeroAsiento.Equals(button.Name) && c.SalaIdAsiento == 5);
+                                asiento.OcupadoAsiento = true;
+                                uow.RepositorioAsiento.Actualizar(asiento);
+                            }
+                        }
+                    }
+                    if (contadorAsientos != 0)
+                    {
+                        Pelicula pelicula = uow.RepositorioPelicula.ObtenerUno(c => c.NombrePelicula.Equals("GoodFellas"));
 
+                        reserva.UsuarioIdReserva = Convert.ToInt32(usuario.UsuarioId);
+                        reserva.PeliculaPrecioReserva = Convert.ToInt32(pelicula.PrecioPelicula) * contadorAsientos;
+                        DateTime data = new DateTime();
+                        data = DateTime.Today;
+                        reserva.FechaReserva = data.ToString("dd/MM/yyyy");
+                        reserva.HoraReserva = "20:30";
+                        reserva.SalaIdReserva = 5;
+                        reserva.HabilitadoReserva = true;
+                        uow.RepositorioReserva.Crear(reserva);
+                        MessageBoxResult confirmation = MessageBox.Show("Reserva hecha Correctamente. Debes " + reserva.PeliculaPrecioReserva+ " euros.", "Información", MessageBoxButton.OK, MessageBoxImage.Information);
+                    }
+                    else
+                    {
+                        MessageBoxResult confirmation = MessageBox.Show("No has seleccionado ningún asiento.", "Información", MessageBoxButton.OK, MessageBoxImage.Information);
+                    }
+                    this.Close();
+                    break;
+            }
         }
 
         private void Create() //Aún no se hizo
@@ -81,9 +124,33 @@ namespace ProyectoFinal.Salas
                     Asiento asiento = new Asiento();
 
                     asiento.NumeroAsiento = button.Name;
-                    asiento.SalaIdAsiento = 1;
+                    asiento.SalaIdAsiento = 5;
                     uow.RepositorioAsiento.Crear(asiento);
 
+                }
+            }
+        }
+
+        public void CheckChairs()
+        {
+            foreach (Asiento asiento in uow.RepositorioAsiento.ObtenerVarios(x => x.SalaIdAsiento == 5))
+            {
+                if (asiento.OcupadoAsiento)
+                {
+                    foreach (UIElement element in Auditorium5Grid.Children)
+                    {
+                        if (element.GetType().ToString().Equals("System.Windows.Controls.Button"))
+                        {
+                            Button button = element as Button;
+                            if (button.Name.Equals(asiento.NumeroAsiento))
+                            {
+                                button.IsEnabled = false;
+                                var brush = new ImageBrush();
+                                brush.ImageSource = red;
+                                button.Background = brush;
+                            }
+                        }
+                    }
                 }
             }
         }
