@@ -88,22 +88,45 @@ namespace ProyectoFinal
         {
             if (textbox_PasswordNewAccount.Password == textbox_PasswordcheckNewAccount.Password)
             {
-                label_PasswordError.Visibility = Visibility.Hidden;
-                DateTime data = new DateTime();
-                data = DateTime.Today;
-                usuario.FechaCreacionUsuario = data;
-                usuario.ContraseñaUsuario = textbox_PasswordNewAccount.Password;
-                usuario.RolUsuario = "Normal";
-                usuario.PerfilUsuario = textbox_ProfilePic.Text;
-                usuario.HabilitadoUsuario = true;
-                uow.RepositorioUsuario.Crear(usuario);
-                MessageBoxResult confirmation = MessageBox.Show("Perfil creado correctamente", "Información", MessageBoxButton.OK, MessageBoxImage.Information);
-                switch (confirmation)
+                List<Usuario> userCheckEmail = new List<Usuario>();
+                List<Usuario> userCheckPhone = new List<Usuario>();
+                userCheckEmail = uow.RepositorioUsuario.ObtenerVarios(c => c.EmailUsuario.Equals(textbox_EmailNewAccount.Text));
+                userCheckPhone = uow.RepositorioUsuario.ObtenerVarios(c => c.TelefonoUsuario.Equals(textbox_PhoneNewAccount.Text));
+                bool isEmpty = !userCheckEmail.Any();
+                bool isEmptyToo = !userCheckPhone.Any();
+                if (isEmpty)
                 {
-                    case MessageBoxResult.OK:
-                        this.Close();
-                        break;
+                    if (isEmptyToo)
+                    {
+                        label_PasswordError.Visibility = Visibility.Hidden;
+                        DateTime data = new DateTime();
+                        data = DateTime.Today;
+                        usuario.FechaCreacionUsuario = data;
+                        usuario.ContraseñaUsuario = textbox_PasswordNewAccount.Password;
+                        usuario.RolUsuario = "Normal";
+                        usuario.PerfilUsuario = textbox_ProfilePic.Text;
+                        usuario.HabilitadoUsuario = true;
+                        uow.RepositorioUsuario.Crear(usuario);
+                        MessageBoxResult confirmation = MessageBox.Show("Perfil creado correctamente", "Información", MessageBoxButton.OK, MessageBoxImage.Information);
+                        switch (confirmation)
+                        {
+                            case MessageBoxResult.OK:
+                                this.Close();
+                                break;
+                        }
+                    }
+                    else
+                    {
+                        MessageBoxResult errorPhone = MessageBox.Show("Ya existe un usuario con ese Teléfono", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                    }
                 }
+                else
+                {
+                    MessageBoxResult errorEmail = MessageBox.Show("Ya existe un usuario con ese correo", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                }
+
+
+                
             }
             else
             {
