@@ -24,19 +24,19 @@
         <TextBox x:Name="textbox_EmailUpdate" FontSize="16" Margin="113,140,84.6,358.8" Text="{Binding Path=EmailUsuario, Mode=TwoWay}"/>
         <PasswordBox x:Name="textbox_PasswordUpdate" FontSize="16" Margin="113,190,145.6,308.8"/>
         <PasswordBox x:Name="textbox_PasswordcheckUpdate" FontSize="16" Margin="113,241,145.6,257.8"/>
-        <TextBox x:Name="textbox_ProfilePic" Margin="124,470,179.6,28.8"/>
+        <TextBox x:Name="textbox_ProfilePic" Margin="124,470,179.6,28.8" FontSize="16" Text="{Binding Path=PerfilUsuario, Mode=TwoWay}"/>
 
         <Button x:Name="button_SelectProfilePic" Content=".." Margin="335,470,140.6,28.8" Click="button_SelectProfilePic_Click"/>
 
         <Image x:Name="image_ProfilePicPreview" Margin="159,284,179.6,67.8" Source="/Images/Random/defaultProfilePic.png"/>
 
-        <Button Margin="370,354,31.6,136.8" Content="Guardar Cambios" Click="Button_Click"/>
+        <Button Margin="370,354,31.6,136.8" Content="Guardar Cambios" Click="Button_Click" RenderTransformOrigin="0.5,0.505"/>
         <Button x:Name="button_Exit" Margin="451,476,3.6,9.8" Foreground="Transparent" BorderBrush="Transparent" Click="button_Exit_Click">
             <Button.Background>
                 <ImageBrush ImageSource="Images/Icons/exitHighlight.png"/>
             </Button.Background>
         </Button>
 
-        <Label x:Name="label_PasswordError" Content="¡¡Las contraseñas no coinciden!!" Margin="365,223,9.6,278.8" Foreground="Black" Background="Red" FontSize="8"/>
+        <Label x:Name="label_PasswordError" Content="¡¡Las contraseñas no coinciden!!" Margin="365,223,9.6,278.8" Foreground="Black" Background="Red" FontSize="8" Visibility="Hidden"/>
     </Grid>
 </Window>

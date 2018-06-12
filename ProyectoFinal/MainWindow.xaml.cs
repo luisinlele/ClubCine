@@ -98,16 +98,18 @@ namespace ProyectoFinal
 
             CheckUser();
 
-
             rol = usuario.RolUsuario;
             CheckUserType();
 
             CargarReservasPorUser();
+            CargarAlquileresPorUser();
 
             GridUsuario.DataContext = user;
             datagrid_Users.ItemsSource = uow.RepositorioUsuario.ObtenerTodo().ToList();
 
             GenerarBotonesPeliculas();
+
+            
         }
 
 
@@ -488,6 +490,26 @@ namespace ProyectoFinal
                 
         }
 
+        //Method that Loads the Rents on the datagrid for the user that is Signed In
+        public void CargarAlquileresPorUser()
+        {
+            List<Alquiler> listaAlquileres = new List<Alquiler>();
+            listaAlquileres = uow.RepositorioAlquiler.ObtenerVarios(c => c.UsuarioIdReserva == usuario.UsuarioId && c.HabilitadoAlquiler == true);
+            datagrid_Alquileres.ItemsSource = listaAlquileres;
+            bool isEmpty = !listaAlquileres.Any();
+
+            if (isEmpty)
+            {
+                label_AlquileresError.Visibility = Visibility.Visible;
+                datagrid_Alquileres.Visibility = Visibility.Hidden;
+            }
+            else
+            {
+                label_AlquileresError.Visibility = Visibility.Hidden;
+                datagrid_Alquileres.Visibility = Visibility.Visible;
+            }
+        }
+
         #endregion Alquileres
 
 
@@ -497,7 +519,7 @@ namespace ProyectoFinal
         public void CargarReservasPorUser()
         {
             List<Reserva> listaReservas = new List<Reserva>();
-            listaReservas = uow.RepositorioReserva.ObtenerVarios(c => c.UsuarioIdReserva == usuario.UsuarioId);
+            listaReservas = uow.RepositorioReserva.ObtenerVarios(c => c.UsuarioIdReserva == usuario.UsuarioId && c.HabilitadoReserva == true);
             datagrid_Book.ItemsSource = listaReservas;
             bool isEmpty = !listaReservas.Any();
 

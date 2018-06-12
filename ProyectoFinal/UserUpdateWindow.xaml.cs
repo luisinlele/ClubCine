@@ -1,4 +1,5 @@
 ﻿using Microsoft.Win32;
+using ProyectoFinal.BD.DAL;
 using ProyectoFinal.Model;
 using System;
 using System.Collections.Generic;
@@ -21,22 +22,26 @@ namespace ProyectoFinal
     /// </summary>
     public partial class UserUpdateWindow : Window
     {
-        Usuario usuario;
+        Usuario user = new Usuario();
+
+        UnitOfWork uow = new UnitOfWork();
 
         //Explorer
         OpenFileDialog explorador = new OpenFileDialog();
 
         public UserUpdateWindow(Usuario usuario)
         {
-            this.usuario = usuario;
+            this.user = usuario;
             InitializeComponent();
-            UserUpdate.DataContext = usuario;
-            CargarImagenPerfil(usuario.PerfilUsuario);
+            UserUpdate.DataContext = user;
+            CargarImagenPerfil(user.PerfilUsuario);
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-
+            uow.RepositorioUsuario.Actualizar(user);
+            MessageBoxResult confirmation = MessageBox.Show("Su perfil se ha modificado Correctamente", "Información", MessageBoxButton.OK, MessageBoxImage.Information);
+            this.Close();
         }
 
         private void CargarImagenPerfil(string path)
@@ -66,7 +71,13 @@ namespace ProyectoFinal
 
         private void button_Exit_Click(object sender, RoutedEventArgs e)
         {
-
+            MessageBoxResult result = MessageBox.Show("¿Seguro que quieres salir?", "Confirmación", MessageBoxButton.YesNo, MessageBoxImage.Question);
+            switch (result)
+            {
+                case MessageBoxResult.Yes:
+                    this.Close();
+                    break;
+            }
         }
     }
 }

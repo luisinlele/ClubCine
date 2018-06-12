@@ -59,8 +59,11 @@ namespace ProyectoFinal
                     alquiler.FechaDevolucionAlquiler = minData;
                     alquiler.PrecioAlquiler = Convert.ToInt32(pelicula.PrecioPelicula);
                     alquiler.UsuarioIdReserva = Convert.ToInt32(usuario.UsuarioId);
+                    alquiler.HabilitadoAlquiler = true;
                     uow.RepositorioAlquiler.Crear(alquiler);
                     MessageBoxResult rent = MessageBox.Show("Alquiler hecho correctamente", "Información", MessageBoxButton.OK, MessageBoxImage.Information);
+                    
+                    this.Close();
                     break;
 
 
@@ -95,6 +98,43 @@ namespace ProyectoFinal
             }
         }
 
+        private void ComboBoxItem_Selected(object sender, RoutedEventArgs e)
+        {
+            groupbox_tarjeta.Visibility = Visibility.Hidden;
+            groupbox_paypal.Visibility = Visibility.Visible;
+        }
 
+        private void ComboBoxItem_Selected_1(object sender, RoutedEventArgs e)
+        {
+            groupbox_paypal.Visibility = Visibility.Hidden;
+            groupbox_tarjeta.Visibility = Visibility.Visible;
+        }
+
+        private void ComboBoxItem_Selected_2(object sender, RoutedEventArgs e)
+        {
+            groupbox_tarjeta.Visibility = Visibility.Hidden;
+            groupbox_paypal.Visibility = Visibility.Hidden;
+        }
+
+        private void button_Visa_Click(object sender, RoutedEventArgs e)
+        {
+            button_AmericanExpress.BorderBrush = Brushes.Transparent;
+            button_MasterCard.BorderBrush = Brushes.Transparent;
+            button_Visa.BorderBrush = Brushes.Red;
+        }
+
+        private void button_MasterCard_Click(object sender, RoutedEventArgs e)
+        {
+            button_AmericanExpress.BorderBrush = Brushes.Transparent;
+            button_MasterCard.BorderBrush = Brushes.Red;
+            button_Visa.BorderBrush = Brushes.Transparent;
+        }
+
+        private void button_AmericanExpress_Click(object sender, RoutedEventArgs e)
+        {
+            button_AmericanExpress.BorderBrush = Brushes.Red;
+            button_MasterCard.BorderBrush = Brushes.Transparent;
+            button_Visa.BorderBrush = Brushes.Transparent;
+        }
     }
 }

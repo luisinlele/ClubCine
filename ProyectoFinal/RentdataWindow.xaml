@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ProyectoFinal"
         mc:Ignorable="d"
-        Title="RentdataWindow" Height="450" Width="800">
+        Title="RentdataWindow" Height="450" Width="800" ResizeMode="NoResize">
     <Window.Background>
         <ImageBrush ImageSource="Images/Random/blackgradient.png" TileMode="FlipX" Stretch="UniformToFill"/>
     </Window.Background>
@@ -15,6 +15,7 @@
         <Label Content="Dirección" Margin="70,150,640.6,236" Foreground="LightGray" FontSize="15"/>
         <Label Content="Código Postal" Margin="40,201,640.6,168" Foreground="LightGray" FontSize="15"/>
         <Label Content="Teléfono" Margin="76,101,632.6,285" Foreground="LightGray" FontSize="15"/>
+        <Label Content="Método de pago" Margin="336,203,321.6,166" Foreground="LightGray" FontSize="15"/>
 
         <Label Content="Tu Alquiler" Margin="88,268,603.6,108" Foreground="Green"/>
 
@@ -23,6 +24,11 @@
         <TextBox x:Name="textbox_PhoneUser" Margin="146,101,405.6,285" FontSize="18"/>
         <TextBox x:Name="textbox_AdressUser" Margin="146,153,169.6,233" FontSize="18"/>
         <TextBox x:Name="textbox_ZipUser" Margin="146,203,497.6,183" FontSize="18"/>
+        <ComboBox x:Name="textbox_Pay" Margin="464,203,157.6,183" FontSize="15">
+            <ComboBoxItem Content="PayPal" Selected="ComboBoxItem_Selected"/>
+            <ComboBoxItem Content="Tarjeta" Selected="ComboBoxItem_Selected_1"/>
+            <ComboBoxItem Content="Contra reembolso" Selected="ComboBoxItem_Selected_2"/>
+        </ComboBox>
 
         <DataGrid x:Name="datagrid_ToRent" Margin="20,292,548.6,31" DataContext="{Binding Source=pelicula}" AutoGenerateColumns="False">
             <DataGrid.Columns>
@@ -34,7 +40,53 @@
         </DataGrid>
         <Image x:Name="image_FilmPoster" Source="Images/Icons/broken.jpg" Margin="251,276,427.6,10"/>
 
-        <Button x:Name="button_Rent" Content="Alquilar" Margin="476,334,207.6,47" Click="button_Rent_Click" Background="White" BorderBrush="White" />
-        <Button x:Name="button_Cancel" Content="Cancelar" Margin="628,334,54.6,47" Click="button_Cancel_Click" Background="White" BorderBrush="White" />
+        <Button x:Name="button_Rent" Content="Alquilar" Margin="441,371,242.6,10" Click="button_Rent_Click" Background="White" BorderBrush="White" />
+        <Button x:Name="button_Cancel" Content="Cancelar" Margin="636,371,46.6,10" Click="button_Cancel_Click" Background="White" BorderBrush="White" />
+
+        <GroupBox x:Name="groupbox_paypal" Header="PayPal" HorizontalAlignment="Left" Height="118" Margin="441,242,0,0" VerticalAlignment="Top" Width="343" BorderBrush="White" Foreground="White" Visibility="Hidden">
+            <Grid>
+                <Button Margin="232,69,16.4,4" Content="Iniciar Sesión" Background="Orange"/>
+                <Label Content="Correo" Margin="32,10,226.4,52" Foreground="LightGray" FontSize="12"/>
+                <Label Content="Contraseña" Margin="7,36,251.4,26" Foreground="LightGray" FontSize="12"/>
+                <TextBox Margin="78,16,93.4,60" FontSize="12"/>
+                <PasswordBox Margin="78,44,93.4,32" FontSize="12"/>
+            </Grid>
+        </GroupBox>
+        <GroupBox x:Name="groupbox_tarjeta" Header="Tarjeta" HorizontalAlignment="Left" Height="118" Margin="441,242,0,0" VerticalAlignment="Top" Width="335" BorderBrush="White" Foreground="White" Visibility="Hidden">
+            <Grid>
+                <Label Content="Número" Margin="10,19,248.4,43" Foreground="LightGray" FontSize="12"/>
+                <Label Content="Titular" Margin="19,41,239.4,21" Foreground="LightGray" FontSize="12"/>
+                <Label Content="Caducidad" Margin="-3,66,252.4,-4" Foreground="LightGray" FontSize="12"/>
+                <Label Content="/" Margin="102,62,200.4,0" Foreground="LightGray" FontSize="18"/>
+                <Label Content="CVC" Margin="186,66,72.4,-4" Foreground="LightGray" FontSize="12"/>
+                
+                <TextBox Margin="66,24,32.4,52" FontSize="12"/>
+                <TextBox Margin="66,47,32.4,29" FontSize="12"/>
+                <TextBox Margin="66,70,226.4,6" FontSize="12"/>
+                <TextBox Margin="127,70,165.4,6" FontSize="12"/>
+                <TextBox Margin="218,70,32.4,6" FontSize="12"/>
+
+                <Button x:Name="button_Visa" Margin="113,-1,183.4,77" BorderBrush="Transparent" Click="button_Visa_Click">
+                    <Button.Background>
+                        <ImageBrush ImageSource="Images/Icons/visa.png" Stretch="UniformToFill"/>
+                    </Button.Background>
+                </Button>
+                <Button x:Name="button_MasterCard" Margin="159,-1,135.4,77" BorderBrush="Transparent" Click="button_MasterCard_Click">
+                    <Button.Background>
+                        <ImageBrush ImageSource="Images/Icons/mastercard.png" Stretch="UniformToFill"/>
+                    </Button.Background>
+                </Button>
+                <Button x:Name="button_AmericanExpress" Margin="206,0,90.4,76" BorderBrush="Transparent" Click="button_AmericanExpress_Click">
+                    <Button.Background>
+                        <ImageBrush ImageSource="Images/Icons/americanexpress.png" Stretch="UniformToFill"/>
+                    </Button.Background>
+                </Button>
+
+            </Grid>
+        </GroupBox>
+        
+
+
+
     </Grid>
 </Window>
