@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ProyectoFinal"
         mc:Ignorable="d"
-        Title="LoginWindow" Height="450" Width="800">
+        Title="LoginWindow" Height="450" Width="800" ResizeMode="NoResize">
 
     <Window.Background>
         <ImageBrush ImageSource="Images/Random/backgroundGrey.jpg"/>
@@ -30,13 +30,13 @@
         </Rectangle>
         <Label Content="E-Mail" FontSize="23" Margin="211,232,494.6,146" Foreground="#FFFF8305" FontFamily="Rockwell"/>
         <Label Content="Contraseña" FontSize="23" Margin="164,273,489.6,101"  Foreground="#FFFF8305" FontFamily="Rockwell"/>
-        <TextBox x:Name="textbox_EmailLogin" FontSize="15" Margin="304,240,205.6,151" Text="admin"/>
-        <PasswordBox x:Name="textbox_PassLogin" FontSize="15" Margin="304,283,205.6,108" Password="admin"/>
+        <TextBox x:Name="textbox_EmailLogin" FontSize="15" Margin="304,240,205.6,158" Text="admin"/>
+        <PasswordBox x:Name="textbox_PassLogin" FontSize="15" Margin="304,283,205.6,115" Password="admin"/>
         <TextBlock x:Name="button_NewAccountLogin" Margin="378,339,302.6,55">
             <Hyperlink FontSize="16" FontStyle="Normal" Click="button_NewAccountMain_Click">Crear cuenta</Hyperlink>
         </TextBlock>
-        <Button x:Name="button_Login" Content="Entrar" Click="button_Login_Click" Margin="304,337,420.6,50" Background="White"/>
-        <Button x:Name="button_Exit" Margin="726,362,9.6,10" Click="button_Exit_Click" Foreground="Transparent" BorderBrush="Transparent">
+        <Button x:Name="button_Login" Content="Entrar" Click="button_Login_Click" Margin="304,337,420.6,57" Background="White" BorderBrush="White"/>
+        <Button x:Name="button_Exit" Margin="737,367,9.6,10" Click="button_Exit_Click" Foreground="Transparent" BorderBrush="Transparent">
             <Button.Background>
                 <ImageBrush ImageSource="Images/Icons/exitHighlight.png"/>
             </Button.Background>

@@ -10,27 +10,27 @@
         <ImageBrush ImageSource="Images/Random/blackgradient.png" TileMode="FlipX" Stretch="UniformToFill"/>
     </Window.Background>
     <Grid Name="GridFilms">
-        <Label Content="Nombre" Margin="76,47,640.6,337" Foreground="LightGray" FontSize="15"/>
+        <Label Content="Nombre" Margin="76,44,640.6,340" Foreground="LightGray" FontSize="15"/>
         <Label Content="Apellidos" Margin="336,47,369.6,328" Foreground="LightGray" FontSize="15"/>
-        <Label Content="Dirección" Margin="70,150,640.6,236" Foreground="LightGray" FontSize="15"/>
-        <Label Content="Código Postal" Margin="40,201,640.6,168" Foreground="LightGray" FontSize="15"/>
-        <Label Content="Teléfono" Margin="76,101,632.6,285" Foreground="LightGray" FontSize="15"/>
-        <Label Content="Método de pago" Margin="336,203,321.6,166" Foreground="LightGray" FontSize="15"/>
+        <Label Content="Dirección" Margin="70,148,640.6,238" Foreground="LightGray" FontSize="15"/>
+        <Label Content="Código Postal" Margin="40,199,640.6,170" Foreground="LightGray" FontSize="15"/>
+        <Label Content="Teléfono" Margin="76,96,632.6,290" Foreground="LightGray" FontSize="15"/>
+        <Label Content="Método de pago" Margin="336,199,321.6,170" Foreground="LightGray" FontSize="15"/>
 
-        <Label Content="Tu Alquiler" Margin="88,268,603.6,108" Foreground="Green"/>
+        <Label Content="Tu Alquiler" Margin="91,276,600.6,100" Foreground="Green"/>
 
-        <TextBox x:Name="textbox_NameUser" Margin="146,49,462.6,337" FontSize="18"/>
-        <TextBox x:Name="textbox_SurnameUser" Margin="409,49,79.6,337" FontSize="18"/>
-        <TextBox x:Name="textbox_PhoneUser" Margin="146,101,405.6,285" FontSize="18"/>
-        <TextBox x:Name="textbox_AdressUser" Margin="146,153,169.6,233" FontSize="18"/>
-        <TextBox x:Name="textbox_ZipUser" Margin="146,203,497.6,183" FontSize="18"/>
-        <ComboBox x:Name="textbox_Pay" Margin="464,203,157.6,183" FontSize="15">
+        <TextBox x:Name="textbox_NameUser" Margin="146,49,462.6,346" FontSize="18"/>
+        <TextBox x:Name="textbox_SurnameUser" Margin="409,49,79.6,346" FontSize="18"/>
+        <TextBox x:Name="textbox_PhoneUser" Margin="146,101,405.6,294" FontSize="18"/>
+        <TextBox x:Name="textbox_AdressUser" Margin="146,153,169.6,242" FontSize="18"/>
+        <TextBox x:Name="textbox_ZipUser" Margin="146,203,497.6,192" FontSize="18"/>
+        <ComboBox x:Name="textbox_Pay" Margin="464,203,157.6,192" FontSize="15">
             <ComboBoxItem Content="PayPal" Selected="ComboBoxItem_Selected"/>
             <ComboBoxItem Content="Tarjeta" Selected="ComboBoxItem_Selected_1"/>
             <ComboBoxItem Content="Contra reembolso" Selected="ComboBoxItem_Selected_2"/>
         </ComboBox>
 
-        <DataGrid x:Name="datagrid_ToRent" Margin="20,292,548.6,31" DataContext="{Binding Source=pelicula}" AutoGenerateColumns="False">
+        <DataGrid x:Name="datagrid_ToRent" Margin="20,298,548.6,31" DataContext="{Binding Source=pelicula}" AutoGenerateColumns="False">
             <DataGrid.Columns>
                 <DataGridTextColumn Header="Nombre" Binding="{Binding NombrePelicula}"/>
                 <DataGridTextColumn Header="Género" Binding="{Binding GeneroPelicula}"/>
@@ -38,21 +38,21 @@
                 <DataGridTextColumn Header="Precio" Binding="{Binding PrecioPelicula}"/>
             </DataGrid.Columns>
         </DataGrid>
-        <Image x:Name="image_FilmPoster" Source="Images/Icons/broken.jpg" Margin="251,276,427.6,10"/>
+        <Image x:Name="image_FilmPoster" Source="Images/Icons/broken.jpg" Margin="251,255,416.6,10"/>
 
-        <Button x:Name="button_Rent" Content="Alquilar" Margin="441,371,242.6,10" Click="button_Rent_Click" Background="White" BorderBrush="White" />
-        <Button x:Name="button_Cancel" Content="Cancelar" Margin="636,371,46.6,10" Click="button_Cancel_Click" Background="White" BorderBrush="White" />
+        <Button x:Name="button_Rent" Content="Alquilar" Margin="457,371,242.6,22" Click="button_Rent_Click" Background="White" BorderBrush="White" />
+        <Button x:Name="button_Cancel" Content="Cancelar" Margin="645,371,54.6,22" Click="button_Cancel_Click" Background="White" BorderBrush="White" />
 
-        <GroupBox x:Name="groupbox_paypal" Header="PayPal" HorizontalAlignment="Left" Height="118" Margin="441,242,0,0" VerticalAlignment="Top" Width="343" BorderBrush="White" Foreground="White" Visibility="Hidden">
+        <GroupBox x:Name="groupbox_paypal" Header="PayPal" HorizontalAlignment="Left" Height="118" Margin="427,242,0,0" VerticalAlignment="Top" Width="335" BorderBrush="White" Foreground="White" Visibility="Hidden">
             <Grid>
-                <Button Margin="232,69,16.4,4" Content="Iniciar Sesión" Background="Orange"/>
-                <Label Content="Correo" Margin="32,10,226.4,52" Foreground="LightGray" FontSize="12"/>
-                <Label Content="Contraseña" Margin="7,36,251.4,26" Foreground="LightGray" FontSize="12"/>
+                <Button Margin="230,69,16.6,4" Content="Iniciar Sesión" Background="Orange"/>
+                <Label Content="Correo" Margin="32,13,226.6,49" Foreground="LightGray" FontSize="12"/>
+                <Label Content="Contraseña" Margin="8,38,243.6,24" Foreground="LightGray" FontSize="12"/>
                 <TextBox Margin="78,16,93.4,60" FontSize="12"/>
                 <PasswordBox Margin="78,44,93.4,32" FontSize="12"/>
             </Grid>
         </GroupBox>
-        <GroupBox x:Name="groupbox_tarjeta" Header="Tarjeta" HorizontalAlignment="Left" Height="118" Margin="441,242,0,0" VerticalAlignment="Top" Width="335" BorderBrush="White" Foreground="White" Visibility="Hidden">
+        <GroupBox x:Name="groupbox_tarjeta" Header="Tarjeta" HorizontalAlignment="Left" Height="118" Margin="427,242,0,0" VerticalAlignment="Top" Width="335" BorderBrush="White" Foreground="White" Visibility="Visible">
             <Grid>
                 <Label Content="Número" Margin="10,19,248.4,43" Foreground="LightGray" FontSize="12"/>
                 <Label Content="Titular" Margin="19,41,239.4,21" Foreground="LightGray" FontSize="12"/>

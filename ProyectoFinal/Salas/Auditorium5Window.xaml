@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ProyectoFinal.Salas"
         mc:Ignorable="d"
-        Title="Auditorium5Window" Height="485.122" Width="846.098" Background="#FF2B2727">
+        Title="Auditorium5Window" Height="485.122" Width="846.098" Background="#FF2B2727" ResizeMode="NoResize">
     <Grid Name="Auditorium5Grid">
 
         <Grid.ColumnDefinitions>

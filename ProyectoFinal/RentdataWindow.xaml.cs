@@ -90,8 +90,8 @@ namespace ProyectoFinal
                 bit2.UriSource = new Uri(pelicula.CartelPelicula);
                 bit2.EndInit();
                 image_FilmPoster.Source = bit2;
-                image_FilmPoster.Width = 115;
-                image_FilmPoster.Height = 134;
+                image_FilmPoster.Width = 126;
+                image_FilmPoster.Height = 155;
             }
             catch (Exception)
             {
