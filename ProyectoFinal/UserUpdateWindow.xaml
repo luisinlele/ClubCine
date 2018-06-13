@@ -10,27 +10,31 @@
         <ImageBrush ImageSource="Images/Random/blackgradient.png"/>
     </Window.Background>
     <Grid Name="UserUpdate">
-        <Label Content="Nombre" FontSize="16" Foreground="#D9D9D9" FontFamily="Rockwell" Margin="38,41,357.6,456.8"/>
-        <Label Content="Apellidos" FontSize="16" Foreground="#D9D9D9" FontFamily="Rockwell" Margin="27,87,379.6,407.8"/>
-        <Label Content="Teléfono" FontSize="16" Foreground="#D9D9D9" FontFamily="Rockwell" Margin="292,39,100.6,458.8"/>
-        <Label Content="Contraseña" FontSize="16" Foreground="#D9D9D9" FontFamily="Rockwell" Margin="13,186,367.6,300.8"/>
-        <Label Content="Repite Contraseña" FontSize="12" Foreground="#D9D9D9" FontFamily="Rockwell" Margin="0,241,338.6,248.8"/>
-        <Label Content="Correo" FontSize="16" Foreground="#D9D9D9" FontFamily="Rockwell" Margin="45,135,379.6,354.8" RenderTransformOrigin="1.553,1.514"/>
-        <Label Content="Imagen Perfil" Margin="38,474,334.6,14.8" FontFamily="Rockwell" Foreground="#D9D9D9"/>
 
-        <TextBox x:Name="textbox_NameUpdate" FontSize="16" Margin="113,44,233.6,465.8" Text="{Binding Path=NombreUsuario, Mode=TwoWay}"/>
-        <TextBox x:Name="textbox_SurnameUpdate" FontSize="16" Margin="113,92,31.6,417.8" Text="{Binding Path=ApellidosUsuario, Mode=TwoWay}"/>
-        <TextBox x:Name="textbox_PhoneUpdate" FontSize="16" Margin="365,44,31.6,465.8" Text="{Binding Path=TelefonoUsuario, Mode=TwoWay}"/>
-        <TextBox x:Name="textbox_EmailUpdate" FontSize="16" Margin="113,140,31.6,369.8" Text="{Binding Path=EmailUsuario, Mode=TwoWay}"/>
-        <PasswordBox x:Name="textbox_PasswordUpdate" FontSize="16" Margin="113,190,145.6,319.8"/>
-        <PasswordBox x:Name="textbox_PasswordcheckUpdate" FontSize="16" Margin="113,241,145.6,268.8"/>
-        <TextBox x:Name="textbox_ProfilePic" Margin="124,470,179.6,39.8" FontSize="16" Text="{Binding Path=PerfilUsuario, Mode=TwoWay}"/>
+        <Label Content="ACTUALIZAR PERFIL" FontSize="25" Margin="131,0,126.6,491.8" Foreground="#FFFFFFFF"/>
+        <Label FontSize="25" Margin="20,10,26.6,457.8" Foreground="#FFFFFFFF" Content="______________________________________________________________________________________________________________________________________________________________________"/>
 
-        <Button x:Name="button_SelectProfilePic" Content=".." Margin="335,470,145.6,39.8" Click="button_SelectProfilePic_Click"/>
+        <Label Content="Nombre" FontSize="16" Foreground="#D9D9D9" FontFamily="Rockwell" Margin="45,58,350.6,439.8"/>
+        <Label Content="Apellidos" FontSize="16" Foreground="#D9D9D9" FontFamily="Rockwell" Margin="34,104,372.6,390.8"/>
+        <Label Content="Teléfono" FontSize="16" Foreground="#D9D9D9" FontFamily="Rockwell" Margin="299,56,93.6,441.8"/>
+        <Label Content="Contraseña" FontSize="16" Foreground="#D9D9D9" FontFamily="Rockwell" Margin="20,203,360.6,283.8"/>
+        <Label Content="Repite Contraseña" FontSize="12" Foreground="#D9D9D9" FontFamily="Rockwell" Margin="7,258,331.6,231.8"/>
+        <Label Content="Correo" FontSize="16" Foreground="#D9D9D9" FontFamily="Rockwell" Margin="52,152,372.6,337.8" RenderTransformOrigin="1.553,1.514"/>
+        <Label Content="Imagen Perfil" Margin="45,491,327.6,-2.2" FontFamily="Rockwell" Foreground="#D9D9D9"/>
 
-        <Image x:Name="image_ProfilePicPreview" Margin="159,284,179.6,67.8" Source="/Images/Random/defaultProfilePic.png"/>
+        <TextBox x:Name="textbox_NameUpdate" FontSize="16" Margin="120,61,226.6,448.8" Text="{Binding Path=NombreUsuario, Mode=TwoWay}"/>
+        <TextBox x:Name="textbox_SurnameUpdate" FontSize="16" Margin="120,109,24.6,400.8" Text="{Binding Path=ApellidosUsuario, Mode=TwoWay}"/>
+        <TextBox x:Name="textbox_PhoneUpdate" FontSize="16" Margin="372,61,24.6,448.8" Text="{Binding Path=TelefonoUsuario, Mode=TwoWay}"/>
+        <TextBox x:Name="textbox_EmailUpdate" FontSize="16" Margin="120,157,24.6,352.8" Text="{Binding Path=EmailUsuario, Mode=TwoWay}"/>
+        <PasswordBox x:Name="textbox_PasswordUpdate" FontSize="16" Margin="120,207,138.6,302.8"/>
+        <PasswordBox x:Name="textbox_PasswordcheckUpdate" FontSize="16" Margin="120,258,138.6,251.8"/>
+        <TextBox x:Name="textbox_ProfilePic" Margin="131,487,172.6,22.8" FontSize="16" Text="{Binding Path=PerfilUsuario, Mode=TwoWay}"/>
 
-        <Button Margin="375,354,31.6,144.8" Content="Guardar Cambios" Click="Button_Click" RenderTransformOrigin="0.5,0.505"/>
+        <Button x:Name="button_SelectProfilePic" Content=".." Margin="342,487,138.6,22.8" Click="button_SelectProfilePic_Click"/>
+
+        <Image x:Name="image_ProfilePicPreview" Margin="166,301,172.6,50.8" Source="/Images/Random/defaultProfilePic.png"/>
+
+        <Button Margin="382,371,24.6,127.8" Content="Guardar Cambios" Click="Button_Click" RenderTransformOrigin="0.5,0.505"/>
         <Button x:Name="button_Exit" Margin="458,481,3.6,9.8" Foreground="Transparent" BorderBrush="Transparent" Click="button_Exit_Click">
             <Button.Background>
                 <ImageBrush ImageSource="Images/Icons/exitHighlight.png"/>
