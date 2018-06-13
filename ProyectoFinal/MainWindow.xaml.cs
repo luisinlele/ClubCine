@@ -347,15 +347,14 @@ namespace ProyectoFinal
         {
             try
             {
-                
                 pelicula = (Pelicula)datagrid_Film.SelectedItem;
                 GridFilms.DataContext = pelicula;
             }
-            catch (Exception)
+            catch (Exception error)
             {
+                Console.WriteLine(error);
             }
         }
-
         //When you click on the button to select a Poster
         private void button_PosterSelect_Click(object sender, RoutedEventArgs e)
         {
