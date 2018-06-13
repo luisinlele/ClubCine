@@ -25,9 +25,9 @@ namespace ProyectoFinal
         Pelicula pelicula;
         Alquiler alquiler = new Alquiler();
         UnitOfWork uow = new UnitOfWork();
-        
+        MainWindow mainWindow;
 
-        public RentdataWindow(Usuario usuario, Pelicula aReservar)
+        public RentdataWindow(Usuario usuario, Pelicula aReservar, MainWindow main)
         {
             InitializeComponent();
             this.usuario = usuario;
@@ -35,6 +35,7 @@ namespace ProyectoFinal
             datagrid_ToRent.ItemsSource = uow.RepositorioPelicula.ObtenerVarios(c => c.NombrePelicula.Equals(pelicula.NombrePelicula));
             CompletarData();
             LoadPoster();
+            mainWindow = main;
         }
 
         public void CompletarData()
@@ -62,7 +63,7 @@ namespace ProyectoFinal
                     alquiler.HabilitadoAlquiler = true;
                     uow.RepositorioAlquiler.Crear(alquiler);
                     MessageBoxResult rent = MessageBox.Show("Alquiler hecho correctamente", "Información", MessageBoxButton.OK, MessageBoxImage.Information);
-                    
+                    mainWindow.CargarAlquileresPorUser();
                     this.Close();
                     break;
 

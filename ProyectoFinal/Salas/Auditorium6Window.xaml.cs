@@ -41,11 +41,14 @@ namespace ProyectoFinal.Salas
         Reserva reserva = new Reserva();
         int contadorAsientos = 0;
 
-        public Auditorium6Window(Usuario usuario)
+        MainWindow mainWindow;
+
+        public Auditorium6Window(Usuario usuario, MainWindow main)
         {
             InitializeComponent();
             this.usuario = usuario;
             CheckChairs();
+            mainWindow = main;
             //Create();
         }
 
@@ -109,6 +112,7 @@ namespace ProyectoFinal.Salas
                     {
                         MessageBoxResult confirmation = MessageBox.Show("No has seleccionado ningún asiento.", "Información", MessageBoxButton.OK, MessageBoxImage.Information);
                     }
+                    mainWindow.CargarReservasPorUser();
                     this.Close();
                     break;
             }

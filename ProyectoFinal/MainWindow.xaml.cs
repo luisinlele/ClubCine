@@ -120,36 +120,36 @@ namespace ProyectoFinal
         
         private void button_Loadsits1Cartelera_Click(object sender, RoutedEventArgs e)
         {
-            auditorium1 = new Auditorium1Window(usuario);
+            auditorium1 = new Auditorium1Window(usuario, this);
             auditorium1.Show();
         }
         private void button_Loadsits2Cartelera_Click(object sender, RoutedEventArgs e)
         {
-            auditorium2 = new Auditorium2Window(usuario);
+            auditorium2 = new Auditorium2Window(usuario, this);
             auditorium2.Show();
         }
 
         private void button_Loadsits3artelera_Click(object sender, RoutedEventArgs e)
         {
-            auditorium3 = new Auditorium3Window(usuario);
+            auditorium3 = new Auditorium3Window(usuario, this);
             auditorium3.Show();
         }
 
         private void button_Loadsits4Cartelera_Click(object sender, RoutedEventArgs e)
         {
-            auditorium4 = new Auditorium4Window(usuario);
+            auditorium4 = new Auditorium4Window(usuario, this);
             auditorium4.Show();
         }
 
         private void button_Loadsits5Cartelera_Click(object sender, RoutedEventArgs e)
         {
-            auditorium5 = new Auditorium5Window(usuario);
+            auditorium5 = new Auditorium5Window(usuario, this);
             auditorium5.Show();
         }
 
         private void button_Loadsits6artelera_Click(object sender, RoutedEventArgs e)
         {
-            auditorium6 = new Auditorium6Window(usuario);
+            auditorium6 = new Auditorium6Window(usuario, this);
             auditorium6.Show();
         }
         #endregion LoadAuditoriums
@@ -479,7 +479,7 @@ namespace ProyectoFinal
                 switch (confirmation)
                 {
                     case MessageBoxResult.Yes:
-                        rentWindow = new RentdataWindow(usuario, aReservar);
+                        rentWindow = new RentdataWindow(usuario, aReservar, this);
                         rentWindow.ShowDialog();
                         break;
                 }
@@ -495,7 +495,7 @@ namespace ProyectoFinal
         {
             List<Alquiler> listaAlquileres = new List<Alquiler>();
             listaAlquileres = uow.RepositorioAlquiler.ObtenerVarios(c => c.UsuarioIdReserva == usuario.UsuarioId && c.HabilitadoAlquiler == true);
-            datagrid_Alquileres.ItemsSource = listaAlquileres;
+            datagrid_Alquileres.ItemsSource = uow.RepositorioAlquiler.ObtenerVarios(c => c.UsuarioIdReserva == usuario.UsuarioId && c.HabilitadoAlquiler == true);
             bool isEmpty = !listaAlquileres.Any();
 
             if (isEmpty)
@@ -520,7 +520,7 @@ namespace ProyectoFinal
         {
             List<Reserva> listaReservas = new List<Reserva>();
             listaReservas = uow.RepositorioReserva.ObtenerVarios(c => c.UsuarioIdReserva == usuario.UsuarioId && c.HabilitadoReserva == true);
-            datagrid_Book.ItemsSource = listaReservas;
+            datagrid_Book.ItemsSource = uow.RepositorioReserva.ObtenerVarios(c => c.UsuarioIdReserva == usuario.UsuarioId && c.HabilitadoReserva == true);
             bool isEmpty = !listaReservas.Any();
 
             if (isEmpty)

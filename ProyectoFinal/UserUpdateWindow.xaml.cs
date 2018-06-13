@@ -42,6 +42,7 @@ namespace ProyectoFinal
         {
             if (textbox_PasswordUpdate.Password.Equals(textbox_PasswordcheckUpdate.Password))
             {
+                user.ContraseñaUsuario = textbox_PasswordUpdate.Password;
                 label_PasswordError.Visibility = Visibility.Hidden;
                 uow.RepositorioUsuario.Actualizar(user);
                 MessageBoxResult confirmation = MessageBox.Show("Su perfil se ha modificado Correctamente", "Información", MessageBoxButton.OK, MessageBoxImage.Information);
