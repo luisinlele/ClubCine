@@ -46,6 +46,7 @@ namespace ProyectoFinal.Salas
             InitializeComponent();
             this.usuario = usuario;
             CheckChairs();
+            //Create();
         }
         private void MarkChair(object sender, RoutedEventArgs e)
         {
@@ -129,7 +130,7 @@ namespace ProyectoFinal.Salas
                     Asiento asiento = new Asiento();
 
                     asiento.NumeroAsiento = button.Name;
-                    asiento.SalaIdAsiento = 3;
+                    asiento.SalaIdAsiento = 2;
                     uow.RepositorioAsiento.Crear(asiento);
 
                 }

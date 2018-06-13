@@ -46,6 +46,7 @@ namespace ProyectoFinal.Salas
             InitializeComponent();
             this.usuario = usuario;
             CheckChairs();
+            //Create();
         }
 
         private void MarkChair(object sender, RoutedEventArgs e)

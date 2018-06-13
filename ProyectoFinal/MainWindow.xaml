@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ProyectoFinal"
         mc:Ignorable="d"
-        Title="MainWindow" Height="682.4" Width="844.535" ResizeMode="NoResize" Closed="WindowClosed">
+        Title="MainWindow" Height="682.4" Width="844.535" ResizeMode="NoResize" Closed="WindowClosed" Closing="WindowClosing" >
 
 
     <Grid>

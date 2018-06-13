@@ -597,7 +597,6 @@ namespace ProyectoFinal
         //Method that opens the LoginWindow when this MainWindow gets closed
         private void WindowClosed(object sender, EventArgs e)
         {
-
             loginWindow = new LoginWindow();
             loginWindow.Show();
         }
@@ -606,6 +605,17 @@ namespace ProyectoFinal
         {
             updateUserWindow = new UserUpdateWindow(usuario);
             updateUserWindow.ShowDialog();
+        }
+
+        private void WindowClosing(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            MessageBoxResult confirmation = MessageBox.Show("¿Estás seguro de que quieres cerrar sesión?", "CONFIRMACIÓN", MessageBoxButton.YesNo, MessageBoxImage.Question);
+            switch (confirmation)
+            {
+                case MessageBoxResult.No:
+                    e.Cancel = true;
+                    break;
+            }
         }
 
         #endregion General
@@ -852,16 +862,17 @@ namespace ProyectoFinal
         }
 
 
+
         #endregion SuperUser
 
 
-        //Nada
+        //nada
         #region testss 
 
-
+        
 
         #endregion testss
 
-        
+
     }
 }
