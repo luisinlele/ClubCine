@@ -83,33 +83,45 @@ namespace ProyectoFinal
         {
             InitializeComponent();
 
+            //hide tabs
             UnloadAll();
 
             GridFilms.DataContext = pelicula;
             datagrid_Film.ItemsSource = uow.RepositorioPelicula.ObtenerVarios(c => c.HabilitadoPelicula == true);
+
+            //loads all the providersIds in the combobox of films
             LoadComboboxProviderId();
+
+            //makes all the textboxes on films empty
             CleanTextboxPelicula();
 
             GridProvider.DataContext = proveedor;
             datagrid_Provider.ItemsSource = uow.RepositorioProveedor.ObtenerVarios(c => c.HabilitadoProveedor == true);
+
+            //makes all the textboxes on providers empty
             CleanTextboxProveedor();
 
             this.usuario = usuario;
 
+            //checks the email and the profile picture to load them in the Window
             CheckUser();
 
             rol = usuario.RolUsuario;
+
+            //checks the role of the user that joined to see witch tabs to make visible
             CheckUserType();
 
+            //loads the datagrid of reservations for the user that singed in
             CargarReservasPorUser();
+
+            //loads the datagrid of rents for the user that signed in
             CargarAlquileresPorUser();
 
             GridUsuario.DataContext = user;
             datagrid_Users.ItemsSource = uow.RepositorioUsuario.ObtenerTodo().ToList();
 
+            //generates buttons in the rents tab for each film in the database
             GenerarBotonesPeliculas();
-
-            
         }
 
 
@@ -603,12 +615,14 @@ namespace ProyectoFinal
             loginWindow.Show();
         }
 
+        //When you click on the button that opens the Window to Update Users
         private void button_UpdateUser_Click(object sender, RoutedEventArgs e)
         {
             updateUserWindow = new UserUpdateWindow(usuario);
             updateUserWindow.ShowDialog();
         }
 
+        //When you Click to close the window
         private void WindowClosing(object sender, System.ComponentModel.CancelEventArgs e)
         {
             MessageBoxResult confirmation = MessageBox.Show("¿Estás seguro de que quieres cerrar sesión?", "CONFIRMACIÓN", MessageBoxButton.YesNo, MessageBoxImage.Question);
@@ -638,8 +652,9 @@ namespace ProyectoFinal
                 Image_Poster.Width = 125;
                 Image_Poster.Height = 139;
             }
-            catch (Exception)
+            catch (Exception error)
             {
+                Console.WriteLine(error);
             }
 
         }
@@ -656,8 +671,9 @@ namespace ProyectoFinal
                 MediaElement_Trailer.Height = 95;
                 MediaElement_Trailer.Play();
             }
-            catch (Exception)
+            catch (Exception error)
             {
+                Console.WriteLine(error);
             }
 
         }
@@ -758,6 +774,7 @@ namespace ProyectoFinal
 
         #endregion ControlPestañas
 
+        //Method that changes the email and the profile picture of the window to the ones of the User that singed in
         private void CheckUser()
         {
             try
@@ -823,8 +840,9 @@ namespace ProyectoFinal
             {
                 userActualizar = (Usuario)datagrid_Users.SelectedItem;
             }
-            catch (Exception)
+            catch (Exception error)
             {
+                Console.WriteLine(error);
             }
         }
 
