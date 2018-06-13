@@ -371,10 +371,13 @@ namespace ProyectoFinal
             explorador.Filter = "All Video Files(*.MP4;*.3GP;*.WEBM;*.WMV)|*.MP4;*.3GP;*.WEBM;*.WMV|All files (*.*)|*.*";
             explorador.ShowDialog();
             textbox_TrailerFilm.Text = explorador.FileName.ToString();
-            Image_VideoFake.Visibility = Visibility.Hidden;
-            MediaElement_Trailer.Visibility = Visibility.Visible;
-            ShowPreviewTrailer(textbox_TrailerFilm.Text);
-            TrailerPreviewLoaded = true;
+            if (textbox_TrailerFilm.Text != "")
+            {
+                Image_VideoFake.Visibility = Visibility.Hidden;
+                MediaElement_Trailer.Visibility = Visibility.Visible;
+                ShowPreviewTrailer(textbox_TrailerFilm.Text);
+                TrailerPreviewLoaded = true;
+            }
         }
 
         //Button Play below the preview of the Trailer
