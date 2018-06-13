@@ -31,17 +31,28 @@ namespace ProyectoFinal
 
         public UserUpdateWindow(Usuario usuario)
         {
-            this.user = usuario;
+            user = uow.RepositorioUsuario.ObtenerUno(c => c.UsuarioId == usuario.UsuarioId);
             InitializeComponent();
             UserUpdate.DataContext = user;
+            textbox_PasswordUpdate.Password = user.ContraseñaUsuario;
             CargarImagenPerfil(user.PerfilUsuario);
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            uow.RepositorioUsuario.Actualizar(user);
-            MessageBoxResult confirmation = MessageBox.Show("Su perfil se ha modificado Correctamente", "Información", MessageBoxButton.OK, MessageBoxImage.Information);
-            this.Close();
+            if (textbox_PasswordUpdate.Password.Equals(textbox_PasswordcheckUpdate.Password))
+            {
+                label_PasswordError.Visibility = Visibility.Hidden;
+                uow.RepositorioUsuario.Actualizar(user);
+                MessageBoxResult confirmation = MessageBox.Show("Su perfil se ha modificado Correctamente", "Información", MessageBoxButton.OK, MessageBoxImage.Information);
+                this.Close();
+            }
+            else
+            {
+                label_PasswordError.Visibility = Visibility.Visible;
+            }
+
+            
         }
 
         private void CargarImagenPerfil(string path)

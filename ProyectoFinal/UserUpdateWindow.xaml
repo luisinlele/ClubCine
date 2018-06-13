@@ -13,7 +13,7 @@
         <Label Content="Nombre" FontSize="16" Foreground="#D9D9D9" FontFamily="Rockwell" Margin="38,41,357.6,456.8"/>
         <Label Content="Apellidos" FontSize="16" Foreground="#D9D9D9" FontFamily="Rockwell" Margin="27,87,379.6,407.8"/>
         <Label Content="Teléfono" FontSize="16" Foreground="#D9D9D9" FontFamily="Rockwell" Margin="292,39,100.6,458.8"/>
-        <Label Content="Contraseña" FontSize="16" Foreground="#D9D9D9" FontFamily="Rockwell" Margin="14,190,366.6,296.8"/>
+        <Label Content="Contraseña" FontSize="16" Foreground="#D9D9D9" FontFamily="Rockwell" Margin="13,186,367.6,300.8"/>
         <Label Content="Repite Contraseña" FontSize="12" Foreground="#D9D9D9" FontFamily="Rockwell" Margin="0,241,338.6,248.8"/>
         <Label Content="Correo" FontSize="16" Foreground="#D9D9D9" FontFamily="Rockwell" Margin="45,135,379.6,354.8" RenderTransformOrigin="1.553,1.514"/>
         <Label Content="Imagen Perfil" Margin="38,474,334.6,14.8" FontFamily="Rockwell" Foreground="#D9D9D9"/>
@@ -37,6 +37,6 @@
             </Button.Background>
         </Button>
 
-        <Label x:Name="label_PasswordError" Content="¡¡Las contraseñas no coinciden!!" Margin="365,223,9.6,278.8" Foreground="Black" Background="Red" FontSize="8" Visibility="Hidden"/>
+        <Label x:Name="label_PasswordError" Content="¡¡Las contraseñas no coinciden!!" Margin="365,217,7.6,293.8" Foreground="Black" Background="Red" FontSize="9" Visibility="Hidden"/>
     </Grid>
 </Window>
