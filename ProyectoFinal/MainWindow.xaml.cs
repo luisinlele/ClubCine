@@ -440,12 +440,19 @@ namespace ProyectoFinal
                     label.Text = listapelis[i].NombrePelicula + " - " + listapelis[i].AñoPelicula;
                     label.TextAlignment = TextAlignment.Center;
                     label.Width = 255;
-                    label.Height = 40;
+                    label.Height = 26;
                     label.FontSize = 20;
 
+                    TextBlock label2 = new TextBlock();
+                    label2.Text = listapelis[i].PrecioPelicula + " €";
+                    label2.TextAlignment = TextAlignment.Center;
+                    label2.Width = 255;
+                    label2.Height = 27;
+                    label2.FontSize = 20;
+
                     Button boton = new Button();
-                    boton.Width = 255;
-                    boton.Height = 349;
+                    boton.Width = 246;
+                    boton.Height = 341;
                     //boton.Margin = new Thickness(1);
                     boton.Content = EnseñarCartel(listapelis[i].CartelPelicula);
                     boton.Name = "buttonTPV_" + listapelis[i].PeliculaId;
@@ -453,6 +460,7 @@ namespace ProyectoFinal
 
                     stack.Children.Add(boton);
                     stack.Children.Add(label);
+                    stack.Children.Add(label2);
                     AlquileresPeliculas.Children.Add(stack);
                 }
             }
@@ -469,8 +477,8 @@ namespace ProyectoFinal
                 bit3.UriSource = new Uri(ruta);
                 bit3.EndInit();
                 imagen.Source = bit3;
-                imagen.Width = 255;
-                imagen.Height = 349;
+                imagen.Width = 246;
+                imagen.Height = 341;
                 return imagen;
             }
             catch (Exception)
@@ -738,8 +746,8 @@ namespace ProyectoFinal
         //Cleans all the texboxes from Peliculas
         private void CleanTextboxPelicula()
         {
-            textbox_NameFilm.Text = "";
             textbox_PosterFilm.Text = "";
+            textbox_NameFilm.Text = "";
             textbox_TrailerFilm.Text = "";
             textbox_YearFilm.Text = "";
             textbox_PriceFilm.Text = "0";
