@@ -414,7 +414,6 @@ namespace ProyectoFinal
             }
         }
 
-
         #endregion Peliculas
 
 
@@ -442,15 +441,15 @@ namespace ProyectoFinal
                     label.Width = 255;
                     label.Height = 26;
                     label.FontSize = 20;
-
+                    
                     TextBlock label2 = new TextBlock();
                     label2.Text = listapelis[i].PrecioPelicula + " €";
                     label2.TextAlignment = TextAlignment.Center;
                     label2.Width = 255;
                     label2.Height = 27;
                     label2.FontSize = 20;
-                    label2.Foreground = Brushes.Green;
-
+                    label2.Foreground = Brushes.Lime;
+                    
                     Button boton = new Button();
                     boton.Width = 246;
                     boton.Height = 341;
@@ -509,11 +508,7 @@ namespace ProyectoFinal
                         rentWindow.ShowDialog();
                         break;
                 }
-
-
-
              }
-                
         }
 
         //Method that Loads the Rents on the datagrid for the user that is Signed In
@@ -554,10 +549,8 @@ namespace ProyectoFinal
                     CargarAlquileresPorUser();
                     uow.RepositorioAlquiler.Actualizar(alquiler);
                     break;
-            }
-
-                    
-            }
+            }            
+        }
 
         private void datagrid_Alquileres_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
@@ -650,8 +643,9 @@ namespace ProyectoFinal
                 proveedor = (Proveedor)datagrid_Provider.SelectedItem;
                 GridProvider.DataContext = proveedor;
             }
-            catch (Exception)
+            catch (Exception error)
             {
+                Console.WriteLine(error);
             }
         }
 
@@ -932,10 +926,6 @@ namespace ProyectoFinal
         {
             datagrid_Users.ItemsSource = uow.RepositorioUsuario.ObtenerTodo().ToList();
         }
-
-
-
-
 
         #endregion SuperUser
 

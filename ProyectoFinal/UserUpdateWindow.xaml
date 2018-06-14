@@ -41,6 +41,6 @@
             </Button.Background>
         </Button>
 
-        <Label x:Name="label_PasswordError" Content="¡¡Las contraseñas no coinciden!!" Margin="365,217,7.6,293.8" Foreground="Black" Background="Red" FontSize="9" Visibility="Hidden"/>
+        <Label x:Name="label_PasswordError" Content="¡¡Las contraseñas no coinciden!!" Margin="369,233,3.6,277.8" Foreground="Black" Background="Red" FontSize="9" Visibility="Hidden"/>
     </Grid>
 </Window>

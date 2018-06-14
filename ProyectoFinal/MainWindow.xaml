@@ -17,7 +17,7 @@
             <RowDefinition Height="172*"/>
         </Grid.RowDefinitions>
         <Image Source="/Images/Random/logo.png" Margin="24,-79,531.4,321.8"/>
-        <TextBlock x:Name="label_UserEmail" Text="Usuario: E-Mail" Margin="260,24,174.4,400.8" FontSize="25" TextAlignment="Center"/>
+        <TextBlock x:Name="label_UserEmail" Text="Usuario: E-Mail" Margin="260,24,174.4,400.8" FontSize="25" TextAlignment="Center" Foreground="Black"/>
         <Button x:Name="button_UpdateUser" Content="Actualizar datos" Margin="601,10,146.4,442.8" FontSize="10" Click="button_UpdateUser_Click" Background="White" BorderBrush="White"/>
         <Image x:Name="image_UserProfile" Source="images/Random/profilePictureDefault.png" Margin="697,4,32.4,366.8"/>
 
