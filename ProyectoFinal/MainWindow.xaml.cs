@@ -432,7 +432,7 @@ namespace ProyectoFinal
                     WrapPanel stack = new WrapPanel();
                     stack.Orientation = Orientation.Horizontal;
                     stack.Width = 255;
-                    stack.Height = 389;
+                    stack.Height = 396;
                     stack.Margin = new Thickness(30);
 
                     TextBlock label = new TextBlock();
@@ -449,10 +449,10 @@ namespace ProyectoFinal
                     label2.Height = 27;
                     label2.FontSize = 20;
                     label2.Foreground = Brushes.Lime;
-                    
+
                     Button boton = new Button();
-                    boton.Width = 246;
-                    boton.Height = 341;
+                    boton.Width = 248;
+                    boton.Height = 348;
                     //boton.Margin = new Thickness(1);
                     boton.Content = EnseñarCartel(listapelis[i].CartelPelicula);
                     boton.Name = "buttonTPV_" + listapelis[i].PeliculaId;
@@ -477,8 +477,8 @@ namespace ProyectoFinal
                 bit3.UriSource = new Uri(ruta);
                 bit3.EndInit();
                 imagen.Source = bit3;
-                imagen.Width = 246;
-                imagen.Height = 341;
+                imagen.Width = 248;
+                imagen.Height = 348;
                 return imagen;
             }
             catch (Exception)

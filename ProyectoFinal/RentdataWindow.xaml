@@ -52,7 +52,7 @@
                 <PasswordBox Margin="78,44,93.4,32" FontSize="12"/>
             </Grid>
         </GroupBox>
-        <GroupBox x:Name="groupbox_tarjeta" Header="Tarjeta" HorizontalAlignment="Left" Height="118" Margin="427,242,0,0" VerticalAlignment="Top" Width="335" BorderBrush="White" Foreground="White" Visibility="Visible">
+        <GroupBox x:Name="groupbox_tarjeta" Header="Tarjeta" HorizontalAlignment="Left" Height="118" Margin="427,242,0,0" VerticalAlignment="Top" Width="335" BorderBrush="White" Foreground="White" Visibility="Hidden">
             <Grid>
                 <Label Content="Número" Margin="10,19,248.4,43" Foreground="LightGray" FontSize="12"/>
                 <Label Content="Titular" Margin="19,41,239.4,21" Foreground="LightGray" FontSize="12"/>
