@@ -94,6 +94,10 @@
     <Compile Include="Migrations\201806140718159_migracion.Designer.cs">
       <DependentUpon>201806140718159_migracion.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201806141003241_migracionFinal.cs" />
+    <Compile Include="Migrations\201806141003241_migracionFinal.Designer.cs">
+      <DependentUpon>201806141003241_migracionFinal.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="RentdataWindow.xaml.cs">
       <DependentUpon>RentdataWindow.xaml</DependentUpon>
@@ -218,6 +222,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201806140718159_migracion.resx">
       <DependentUpon>201806140718159_migracion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201806141003241_migracionFinal.resx">
+      <DependentUpon>201806141003241_migracionFinal.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

@@ -153,7 +153,9 @@
             <TabItem Header="Tus Reservas" Name="TabTuCartelera" Foreground="White" Height="30">
                 <Grid Name="GridReservas" >
 
-                    <DataGrid x:Name="datagrid_Book" Margin="143,138,300.8,68.8" Visibility="Hidden" IsReadOnly="True" AutoGenerateColumns="False">
+                    <TextBlock x:Name="label_Reservaslbl1" Text="Tus Reservas" Margin="338,27,158.8,423.8" FontSize="30"/>
+                    <TextBlock x:Name="label_Reservaslbl2" Text="____________________________________________________________" Margin="77,39,76.8,411.8" FontSize="30"/>
+                    <DataGrid x:Name="datagrid_Book" Margin="143,138,135.8,68.8" Visibility="Visible" IsReadOnly="True" AutoGenerateColumns="False">
                         <DataGrid.Columns>
                             <DataGridTextColumn Header="Sala" Binding="{Binding SalaId}"/>
                             <DataGridTextColumn Header="Fecha Reserva" Binding="{Binding FechaReserva}"/>
@@ -190,6 +192,10 @@
             <TabItem Header="Tus Alquileres" Name="TabTuAlquiler" Foreground="White" Height="30">
 
                 <Grid Name="GridAlquileres">
+
+                    <TextBlock x:Name="label_Alquilereslbl1" Text="Tus Alquileres" Margin="338,27,158.8,423.8" FontSize="30"/>
+                    <TextBlock x:Name="label_Alquilereslbl2" Text="____________________________________________________________" Margin="77,39,76.8,411.8" FontSize="30"/>
+
                     <DataGrid x:Name="datagrid_Alquileres" Margin="56,138,253.8,68.8"  Visibility="Visible" IsReadOnly="True" AutoGenerateColumns="False" SelectionChanged="datagrid_Alquileres_SelectionChanged">
                         <DataGrid.Columns>
                             <DataGridTextColumn Header="Fecha Alquiler" Binding="{Binding FechaAlquiler}" Width="155.5"/>
@@ -356,9 +362,9 @@
                     <TextBox x:Name="textbox_PhoneProvider" Text="{Binding Path=TelefonoProveedor, Mode=TwoWay}" FontSize="18" Margin="408,147,132.8,354.8"/>
                     <TextBox x:Name="textbox_EmailProvider" Text="{Binding Path=CorreoContactoProveedor, Mode=TwoWay}" FontSize="18" Margin="214,224,307.8,277.8"/>
 
-                    <Button x:Name="button_SaveProvider" Content="Guardar" Margin="695,337,53.8,164.4" Click="button_SaveProvider_Click" Background="White" BorderBrush="White" />
-                    <Button x:Name="button_ModifyProvider" Content="Modificar" Margin="695,402,53.8,99.4" Click="button_ModifyProvider_Click"  Background="White" BorderBrush="White"/>
-                    <Button x:Name="button_DeleteProvider" Content="Borrar" Margin="695,468,53.8,33.4" Click="button_DeleteProvider_Click"  Background="White" BorderBrush="White"/>
+                    <Button x:Name="button_SaveProvider" Content="Guardar" Margin="695,329,53.8,163.8" Click="button_SaveProvider_Click" Background="White" BorderBrush="White" />
+                    <Button x:Name="button_ModifyProvider" Content="Modificar" Margin="695,394,53.8,98.8" Click="button_ModifyProvider_Click"  Background="White" BorderBrush="White"/>
+                    <Button x:Name="button_DeleteProvider" Content="Borrar" Margin="695,460,53.8,32.8" Click="button_DeleteProvider_Click"  Background="White" BorderBrush="White"/>
 
                     <DataGrid x:Name="datagrid_Provider" Margin="20,278,197.8,10.4" SelectionChanged="datagrid_Provider_SelectionChanged" AutoGenerateColumns="False" DataContext="{Binding Source=Proveedor}" IsReadOnly="True">
                         <DataGrid.Columns>

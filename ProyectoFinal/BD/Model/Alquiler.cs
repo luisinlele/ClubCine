@@ -20,12 +20,12 @@ namespace ProyectoFinal.Model
         public int AlquilerId { get; set; }
 
 
-        public DateTime FechaAlquiler { get; set; }
+        public String FechaAlquiler { get; set; }
 
-        public DateTime FechaMaxAlquiler { get; set; }
+        public String FechaMaxAlquiler { get; set; }
 
         
-        public DateTime? FechaDevolucionAlquiler { get; set; }
+        public string FechaDevolucionAlquiler { get; set; }
 
         public int PrecioAlquiler { get; set; }
 

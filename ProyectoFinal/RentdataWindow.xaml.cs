@@ -53,9 +53,9 @@ namespace ProyectoFinal
                 case MessageBoxResult.Yes:
 
                     DateTime data = new DateTime();
-                    data = DateTime.Today;
-                    alquiler.FechaAlquiler = data;
-                    alquiler.FechaMaxAlquiler = data.AddDays(7);
+                    data = DateTime.Now;
+                    alquiler.FechaAlquiler = data.ToShortDateString();
+                    alquiler.FechaMaxAlquiler = data.AddDays(7).ToShortDateString();
                     alquiler.PrecioAlquiler = Convert.ToInt32(pelicula.PrecioPelicula);
                     alquiler.UsuarioIdReserva = Convert.ToInt32(usuario.UsuarioId);
                     alquiler.HabilitadoAlquiler = true;

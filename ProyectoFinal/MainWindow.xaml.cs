@@ -520,12 +520,16 @@ namespace ProyectoFinal
                 label_AlquileresError.Visibility = Visibility.Visible;
                 datagrid_Alquileres.Visibility = Visibility.Hidden;
                 button_ReturnRent.Visibility = Visibility.Hidden;
+                label_Alquilereslbl1.Visibility = Visibility.Hidden;
+                label_Alquilereslbl2.Visibility = Visibility.Hidden;
             }
             else
             {
                 label_AlquileresError.Visibility = Visibility.Hidden;
                 datagrid_Alquileres.Visibility = Visibility.Visible;
                 button_ReturnRent.Visibility = Visibility.Visible;
+                label_Alquilereslbl1.Visibility = Visibility.Visible;
+                label_Alquilereslbl2.Visibility = Visibility.Visible;
             }
         }
 
@@ -536,8 +540,8 @@ namespace ProyectoFinal
             {
                 case MessageBoxResult.Yes:
                     DateTime data = new DateTime();
-                    data = DateTime.Today;
-                    alquiler.FechaDevolucionAlquiler = data;
+                    data = DateTime.Now;
+                    alquiler.FechaDevolucionAlquiler = data.ToShortDateString();
                     CargarAlquileresPorUser();
                     uow.RepositorioAlquiler.Actualizar(alquiler);
                     break;
@@ -576,11 +580,15 @@ namespace ProyectoFinal
             {
                 label_ReservasError.Visibility = Visibility.Visible;
                 datagrid_Book.Visibility = Visibility.Hidden;
+                label_Reservaslbl1.Visibility = Visibility.Hidden;
+                label_Reservaslbl2.Visibility = Visibility.Hidden;
             }
             else
             {
                 label_ReservasError.Visibility = Visibility.Hidden;
                 datagrid_Book.Visibility = Visibility.Visible;
+                label_Reservaslbl1.Visibility = Visibility.Visible;
+                label_Reservaslbl2.Visibility = Visibility.Visible;
             }
         }
 
