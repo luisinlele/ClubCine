@@ -24,7 +24,8 @@ namespace ProyectoFinal.Model
 
         public DateTime FechaMaxAlquiler { get; set; }
 
-        public DateTime FechaDevolucionAlquiler { get; set; }
+        
+        public DateTime? FechaDevolucionAlquiler { get; set; }
 
         public int PrecioAlquiler { get; set; }
 

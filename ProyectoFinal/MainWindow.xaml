@@ -190,13 +190,13 @@
             <TabItem Header="Tus Alquileres" Name="TabTuAlquiler" Foreground="White" Height="30">
 
                 <Grid Name="GridAlquileres">
-                    <DataGrid x:Name="datagrid_Alquileres" Margin="143,138,300.8,68.8"  Visibility="Hidden" IsReadOnly="True" AutoGenerateColumns="False">
+                    <DataGrid x:Name="datagrid_Alquileres" Margin="56,138,253.8,68.8"  Visibility="Visible" IsReadOnly="True" AutoGenerateColumns="False" SelectionChanged="datagrid_Alquileres_SelectionChanged">
                         <DataGrid.Columns>
-                            <DataGridTextColumn Header="Fecha Alquiler" Binding="{Binding FechaAlquiler}"/>
-                            <DataGridTextColumn Header="Fecha máxima" Binding="{Binding FechaMaxAlquiler}"/>
-                            <DataGridTextColumn Header="Precio" Binding="{Binding PrecioAlquiler}"/>
+                            <DataGridTextColumn Header="Fecha Alquiler" Binding="{Binding FechaAlquiler}" Width="155.5"/>
+                            <DataGridTextColumn Header="Fecha máxima" Binding="{Binding FechaMaxAlquiler}" Width="155.5"/>
+                            <DataGridTextColumn Header="Precio" Binding="{Binding PrecioAlquiler}" Width="45"/>
+                            <DataGridTextColumn Header="FechaDevolucion" Binding="{Binding FechaDevolucionAlquiler}" Width="150"/>
                         </DataGrid.Columns>
-
                         <DataGrid.CellStyle>
                             <Style TargetType="DataGridCell">
                                 <Style.Triggers>
@@ -218,6 +218,8 @@
                             </Style>
                         </DataGrid.RowStyle>
                     </DataGrid>
+                    <Button x:Name="button_ReturnRent" Margin="645,250,49.8,211.8" Content="Hacer Devolución" Visibility="Visible" Click="button_ReturnRent_Click"/>
+
 
                     <TextBlock x:Name="label_AlquileresError" TextWrapping="Wrap" Text="ACTUALMENTE NO TIENES ALQUILERES"  FontSize="50" Margin="218,156,225.8,116.4" FontFamily="Segoe UI Black" Foreground="Red" TextAlignment="Center"/>
                 </Grid>

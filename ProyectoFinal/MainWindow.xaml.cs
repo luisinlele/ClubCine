@@ -67,6 +67,9 @@ namespace ProyectoFinal
         //User that shows on "SuperAdmin"
         Usuario userActualizar = new Usuario();
 
+        //The rents of the User
+        Alquiler alquiler = new Alquiler();
+
         //The rol of the user
         String rol;
 
@@ -516,13 +519,45 @@ namespace ProyectoFinal
             {
                 label_AlquileresError.Visibility = Visibility.Visible;
                 datagrid_Alquileres.Visibility = Visibility.Hidden;
+                button_ReturnRent.Visibility = Visibility.Hidden;
             }
             else
             {
                 label_AlquileresError.Visibility = Visibility.Hidden;
                 datagrid_Alquileres.Visibility = Visibility.Visible;
+                button_ReturnRent.Visibility = Visibility.Visible;
             }
         }
+
+        private void button_ReturnRent_Click(object sender, RoutedEventArgs e)
+        {
+            MessageBoxResult confirmation = MessageBox.Show("¿Quieres devolver este alquiler? ", "Confirmación", MessageBoxButton.YesNo, MessageBoxImage.Question);
+            switch (confirmation)
+            {
+                case MessageBoxResult.Yes:
+                    DateTime data = new DateTime();
+                    data = DateTime.Today;
+                    alquiler.FechaDevolucionAlquiler = data;
+                    CargarAlquileresPorUser();
+                    uow.RepositorioAlquiler.Actualizar(alquiler);
+                    break;
+            }
+
+                    
+            }
+
+        private void datagrid_Alquileres_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            try
+            {
+                alquiler = (Alquiler)datagrid_Alquileres.SelectedItem;
+            }
+            catch (Exception error)
+            {
+                Console.WriteLine(error);
+            }
+        }
+
 
         #endregion Alquileres
 
@@ -883,13 +918,15 @@ namespace ProyectoFinal
 
 
 
+
+
         #endregion SuperUser
 
 
         //nada
         #region testss 
 
-        
+
 
         #endregion testss
 
