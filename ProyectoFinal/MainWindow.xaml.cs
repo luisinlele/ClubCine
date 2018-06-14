@@ -449,6 +449,7 @@ namespace ProyectoFinal
                     label2.Width = 255;
                     label2.Height = 27;
                     label2.FontSize = 20;
+                    label2.Foreground = Brushes.Green;
 
                     Button boton = new Button();
                     boton.Width = 246;
