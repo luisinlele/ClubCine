@@ -36,9 +36,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="CButtonLib, Version=3.0.6.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\CButtonLib.3.0.6\lib\net40\CButtonLib.dll</HintPath>
-    </Reference>
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
     </Reference>
@@ -99,6 +96,7 @@
       <DependentUpon>201806141003241_migracionFinal.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="PDFGeneration.cs" />
     <Compile Include="RentdataWindow.xaml.cs">
       <DependentUpon>RentdataWindow.xaml</DependentUpon>
     </Compile>
