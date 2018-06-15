@@ -63,5 +63,9 @@ namespace ProyectoFinal
             return result;
         }
 
+
+        //http://www.aspbucket.com/2016/05/how-to-generate-pdf-using-itextsharp.html
+
+
     }
 }
