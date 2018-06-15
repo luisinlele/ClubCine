@@ -64,7 +64,8 @@ namespace ProyectoFinal
         }
 
 
-        //http://www.aspbucket.com/2016/05/how-to-generate-pdf-using-itextsharp.html
+        //http://www.aspbucket.com/2016/05/how-to-generate-pdf-using-itextsharp.html  best
+        //https://mlichtenberg.wordpress.com/2011/04/13/using-c-and-itextsharp-to-create-a-pdf/
 
 
     }
